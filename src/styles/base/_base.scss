@@ -1,0 +1,12 @@
+@use '../abstracts/variables' as *;
+
+body {
+  background-color: $color-background-main;
+  color: $color-text-primary;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 $spacing-md;
+}

@@ -1,0 +1,35 @@
+// Colors
+$color-primary: #2196F3;
+$color-accent: #757575;
+$color-warn: #f44336;
+$color-background-dark: #1a1a1a;
+$color-background-main: #0a0a0a;
+$color-text-primary: #ffffff;
+$color-text-secondary: #b0b0b0;
+
+// Spacing
+$spacing-xs: 0.5rem;
+$spacing-sm: 1rem;
+$spacing-md: 1.5rem;
+$spacing-lg: 2rem;
+$spacing-xl: 3rem;
+
+// Breakpoints
+$breakpoint-mobile: 576px;
+$breakpoint-tablet: 768px;
+$breakpoint-desktop: 1024px;
+$breakpoint-wide: 1440px;
+
+// Transitions
+$transition-fast: 0.2s ease;
+$transition-normal: 0.3s ease;
+$transition-slow: 0.5s ease;
+
+// Typography
+$font-family-base: 'Roboto', 'Helvetica Neue', sans-serif;
+$font-size-base: 1rem;
+$font-size-small: 0.875rem;
+$font-size-large: 1.25rem;
+$font-size-h1: 2.5rem;
+$font-size-h2: 2rem;
+$font-size-h3: 1.75rem;
