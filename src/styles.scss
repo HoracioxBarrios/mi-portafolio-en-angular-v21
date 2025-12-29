@@ -1,4 +1,4 @@
-// 1. Angular Material
+// Angular Material
 @use '@angular/material' as mat;
 
 @include mat.core();
@@ -21,11 +21,10 @@ $my-dark-theme: mat.define-dark-theme((
 
 @include mat.all-component-themes($my-dark-theme);
 
-// 2. Custom styles
+// Custom styles
 @use './styles/abstracts/variables';
 @use './styles/abstracts/mixins';
 @use './styles/base/reset';
 @use './styles/base/typography';
 @use './styles/base/base';
 @use './styles/themes/dark-theme';
-

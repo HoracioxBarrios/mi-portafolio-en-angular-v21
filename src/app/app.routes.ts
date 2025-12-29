@@ -1,11 +1,11 @@
 import { Routes } from '@angular/router';
 
 export const routes: Routes = [
-    {
-        path: '',
-        loadComponent: () => import('./layout/main-layout/main-layout').then(m => m.MainLayout),
-        children: [
-                  {
+  {
+    path: '',
+    loadComponent: () => import('./layout/main-layout/main-layout').then(m => m.MainLayout),
+    children: [
+      {
         path: '',
         redirectTo: 'home',
         pathMatch: 'full'
@@ -26,10 +26,10 @@ export const routes: Routes = [
         path: 'sobre-mi',
         loadComponent: () => import('./features/sobre-mi/sobre-mi').then(m => m.SobreMi)
       }
-        ]
-    },
-    {
-        path: '**',
-        redirectTo: 'home'
-    }
+    ]
+  },
+  {
+    path: '**',
+    redirectTo: 'home'
+  }
 ];
