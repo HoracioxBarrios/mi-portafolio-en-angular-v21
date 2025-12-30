@@ -1,4 +1,4 @@
-
+// Responsive breakpoints
 @mixin respond-to($breakpoint) {
   @if $breakpoint == mobile {
     @media (max-width: 576px) { @content; }
@@ -11,14 +11,14 @@
   }
 }
 
-
+// Flexbox center
 @mixin flex-center {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-
+// Card style
 @mixin card-base {
   background-color: rgba(255, 255, 255, 0.05);
   border-radius: 8px;

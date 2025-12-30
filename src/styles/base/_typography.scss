@@ -1,8 +1,9 @@
 @use '../abstracts/variables' as *;
+@use 'sass:color';
 
 body {
-  font-family: $font-family-base;
-  font-size: $font-size-base;
+  font-family: 'Roboto', 'Helvetica Neue', sans-serif;
+  font-size: 1rem;
   color: $color-text-primary;
 }
 
@@ -13,15 +14,19 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-  font-size: $font-size-h1;
+  font-size: 2.5rem;
 }
 
 h2 {
-  font-size: $font-size-h2;
+  font-size: 2rem;
 }
 
 h3 {
-  font-size: $font-size-h3;
+  font-size: 1.75rem;
+}
+
+h4 {
+  font-size: 1.5rem;
 }
 
 p {
@@ -34,6 +39,6 @@ a {
   transition: color $transition-fast;
 
   &:hover {
-    color: lighten($color-primary, 10%);
+    color: color.adjust($color-primary, $lightness: 10%);
   }
 }

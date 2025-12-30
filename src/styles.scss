@@ -1,30 +1,56 @@
-// Angular Material
+// ========================================
+// 1. TODOS LOS @use PRIMERO
+// ========================================
 @use '@angular/material' as mat;
-
-@include mat.core();
-
-// Define palettes
-$my-primary: mat.define-palette(mat.$blue-palette, 500);
-$my-accent: mat.define-palette(mat.$grey-palette, 400);
-$my-warn: mat.define-palette(mat.$red-palette);
-
-// Create dark theme
-$my-dark-theme: mat.define-dark-theme((
-  color: (
-    primary: $my-primary,
-    accent: $my-accent,
-    warn: $my-warn,
-  ),
-  typography: mat.define-typography-config(),
-  density: 0,
-));
-
-@include mat.all-component-themes($my-dark-theme);
-
-// Custom styles
 @use './styles/abstracts/variables';
 @use './styles/abstracts/mixins';
 @use './styles/base/reset';
 @use './styles/base/typography';
 @use './styles/base/base';
 @use './styles/themes/dark-theme';
+
+// ========================================
+// 2. INCLUIR CORE
+// ========================================
+@include mat.core();
+
+// ========================================
+// 3. DEFINIR TEMA (Material Design 3 - Simplificado)
+// ========================================
+$dark-theme: mat.define-theme((
+  color: (
+    theme-type: dark,
+    primary: mat.$blue-palette,
+  ),
+));
+
+@include mat.all-component-themes($dark-theme);
+
+// ========================================
+// 4. GLOBAL STYLES
+// ========================================
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  background-color: #0a0a0a;
+  color: #ffffff;
+}
+
+.material-icons {
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  -webkit-font-smoothing: antialiased;
+}

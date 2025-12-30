@@ -1,1 +1,37 @@
-<p>header works!</p>
+<header class="header">
+  <div class="header__container">
+    <div class="header__profile">
+      <img src="assets/images/profile.jpg" alt="Profile" class="header__avatar">
+      
+      <div class="header__info">
+        <h1 class="header__name">Ricardo Quebrada R.</h1>
+        <p class="header__title">Desarrollador Web | React JS | JS | PHP | HTML5 | CSS | Tailwind</p>
+        <p class="header__location">Lugar X - Colombia</p>
+      </div>
+      
+      <div class="header__social">
+        <a href="https://github.com" target="_blank" class="header__social-link">
+          <mat-icon>code</mat-icon> GitHub
+        </a>
+        <a href="https://linkedin.com" target="_blank" class="header__social-link">
+          <mat-icon>work</mat-icon> LinkedIn
+        </a>
+        <a href="https://instagram.com" target="_blank" class="header__social-link">
+          <mat-icon>photo_camera</mat-icon> Instagram
+        </a>
+      </div>
+    </div>
+
+    <nav class="header__nav">
+      <mat-tab-group>
+        <mat-tab *ngFor="let link of navLinks" [label]="link.label">
+          <ng-template mat-tab-label>
+            <a [routerLink]="link.path" routerLinkActive="active">
+              {{ link.label }}
+            </a>
+          </ng-template>
+        </mat-tab>
+      </mat-tab-group>
+    </nav>
+  </div>
+</header>

@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
-import { Footer } from "../../shared/components/footer/footer";
-import { RouterOutlet } from "../../../../node_modules/@angular/router/types/_router_module-chunk";
-import { Header } from "../../shared/components/header/header";
+import { RouterOutlet } from '@angular/router';
+import { Header } from '../../shared/components/header/header';
+import { Footer } from '../../shared/components/footer/footer';
 
 @Component({
   selector: 'app-main-layout',

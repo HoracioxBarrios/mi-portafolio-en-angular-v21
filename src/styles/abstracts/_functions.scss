@@ -1,0 +1,9 @@
+// Función para convertir px a rem
+@function px-to-rem($px) {
+  @return calc($px / 16) * 1rem;
+}
+
+// Función para calcular porcentaje
+@function percentage($value, $total) {
+  @return calc($value / $total) * 100%;
+}

@@ -1,8 +1,14 @@
-// Dark theme específico
+// Dark theme CSS variables
 :root {
   --background-primary: #0a0a0a;
   --background-secondary: #1a1a1a;
   --text-primary: #ffffff;
   --text-secondary: #b0b0b0;
   --accent-color: #2196F3;
+}
+
+// Dark theme overrides
+.dark-theme {
+  background-color: var(--background-primary);
+  color: var(--text-primary);
 }

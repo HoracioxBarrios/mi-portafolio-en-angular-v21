@@ -1,0 +1,24 @@
+[
+  {
+    "id": "1",
+    "title": "E-commerce Platform",
+    "description": "Plataforma de comercio electrónico con Angular y Node.js",
+    "technologies": ["Angular", "Node.js", "MongoDB", "Express"],
+    "imageUrl": "assets/images/projects/project-1.png",
+    "githubUrl": "https://github.com/usuario/proyecto1",
+    "liveUrl": "https://proyecto1.com",
+    "featured": true,
+    "createdAt": "2024-01-15T00:00:00.000Z"
+  },
+  {
+    "id": "2",
+    "title": "Task Manager",
+    "description": "Aplicación de gestión de tareas con Angular Material",
+    "technologies": ["Angular", "TypeScript", "Firebase", "Material Design"],
+    "imageUrl": "assets/images/projects/project-2.png",
+    "githubUrl": "https://github.com/usuario/proyecto2",
+    "liveUrl": "https://proyecto2.com",
+    "featured": false,
+    "createdAt": "2024-02-20T00:00:00.000Z"
+  }
+]
