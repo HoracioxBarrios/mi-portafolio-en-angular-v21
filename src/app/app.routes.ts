@@ -4,23 +4,23 @@ export const routes: Routes = [
   {
     path: '',
     loadComponent: () => import('./layout/main-layout/main-layout').then(m => m.MainLayout),
-    children: [// al tener estas rutas hijas definidas para main layout, podremos usar otro router oulet en este main-layout para renderizar -> home, proyectos, publicaciones, sobre mí
+    children: [  // ← IMPORTANTE: children aquí
       {
         path: '',
-        redirectTo: 'home',
+        redirectTo: 'publicaciones',
         pathMatch: 'full'
       },
       {
-        path: 'home',
-        loadComponent: () => import('./features/home/home').then(m => m.Home)
+        path: 'publicaciones',
+        loadComponent: () => import('./features/publicaciones/publicaciones').then(m => m.Publicaciones)
       },
       {
         path: 'proyectos',
         loadComponent: () => import('./features/proyectos/proyectos').then(m => m.Proyectos)
       },
       {
-        path: 'publicaciones',
-        loadComponent: () => import('./features/publicaciones/publicaciones').then(m => m.Publicaciones)
+        path: 'home',
+        loadComponent: () => import('./features/home/home').then(m => m.Home)
       },
       {
         path: 'sobre-mi',
@@ -30,6 +30,6 @@ export const routes: Routes = [
   },
   {
     path: '**',
-    redirectTo: 'home'
+    redirectTo: 'publicaciones'
   }
 ];
