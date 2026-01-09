@@ -1,12 +1,12 @@
 <header class="header">
   <div class="header__container">
     <div class="header__profile">
-      <img [src]="userInfo.photo" alt="Profile" class="header__avatar">
+      <img [src]="photo" alt="Profile" class="header__avatar">
       
       <div class="header__info">
         <h1 class="header__name">{{fullName}}</h1>
         <p class="header__title">{{tecnologiasArr | joinText}}</p>
-        <p class="header__location">Lugar X - Colombia</p>
+        <p class="header__location">{{location}}</p>
       </div>
       
       <div class="header__social">

@@ -21,7 +21,7 @@ import { JoinTextPipe } from '../../pipes/join-text-pipe';
 })
 export class Header {
 
-userInfo = {
+private userInfo = {
   name : "Horacio",
   secondName: "Javier",
   lastName : "Barrios",
@@ -47,6 +47,12 @@ get fullName(): string {
 
 get tecnologiasArr():any[]{
   return this.userInfo.tecnologias;
+}
+get location(){
+  return this.userInfo.location;
+}
+get photo(){
+  return this.userInfo.photo;
 }
 
 }
