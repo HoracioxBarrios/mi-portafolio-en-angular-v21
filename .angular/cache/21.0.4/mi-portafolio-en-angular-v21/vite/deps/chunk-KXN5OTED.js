@@ -1,6 +1,6 @@
 import {
   isPlatformBrowser
-} from "./chunk-F7DROSCW.js";
+} from "./chunk-AL6SFSOZ.js";
 import {
   Injectable,
   NgModule,
@@ -10,7 +10,7 @@ import {
   ɵɵdefineInjectable,
   ɵɵdefineInjector,
   ɵɵdefineNgModule
-} from "./chunk-3Y6DEMEF.js";
+} from "./chunk-DB6KGXHE.js";
 
 // node_modules/@angular/cdk/fesm2022/_platform-chunk.mjs
 var hasV8BreakIterator;
@@ -177,13 +177,13 @@ var PlatformModule = class _PlatformModule {
 })();
 
 export {
-  _getShadowRoot,
-  _getFocusedElementPierceShadowDom,
-  _getEventTarget,
   Platform,
   normalizePassiveListenerOptions,
   RtlScrollAxisType,
   supportsScrollBehavior,
-  getRtlScrollAxisType
+  getRtlScrollAxisType,
+  _getShadowRoot,
+  _getFocusedElementPierceShadowDom,
+  _getEventTarget
 };
-//# sourceMappingURL=chunk-K3Z3ENMM.js.map
+//# sourceMappingURL=chunk-KXN5OTED.js.map

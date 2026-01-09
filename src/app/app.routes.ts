@@ -4,7 +4,7 @@ export const routes: Routes = [
   {
     path: '',
     loadComponent: () => import('./layout/main-layout/main-layout').then(m => m.MainLayout),
-    children: [
+    children: [// al tener estas rutas hijas definidas para main layout, podremos usar otro router oulet en este main-layout para renderizar -> home, proyectos, publicaciones, sobre mí
       {
         path: '',
         redirectTo: 'home',
