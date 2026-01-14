@@ -18,6 +18,10 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+
+    @include from-tablet{
+      align-items: self-start;
+    }
   }
 
   &__profile {
@@ -38,7 +42,7 @@
 
      @include from-tablet{
       flex-direction: row;
-      align-items: flex-start;
+      align-items: center;
       gap: 2rem;
       text-align: left;
      }
@@ -59,6 +63,11 @@
     border-radius: 50%;
     object-fit: cover;
     border: 3px solid $color-primary;
+
+    @include from-desktop{
+      width: 180px;
+      height: 180px;
+    }
   }
   
   &__name {
