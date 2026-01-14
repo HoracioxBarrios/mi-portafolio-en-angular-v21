@@ -27,7 +27,7 @@
       </div>
     </div>
 
-    <nav class="header__nav">
+    <!-- <nav class="header__nav">
       <mat-tab-group>
         @for (link of navLinks; track link.id) {
           <mat-tab>
@@ -35,6 +35,21 @@
               <a [routerLink]="link.path">
                 {{ link.label }}
               </a>
+            </ng-template>
+          </mat-tab>
+        }
+      </mat-tab-group>
+    </nav> -->
+
+    <nav class="header__nav">
+      <mat-tab-group
+        [selectedIndex]="activeIndex"
+        (selectedIndexChange)="onTabChange($event)"
+      >
+        @for (link of navLinks; track link.id) {
+          <mat-tab>
+            <ng-template mat-tab-label>
+              {{ link.label }}
             </ng-template>
           </mat-tab>
         }

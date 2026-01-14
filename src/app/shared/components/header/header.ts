@@ -1,11 +1,14 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { RouterModule } from '@angular/router';
 import { JoinTextPipe } from '../../pipes/join-text-pipe';
-import {RedSocial} from "../../../core/models/redSocial"
+import {RedSocial} from "../../../core/models/redSocial";
+import { Router } from '@angular/router';
+
+
 @Component({
   selector: 'app-header',
   imports: [
@@ -20,6 +23,8 @@ import {RedSocial} from "../../../core/models/redSocial"
   styleUrl: './header.scss',
 })
 export class Header {
+  
+  private router = inject(Router);
 
   private userInfo = {
     name : "Horacio",
@@ -38,11 +43,33 @@ export class Header {
 
 
   navLinks = [
-    { id: 1, path: '/proyectos', label: 'Proyectos' },
-    { id: 2, path: '/publicaciones', label: 'Publicaciones' },
-    { id: 3, path: '/sobre-mi', label: 'Sobre Mí' }
+    { id: 1, path: 'proyectos', label: 'Proyectos' },
+    { id: 2, path: 'publicaciones', label: 'Publicaciones' },
+    { id: 3, path: 'sobre-mi', label: 'Sobre Mí' }
   ];
+  activeIndex = 0;
 
+
+  constructor(){
+    this.router.events.subscribe(()=> {
+      this.syncTabWithRoute();
+    });
+    this.syncTabWithRoute();
+  }
+
+
+  onTabChange(index: number) {
+    const link = this.navLinks[index];
+    if (link) {
+      this.router.navigate([link.path]);
+    }
+  }
+
+  private syncTabWithRoute() {
+    const currentPath = this.router.url.split('/').pop();
+    const index = this.navLinks.findIndex(l => l.path === currentPath);
+    this.activeIndex = index !== -1 ? index : 0;
+  }
 
   get fullName(): string {
     return [this.userInfo.name, this.userInfo.secondName, this.userInfo.lastName]
