@@ -5,6 +5,7 @@
   background-color: $color-background-dark;
   padding: $spacing-lg 0;
   
+  
   &__container {
     max-width: 1200px;
     margin: 0 auto;
@@ -112,4 +113,9 @@
   &__nav {
     width: 100%;
   }
+
+  @include from-desktop{
+    padding: 2rem 0 1.5rem 0;
+  }
 }
+

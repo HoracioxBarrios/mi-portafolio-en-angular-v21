@@ -54,3 +54,22 @@ body {
   direction: ltr;
   -webkit-font-smoothing: antialiased;
 }
+
+/* === MAT TAB INDICATOR COLOR para las opciones en el navbar === */
+
+/* Línea inferior activa */
+.mat-mdc-tab-group
+  .mat-mdc-tab.mdc-tab--active
+  .mdc-tab-indicator__content--underline {
+  border-color: #2196F3 !important;
+}
+
+/* Texto activo */
+.mat-mdc-tab-group
+  .mat-mdc-tab.mdc-tab--active
+  .mdc-tab__text-label,
+.mat-mdc-tab-group
+  .mat-mdc-tab.mdc-tab--active
+  a {
+  color: #2196F3 !important;
+}
