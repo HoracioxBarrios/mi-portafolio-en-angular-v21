@@ -1,24 +1,53 @@
-// Responsive breakpoints
-@mixin respond-to($breakpoint) {
-  @if $breakpoint == mobile {
-    @media (max-width: 576px) { @content; }
-  } @else if $breakpoint == tablet {
-    @media (max-width: 768px) { @content; }
-  } @else if $breakpoint == desktop {
-    @media (max-width: 1024px) { @content; }
-  } @else if $breakpoint == wide {
-    @media (min-width: 1440px) { @content; }
-  }
+// ========================================
+// MOBILE-FIRST RESPONSIVE BREAKPOINTS
+// ========================================
+
+// Desde tablet hacia arriba (768px+)
+@mixin from-tablet {
+  @media (min-width: 768px) { @content; }
 }
 
-// Flexbox center
+// Desde desktop hacia arriba (1024px+)
+@mixin from-desktop {
+  @media (min-width: 1024px) { @content; }
+}
+
+// Desde pantallas anchas hacia arriba (1440px+)
+@mixin from-wide {
+  @media (min-width: 1440px) { @content; }
+}
+
+// ========================================
+// DESKTOP-FIRST (opcional, por si lo necesitas)
+// ========================================
+
+// Solo mobile (0-767px)
+@mixin mobile-only {
+  @media (max-width: 767px) { @content; }
+}
+
+// Solo tablet (768px-1023px)
+@mixin tablet-only {
+  @media (min-width: 768px) and (max-width: 1023px) { @content; }
+}
+
+// Solo desktop (1024px-1439px)
+@mixin desktop-only {
+  @media (min-width: 1024px) and (max-width: 1439px) { @content; }
+}
+
+// ========================================
+// UTILITY MIXINS
+// ========================================
+
+// Centrar con flexbox
 @mixin flex-center {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-// Card style
+// Estilo de card base
 @mixin card-base {
   background-color: rgba(255, 255, 255, 0.05);
   border-radius: 8px;
