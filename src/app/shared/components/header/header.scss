@@ -65,8 +65,8 @@
     border: 3px solid $color-primary;
 
     @include from-desktop{
-      width: 180px;
-      height: 180px;
+      width: 170px;
+      height: 170px;
     }
   }
   
@@ -103,7 +103,9 @@
       }
     }
 
-
+    @include from-desktop{
+      gap: 2.5rem;
+    }
 
   }
   
