@@ -29,9 +29,16 @@ $dark-theme: mat.define-theme((
 // ========================================
 // 4. GLOBAL STYLES
 // ========================================
+html {
+  overflow-y: scroll;
+}
+
+
 html, body {
   height: 100%;
   margin: 0;
+
+  
 }
 
 body {
