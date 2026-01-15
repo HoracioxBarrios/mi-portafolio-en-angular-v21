@@ -1,1 +1,15 @@
-<p>proyectos works!</p>
+<section class="proyectos">
+  <div class="proyectos__container">
+    <div class="proyectos__grid">
+      @for (project of projects; track project.title) {
+        <app-project-card
+          [title]="project.title"
+          [description]="project.description"
+          [image]="project.image"
+          [repoUrl]="project.repoUrl"
+          [liveUrl]="project.liveUrl"
+        />
+      }
+    </div>
+  </div>
+</section>

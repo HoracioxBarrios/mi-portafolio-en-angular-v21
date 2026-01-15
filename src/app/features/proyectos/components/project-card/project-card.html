@@ -1,1 +1,43 @@
-<p>project-card works!</p>
+<article class="project-card">
+
+  <img
+    class="project-card__image"
+    [src]="image"
+    [alt]="title"
+    loading="lazy"
+  />
+
+  <div class="project-card__content">
+        <h3 class="project-card__title">{{ title }}</h3>
+
+        <p class="project-card__description">
+        {{ description }}
+        </p>
+
+        <div class="project-card__links">
+        @if (repoUrl) {
+            <a
+            [href]="repoUrl"
+            target="_blank"
+            rel="noopener"
+            aria-label="Repositorio GitHub"
+            >
+            <mat-icon>code</mat-icon>
+            </a>
+        }
+
+        @if (liveUrl) {
+            <a
+            [href]="liveUrl"
+            target="_blank"
+            rel="noopener"
+            aria-label="Ver proyecto"
+            >
+            <mat-icon>open_in_new</mat-icon>
+            </a>
+        }
+        </div>
+  </div>
+
+</article>
+

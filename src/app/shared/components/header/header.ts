@@ -43,9 +43,10 @@ export class Header {
 
 
   navLinks = [
-    { id: 1, path: 'proyectos', label: 'Proyectos' },
-    { id: 2, path: 'publicaciones', label: 'Publicaciones' },
-    { id: 3, path: 'sobre-mi', label: 'Sobre Mí' }
+    {id: 1, path: 'home', label: 'home'},
+    { id: 2, path: 'proyectos', label: 'Proyectos' },
+    { id: 3, path: 'publicaciones', label: 'Publicaciones' },
+    { id: 4, path: 'sobre-mi', label: 'Sobre Mí' }
   ];
   activeIndex = 0;
 
