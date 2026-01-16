@@ -4,7 +4,6 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { RouterModule } from '@angular/router';
-import { JoinTextPipe } from '../../pipes/join-text-pipe';
 import { Router } from '@angular/router';
 
 
@@ -15,8 +14,7 @@ import { Router } from '@angular/router';
     MatToolbarModule,
     MatButtonModule,
     MatIconModule,
-    MatTabsModule,
-    JoinTextPipe
+    MatTabsModule
   ],
   templateUrl: './header.html',
   styleUrl: './header.scss',

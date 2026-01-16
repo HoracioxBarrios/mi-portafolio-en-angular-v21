@@ -5,9 +5,15 @@ import { Footer } from '../../shared/components/footer/footer';
 import { Profile } from "@app/shared/components/profile/profile";
 import { RedSocial } from '@app/core/models/redSocial';
 
+
 @Component({
   selector: 'app-main-layout',
-  imports: [Footer, RouterOutlet, Header, Profile],
+  imports: [
+    Footer, 
+    RouterOutlet, 
+    Header, 
+    Profile
+  ],
   templateUrl: './main-layout.html',
   styleUrl: './main-layout.scss',
 })

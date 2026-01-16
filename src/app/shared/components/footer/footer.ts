@@ -11,7 +11,7 @@ export class Footer {
 
     constructor() {
     const year = new Date().getFullYear();
-    this.text = `Diseñado y desarrollado por Horacio Barrios · © ${year}`;
+    this.text = `Desarrollado por mí · © ${year}`;
   }
 
 }
