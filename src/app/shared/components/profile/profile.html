@@ -1,0 +1,24 @@
+<div class="profile">
+  <div class="profile__container">
+    <div class="profile__profile">
+      <img [src]="photo" alt="Profile" class="profile__avatar" />
+
+      <div class="profile__informacion-container">
+        <div class="profile__info">
+          <h1 class="profile__name">{{ fullName }}</h1>
+          <p class="profile__title">{{ tecnologiasArr | joinText }}</p>
+          <p class="profile__location">{{ location }}</p>
+        </div>
+
+        <div class="profile__social">
+          @for (red of redesSociales; track red.link) {
+          <a [href]="red.link" target="_blank" rel="noopener" class="profile__social-link">
+            <mat-icon>{{ red.icon }}</mat-icon>
+            {{ red.label }}
+          </a>
+          }
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

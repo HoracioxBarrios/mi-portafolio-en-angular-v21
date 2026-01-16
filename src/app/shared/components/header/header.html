@@ -1,46 +1,5 @@
 <header class="header">
   <div class="header__container">
-    <div class="header__profile">
-      <img [src]="photo" alt="Profile" class="header__avatar">
-
-      <div class="header__informacion-container">
-        <div class="header__info">
-          <h1 class="header__name">{{fullName}}</h1>
-          <p class="header__title">{{tecnologiasArr | joinText}}</p>
-          <p class="header__location">{{location}}</p>
-        </div>
-        
-        <div class="header__social">
-          @for (red of redesSociales; track red.link) {
-            <a
-              [href]="red.link"
-              target="_blank"
-              rel="noopener"
-              class="header__social-link"
-            >
-              <mat-icon>{{ red.icon }}</mat-icon>
-              {{ red.label }}
-            </a>
-          }
-        </div>
-
-      </div>
-    </div>
-
-    <!-- <nav class="header__nav">
-      <mat-tab-group>
-        @for (link of navLinks; track link.id) {
-          <mat-tab>
-            <ng-template mat-tab-label>
-              <a [routerLink]="link.path">
-                {{ link.label }}
-              </a>
-            </ng-template>
-          </mat-tab>
-        }
-      </mat-tab-group>
-    </nav> -->
-
     <nav class="header__nav">
       <mat-tab-group
         [selectedIndex]="activeIndex"

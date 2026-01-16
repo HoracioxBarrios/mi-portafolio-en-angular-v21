@@ -5,7 +5,6 @@ import { MatTabsModule } from '@angular/material/tabs';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { RouterModule } from '@angular/router';
 import { JoinTextPipe } from '../../pipes/join-text-pipe';
-import {RedSocial} from "../../../core/models/redSocial";
 import { Router } from '@angular/router';
 
 
@@ -26,20 +25,7 @@ export class Header {
   
   private router = inject(Router);
 
-  private userInfo = {
-    name : "Horacio",
-    secondName: "Javier",
-    lastName : "Barrios",
-    tecnologias: ["Desarrollador FullStack", "Html", "CSS", "Typescript", "Angular"],
-    location: "Buenos Aires - Argentina",
-    photo: 'images/user-profile.webp',
-    redesSociales: [
-      { label: 'GitHub', link: 'https://github.com/HoracioxBarrios', icon: 'code' },
-      { label: 'LinkedIn', link: 'https://linkedin.com/in/horacioxbarrios', icon: 'work' },
-      { label: 'Instagram', link: 'https://instagram.com', icon: 'photo_camera' }
-    ]
 
-  }
 
 
   navLinks = [
@@ -70,26 +56,6 @@ export class Header {
     const currentPath = this.router.url.split('/').pop();
     const index = this.navLinks.findIndex(l => l.path === currentPath);
     this.activeIndex = index !== -1 ? index : 0;
-  }
-
-  get fullName(): string {
-    return [this.userInfo.name, this.userInfo.secondName, this.userInfo.lastName]
-      .filter(Boolean)
-      .join(' ');
-  }
-
-  get tecnologiasArr():any[]{
-    return this.userInfo.tecnologias;
-  }
-  get location(){
-    return this.userInfo.location;
-  }
-  get photo(){
-    return this.userInfo.photo;
-  }
-
-  get redesSociales(): RedSocial[] {
-    return this.userInfo?.redesSociales ?? [];
   }
 
 }
