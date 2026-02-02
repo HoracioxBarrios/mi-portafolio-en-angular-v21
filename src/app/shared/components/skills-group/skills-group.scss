@@ -1,0 +1,65 @@
+@use 'abstracts/variables' as *;
+@use 'abstracts/mixins' as *;
+
+.skills-group {
+  background-color: $color-background-dark;
+  border-radius: 16px;
+  padding: 1.75rem 1.5rem;
+
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+
+  box-shadow:
+    0 12px 40px rgba(0, 0, 0, 0.45),
+    0 0 0 1px rgba(255, 255, 255, 0.04);
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow:
+      0 20px 60px rgba(0, 0, 0, 0.6),
+      0 0 0 1px rgba(255, 255, 255, 0.08);
+  }
+
+  &__title {
+    margin: 0;
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-align: center;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: $color-text-primary;
+
+    position: relative;
+
+    &::after {
+      content: '';
+      display: block;
+      width: 36px;
+      height: 2px;
+      margin: 0.6rem auto 0;
+      background-color: $color-primary;
+      border-radius: 2px;
+    }
+  }
+
+  &__icons {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.25rem;
+
+    justify-items: center;
+
+    @include from-tablet {
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    @include from-desktop {
+      grid-template-columns: repeat(5, 1fr);
+    }
+  }
+}

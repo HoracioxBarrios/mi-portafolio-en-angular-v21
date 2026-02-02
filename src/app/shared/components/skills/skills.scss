@@ -1,0 +1,54 @@
+@use 'abstracts/variables' as *;
+@use 'abstracts/mixins' as *;
+
+.skills {
+  width: 100%;
+  max-width: 1152px;
+  margin: 0 auto;
+  padding: 4rem 1rem;
+
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+
+  @include from-tablet {
+    padding: 5rem 2rem;
+  }
+
+  &__title {
+    font-size: 2rem;
+    font-weight: 600;
+    color: $color-text-primary;
+    text-align: center;
+    position: relative;
+
+    &::after {
+      content: '';
+      display: block;
+      width: 60px;
+      height: 3px;
+      margin: 0.75rem auto 0;
+      background-color: $color-primary;
+      border-radius: 2px;
+    }
+
+    @include from-tablet {
+      font-size: 2.25rem;
+    }
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+
+    @include from-tablet {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 3rem;
+    }
+
+    @include from-desktop {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+}

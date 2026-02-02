@@ -1,0 +1,21 @@
+.skill-icon {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  img {
+    width: 36px;
+    height: 36px;
+    object-fit: contain;
+    opacity: 0.85;
+    transition:
+      transform 0.2s ease,
+      opacity 0.2s ease;
+  }
+
+  &:hover img {
+    transform: scale(1.15);
+    opacity: 1;
+  }
+}

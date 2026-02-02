@@ -1,0 +1,9 @@
+<div class="skills-group" [attr.data-stack]="group.stack">
+  <h4 class="skills-group__title">{{ group.title }}</h4>
+
+  <div class="skills-group__icons">
+    @for (skill of group.skills; track skill.name) {
+      <app-skills-icon [skill]="skill" />
+    }
+  </div>
+</div>
