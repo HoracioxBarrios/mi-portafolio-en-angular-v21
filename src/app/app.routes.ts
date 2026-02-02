@@ -10,6 +10,10 @@ export const routes: Routes = [
         redirectTo: 'publicaciones',
         pathMatch: 'full'
       },
+            {
+        path: 'home',
+        loadComponent: () => import('./features/home/home').then(m => m.Home)
+      },
       {
         path: 'publicaciones',
         loadComponent: () => import('./features/publicaciones/publicaciones').then(m => m.Publicaciones)
