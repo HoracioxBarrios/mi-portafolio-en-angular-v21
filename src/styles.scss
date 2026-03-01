@@ -80,3 +80,14 @@ body {
   a {
   color: #2196F3 !important;
 }
+
+/* === Skill detail dialog (modal) === */
+.skill-detail-dialog-panel .mat-mdc-dialog-container {
+  padding: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+.skill-detail-dialog-backdrop {
+  background: rgba(0, 0, 0, 0.65) !important;
+}

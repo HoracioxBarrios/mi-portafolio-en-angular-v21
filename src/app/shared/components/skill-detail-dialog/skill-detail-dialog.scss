@@ -1,0 +1,101 @@
+@use 'abstracts/variables' as *;
+
+.skill-dialog {
+  background: linear-gradient(
+    180deg,
+    rgba($color-background-dark, 0.98),
+    rgba($color-background-main, 0.98)
+  );
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  box-shadow: $shadow-lg, 0 0 0 1px rgba(255, 255, 255, 0.05);
+  padding: 0;
+  min-width: 320px;
+  max-width: 420px;
+  overflow: hidden;
+}
+
+.skill-dialog__header {
+  display: flex;
+  justify-content: flex-end;
+  padding: $spacing-sm $spacing-md 0;
+}
+
+.skill-dialog__close {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border: none;
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 10px;
+  color: $color-text-secondary;
+  cursor: pointer;
+  transition: background $transition-fast, color $transition-fast;
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: $color-text-primary;
+  }
+
+  mat-icon {
+    font-size: 22px;
+    width: 22px;
+    height: 22px;
+  }
+}
+
+.skill-dialog__body {
+  padding: $spacing-sm $spacing-xl $spacing-xl;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: $spacing-md;
+}
+
+.skill-dialog__icon-wrap {
+  width: 80px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.04);
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.skill-dialog__icon {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+}
+
+.skill-dialog__name {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: $color-text-primary;
+  letter-spacing: -0.02em;
+}
+
+.skill-dialog__stack {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: $color-primary;
+  padding: 0.25rem 0.75rem;
+  background: rgba($color-primary, 0.12);
+  border-radius: 8px;
+}
+
+.skill-dialog__description {
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.65;
+  color: $color-text-secondary;
+  text-align: center;
+}
