@@ -1,7 +1,7 @@
 <section class="proyectos">
   <div class="proyectos__container">
     <div class="proyectos__grid">
-      @for (project of projects; track project.title) {
+      @for (project of projects; track $index) {
         <app-project-card
           [title]="project.title"
           [description]="project.description"

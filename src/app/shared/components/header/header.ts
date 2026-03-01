@@ -1,16 +1,15 @@
-import { Component, inject } from '@angular/core';
+import { Component, DestroyRef, inject } from '@angular/core';
+import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatToolbarModule } from '@angular/material/toolbar';
-import { RouterModule } from '@angular/router';
-import { Router } from '@angular/router';
-
+import { Router, RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-header',
   imports: [
-    RouterModule,       
+    RouterModule,
     MatToolbarModule,
     MatButtonModule,
     MatIconModule,
@@ -20,25 +19,22 @@ import { Router } from '@angular/router';
   styleUrl: './header.scss',
 })
 export class Header {
-  
+
   private router = inject(Router);
-
-
-
+  private destroyRef = inject(DestroyRef);
 
   navLinks = [
-    {id: 1, path: 'home', label: 'home'},
+    { id: 1, path: 'home', label: 'home' },
     { id: 2, path: 'proyectos', label: 'Proyectos' },
     { id: 3, path: 'publicaciones', label: 'Publicaciones' },
     { id: 4, path: 'sobre-mi', label: 'Sobre Mí' }
   ];
   activeIndex = 0;
 
-
-  constructor(){
-    this.router.events.subscribe(()=> {
-      this.syncTabWithRoute();
-    });
+  constructor() {
+    this.router.events
+      .pipe(takeUntilDestroyed(this.destroyRef))
+      .subscribe(() => this.syncTabWithRoute());
     this.syncTabWithRoute();
   }
 
