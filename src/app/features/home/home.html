@@ -1,1 +1,55 @@
-<p>home works!</p>
+<!-- Hero Section -->
+<section class="hero">
+  <div class="hero__container">
+    <div class="hero__content">
+      <h1 class="hero__title">Bienvenido a mi Portafolio Digital</h1>
+      <p class="hero__subtitle">Desarrollador Full Stack | Angular | Node.js | Cloud</p>
+      <div class="hero__cta">
+        <a href="/sobre-mi" class="btn btn--primary">Conóceme más</a>
+        <a href="/proyectos" class="btn btn--secondary">Ver mis proyectos</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Skills Section -->
+<section class="skills-section">
+  <div class="skills-section__container">
+    <h2 class="skills-section__title">Mis Habilidades</h2>
+    <app-skills />
+  </div>
+</section>
+
+<!-- Featured Projects Section -->
+<section class="featured-projects">
+  <div class="featured-projects__container">
+    <h2 class="featured-projects__title">Proyectos Destacados</h2>
+    <div class="featured-projects__grid">
+      @if (featuredProjects.length > 0) {
+        @for (project of featuredProjects; track $index) {
+          <app-project-card
+            [title]="project.title"
+            [description]="project.description"
+            [image]="project.image"
+            [repoUrl]="project.repoUrl"
+            [liveUrl]="project.liveUrl"
+          />
+        }
+      } @else {
+        <p class="featured-projects__empty">Cargando proyectos...</p>
+      }
+    </div>
+    <div class="featured-projects__cta">
+      <a href="/proyectos" class="btn btn--outline">Ver todos los proyectos</a>
+    </div>
+  </div>
+</section>
+
+<!-- CTA Section -->
+<section class="cta-section">
+  <div class="cta-section__container">
+    <h2>¿Interesado en trabajar juntos?</h2>
+    <p>Estoy disponible para proyectos freelance y posiciones a tiempo completo</p>
+    <a href="mailto:tu-email@ejemplo.com" class="btn btn--primary btn--large">Contactarme</a>
+  </div>
+</section>
