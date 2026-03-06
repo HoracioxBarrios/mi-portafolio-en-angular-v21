@@ -119,6 +119,24 @@
   
   &__nav {
     width: 100%;
+
+    ::ng-deep {
+      .mat-mdc-tab {
+        cursor: pointer;
+      }
+
+      .mat-mdc-tab-label {
+        cursor: pointer;
+      }
+
+      .mdc-tab {
+        cursor: pointer;
+      }
+
+      .mdc-tab__text-label {
+        cursor: pointer;
+      }
+    }
   }
 
   @include from-desktop{

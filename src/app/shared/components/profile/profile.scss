@@ -104,6 +104,7 @@
       align-items: center;
       gap: 0.5rem;
       color: $color-text-secondary;
+      cursor: pointer;
       transition: color $transition-fast;
 
       &:hover {
