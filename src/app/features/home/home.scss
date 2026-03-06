@@ -1,6 +1,6 @@
 // Hero Section
 .hero {
-  padding: 80px 20px;
+  padding: 50px 20px;
   background: linear-gradient(135deg, #1c275d 0%, #3d6ae6 100%);
   color: white;
   text-align: center;
@@ -53,7 +53,7 @@
 
 // About Preview
 .about-preview {
-  padding: 60px 20px;
+  padding: 40px 20px;
   background-color: var(--color-surface);
 
   &__container {
@@ -64,7 +64,7 @@
 
 // Skills Section
 .skills-section {
-  padding: 60px 20px;
+  padding: 50px 20px;
   background-color: var(--color-background);
 
   &__container {
@@ -82,7 +82,7 @@
 
 // Featured Projects
 .featured-projects {
-  padding: 60px 20px;
+  padding: 50px 20px;
   background-color: var(--color-surface);
 
   &__container {
@@ -122,7 +122,7 @@
 
 // CTA Section
 .cta-section {
-  padding: 80px 20px;
+  padding: 60px 20px;
   background: linear-gradient(135deg, #5572f2 0%, #6d25b5 100%);
   color: white;
   text-align: center;
