@@ -5,11 +5,11 @@
   width: 100%;
   max-width: 1152px;
   margin: 0 auto;
-  padding: 4rem 1rem;
+  // padding: 4rem 1rem;
 
   display: flex;
   flex-direction: column;
-  gap: 2.5rem;
+  gap: 1.5rem;
 
   @include from-tablet {
     padding: 5rem 2rem;
