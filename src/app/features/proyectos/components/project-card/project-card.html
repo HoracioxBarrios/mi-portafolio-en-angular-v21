@@ -1,43 +1,53 @@
 <article class="project-card">
 
-  <img
-    class="project-card__image"
-    [src]="image"
-    [alt]="title"
-    loading="lazy"
-  />
+  <div class="project-card__image-wrapper">
+    <img
+      class="project-card__image"
+      [src]="image"
+      [alt]="title"
+      loading="lazy"
+    />
+  </div>
 
   <div class="project-card__content">
-        <h3 class="project-card__title">{{ title }}</h3>
+    <h3 class="project-card__title">{{ title }}</h3>
 
-        <p class="project-card__description">
-        {{ description }}
-        </p>
+    <p class="project-card__description">{{ description }}</p>
 
-        <div class="project-card__links">
-        @if (repoUrl) {
-            <a
-            [href]="repoUrl"
-            target="_blank"
-            rel="noopener"
-            aria-label="Repositorio GitHub"
-            >
-            <mat-icon>code</mat-icon>
-            </a>
+    <div class="project-card__actions">
+      @if (repoUrl) {
+        <a
+          class="project-card__action"
+          [href]="repoUrl"
+          target="_blank"
+          rel="noopener"
+          aria-label="Ver repositorio en GitHub"
+        >
+          <mat-icon>code</mat-icon>
+          <span>Repositorio</span>
+        </a>
+      }
+      @if (liveUrl) {
+        <a
+          class="project-card__action project-card__action--primary"
+          [href]="liveUrl"
+          target="_blank"
+          rel="noopener"
+          aria-label="Ver proyecto en vivo"
+        >
+          <mat-icon>open_in_new</mat-icon>
+          <span>Ver proyecto</span>
+        </a>
+      }
+    </div>
+
+    @if (technologies.length) {
+      <div class="project-card__tags">
+        @for (tech of technologies; track tech) {
+          <span class="project-card__tag">{{ tech }}</span>
         }
-
-        @if (liveUrl) {
-            <a
-            [href]="liveUrl"
-            target="_blank"
-            rel="noopener"
-            aria-label="Ver proyecto"
-            >
-            <mat-icon>open_in_new</mat-icon>
-            </a>
-        }
-        </div>
+      </div>
+    }
   </div>
 
 </article>
-

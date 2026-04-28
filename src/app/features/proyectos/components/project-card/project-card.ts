@@ -13,6 +13,7 @@ export class ProjectCard {
   @Input({ required: true }) description!: string;
   @Input({ required: true }) image!: string;
 
+  @Input() technologies: string[] = [];
   @Input() repoUrl?: string;
   @Input() liveUrl?: string;
 }

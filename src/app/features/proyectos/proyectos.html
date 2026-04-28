@@ -1,15 +1,23 @@
 <section class="proyectos">
   <div class="proyectos__container">
+
+    <div class="proyectos__header">
+      <h2 class="proyectos__title">Mis Proyectos</h2>
+      <p class="proyectos__subtitle">Una selección de los trabajos en los que he participado</p>
+    </div>
+
     <div class="proyectos__grid">
       @for (project of projects; track $index) {
         <app-project-card
           [title]="project.title"
           [description]="project.description"
           [image]="project.image"
+          [technologies]="project.technologies"
           [repoUrl]="project.repoUrl"
           [liveUrl]="project.liveUrl"
         />
       }
     </div>
+
   </div>
 </section>
