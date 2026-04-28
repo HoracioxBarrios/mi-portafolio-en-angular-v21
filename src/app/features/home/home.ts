@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { RouterLink } from '@angular/router';
 import { Skills } from '../../shared/components/skills/skills';
 import { ProjectCard } from '../proyectos/components/project-card/project-card';
 
@@ -13,7 +14,7 @@ interface Project {
 
 @Component({
   selector: 'app-home',
-  imports: [Skills, ProjectCard],
+  imports: [RouterLink, Skills, ProjectCard],
   templateUrl: './home.html',
   styleUrl: './home.scss',
 })
