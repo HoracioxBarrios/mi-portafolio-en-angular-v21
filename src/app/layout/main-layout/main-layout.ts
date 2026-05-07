@@ -23,7 +23,7 @@ export class MainLayout {
     name : "Horacio",
     secondName: "Javier",
     lastName : "Barrios",
-    tecnologias: ["Desarrollador FullStack", "Html", "CSS", "Typescript", "Angular"],
+    tecnologias: ["Desarrollador Angular SSR", "Desarrollador Full Stack", "Desarrollador Frontend"],
     location: "Buenos Aires - Argentina",
     photo: 'images/user-profile.webp',
     redesSociales: [

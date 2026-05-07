@@ -9,7 +9,9 @@ interface Project {
   image: string;
   technologies: string[];
   repoUrl?: string;
+  repoPrivate: boolean;
   liveUrl?: string;
+  featured?: boolean;
 }
 
 @Component({
@@ -21,14 +23,26 @@ interface Project {
 export class Home implements OnInit {
   featuredProjects: Project[] = [];
 
-    projects = [
+  projects: Project[] = [
+    {
+      title: 'Lineage 2 Eternal',
+      description: 'Aplicación web para el servidor Lineage 2 Eternal, desarrollada en Angular 21 con detalles específicos del juego.',
+      image: 'images/lineage2-eternal.png',
+      technologies: ['Angular 21', 'TypeScript', 'SCSS', 'Node.js'],
+      repoUrl: 'https://github.com/HoracioxBarrios/Lineage2-Eternal-web-angular-21-responsive.git',
+      repoPrivate: true,
+      liveUrl: 'https://lineage2-eternal-web-angular-21-res.vercel.app/home',
+      featured: true,
+    },
     {
       title: 'Calvin',
       description: 'TheColvinCo.com es una tienda online especializada en la venta y envío de flores, plantas y regalos a domicilio, con enfoque en ramos y arreglos florales para ocasiones especiales como cumpleaños, aniversarios, celebraciones, fechas señaladas y momentos de detalle.',
       image: 'images/calvin_web_venta_flores.webp',
       technologies: ['Angular', 'TypeScript', 'SCSS', 'Node.js'],
       repoUrl: 'https://github.com/Horacioxbarrios',
+      repoPrivate: false,
       liveUrl: 'https://www.thecolvinco.com/',
+      featured: true,
     },
     {
       title: 'Viajeros con B',
@@ -36,7 +50,9 @@ export class Home implements OnInit {
       image: 'images/viajeros_con_B_web_de_viajes.webp',
       technologies: ['Angular', 'TypeScript', 'SCSS'],
       repoUrl: 'https://github.com/usuario/demo',
+      repoPrivate: false,
       liveUrl: 'https://viajerosconb.btravel.com/',
+      featured: false,
     }
   
   ];
@@ -53,7 +69,6 @@ export class Home implements OnInit {
     //   this.featuredProjects = projects.slice(0, 3);
     // });
     
-    // Datos temporales para visualización
-    this.featuredProjects = this.projects ?? [];
+    this.featuredProjects = this.projects.filter(project => project.featured) ?? [];
   }
 }

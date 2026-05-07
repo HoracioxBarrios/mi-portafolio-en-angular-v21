@@ -1,0 +1,75 @@
+<div class="project-detail-modal">
+  <div class="modal__header">
+    <h2 class="modal__title">{{ project.title }}</h2>
+    <button
+      class="modal__close"
+      type="button"
+      (click)="onClose()"
+      aria-label="Cerrar"
+    >
+      <mat-icon>close</mat-icon>
+    </button>
+  </div>
+
+  <div class="modal__content">
+    <div class="modal__image-wrapper">
+      <img
+        class="modal__image"
+        [src]="project.image"
+        [alt]="project.title"
+      />
+    </div>
+
+    <div class="modal__body">
+      <p class="modal__description">
+        {{ project.description }}
+      </p>
+
+      <div class="modal__actions">
+        @if (!project.repoPrivate && project.repoUrl) {
+          <a
+            class="modal__action modal__action--secondary"
+            [href]="project.repoUrl"
+            target="_blank"
+            rel="noopener"
+          >
+            <mat-icon>code</mat-icon>
+            <span>Repositorio</span>
+          </a>
+        }
+        @if (project.repoPrivate) {
+          <button
+            class="modal__action modal__action--private"
+            type="button"
+            disabled
+            title="Este repositorio es privado"
+          >
+            <mat-icon>lock</mat-icon>
+            <span>Repositorio</span>
+          </button>
+        }
+        @if (project.liveUrl) {
+          <a
+            class="modal__action modal__action--primary"
+            [href]="project.liveUrl"
+            target="_blank"
+            rel="noopener"
+          >
+            <mat-icon>open_in_new</mat-icon>
+            <span>Ver proyecto</span>
+          </a>
+        }
+      </div>
+
+      @if (project.technologies.length) {
+        <div class="modal__tags">
+          @for (tech of project.technologies; track tech) {
+            <span class="modal__tag">
+              {{ tech }}
+            </span>
+          }
+        </div>
+      }
+    </div>
+  </div>
+</div>

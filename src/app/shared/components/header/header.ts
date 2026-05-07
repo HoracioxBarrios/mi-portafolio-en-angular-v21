@@ -24,7 +24,7 @@ export class Header {
   private destroyRef = inject(DestroyRef);
 
   navLinks = [
-    { id: 1, path: 'home', label: 'home' },
+    { id: 1, path: 'home', label: 'Home' },
     { id: 2, path: 'proyectos', label: 'Proyectos' },
     { id: 3, path: 'publicaciones', label: 'Publicaciones' },
     { id: 4, path: 'sobre-mi', label: 'Sobre Mí' }

@@ -14,8 +14,29 @@
 
     <p class="project-card__description">{{ description }}</p>
 
+    @if (showDetailButton) {
+      <button
+        class="project-card__see-more"
+        type="button"
+        (click)="openProjectDetail()"
+      >
+        Ver más...
+      </button>
+    }
+
     <div class="project-card__actions">
-      @if (repoUrl) {
+      @if (repoPrivate) {
+        <button
+          class="project-card__action project-card__action--private"
+          type="button"
+          disabled
+          title="Este repositorio es privado"
+          aria-label="Repositorio privado"
+        >
+          <mat-icon>lock</mat-icon>
+          <span>Repositorio</span>
+        </button>
+      } @else if (repoUrl) {
         <a
           class="project-card__action"
           [href]="repoUrl"

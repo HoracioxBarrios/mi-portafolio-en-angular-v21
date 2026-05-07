@@ -102,6 +102,17 @@
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
     margin-bottom: 3rem;
+    justify-items: center;
+
+    & > * {
+      width: min(100%, 980px);
+    }
+
+    & > app-project-card:only-child {
+      .project-card__image-wrapper {
+        height: 320px;
+      }
+    }
 
     @media (max-width: 768px) {
       grid-template-columns: 1fr;
