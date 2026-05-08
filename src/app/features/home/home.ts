@@ -34,6 +34,16 @@ export class Home implements OnInit {
       liveUrl: 'https://lineage2-eternal-web-angular-21-res.vercel.app/home',
       featured: true,
     },
+        {
+      title: 'Lineage 2 Alika',
+      description: 'Aplicación web para el servidor Lineage 2 Alika, desarrollada en Angular 21 con detalles específicos del juego.',
+      image: 'images/lineage2-alika.png',
+      technologies: ['Angular 21', 'TypeScript', 'SCSS', 'Node.js'],
+      repoUrl: 'https://github.com/HoracioxBarrios/lineage2-Alika-web-angular-21-responsive.git',
+      repoPrivate: true,
+      liveUrl: 'https://lineage2-alika-web-angular-21-respo-lilac.vercel.app/',
+      featured: true,
+    },
     {
       title: 'Calvin',
       description: 'TheColvinCo.com es una tienda online especializada en la venta y envío de flores, plantas y regalos a domicilio, con enfoque en ramos y arreglos florales para ocasiones especiales como cumpleaños, aniversarios, celebraciones, fechas señaladas y momentos de detalle.',
