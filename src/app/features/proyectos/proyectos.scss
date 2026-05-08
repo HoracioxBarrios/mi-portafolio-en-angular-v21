@@ -15,19 +15,36 @@
   &__header {
     text-align: center;
     margin-bottom: $spacing-xl;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  &__label {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: $color-primary;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    padding-bottom: 0.4rem;
+    border-bottom: 1px solid rgba(33, 150, 243, 0.2);
+    padding-inline: 1rem;
   }
 
   &__title {
     font-size: 2rem;
-    font-weight: 600;
+    font-weight: 700;
     color: $color-text-primary;
-    margin-bottom: $spacing-xs;
+    margin: 0;
   }
 
   &__subtitle {
-    font-size: 1rem;
+    font-size: 0.95rem;
     color: $color-text-secondary;
-    margin-bottom: 0;
+    max-width: 560px;
+    line-height: 1.6;
+    margin: 0;
   }
 
   &__grid {

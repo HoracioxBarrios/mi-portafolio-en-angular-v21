@@ -13,7 +13,7 @@ export const PROJECTS: Project[] = [
   },
   {
     title: 'Lineage 2 Alika',
-    description: 'Aplicación web para el servidor Lineage 2 Alika, crónica Essence. desarrollada en Angular 21,',
+    description: 'Aplicación web para el servidor Lineage 2 Alika, crónica Essence. Desarrollada en Angular 21 con diseño responsive, información del servidor, guías para nuevos jugadores y sección de comunidad.',
     image: 'images/lineage2-alika.png',
     technologies: ['Angular 21', 'TypeScript', 'SCSS', 'Node.js'],
     repoUrl: 'https://github.com/HoracioxBarrios/lineage2-Alika-web-angular-21-responsive.git',
@@ -40,15 +40,5 @@ export const PROJECTS: Project[] = [
     repoPrivate: false,
     liveUrl: 'https://viajerosconb.btravel.com/',
     featured: false,
-  },
-  {
-    title: 'Portafolio Personal',
-    description: 'Portafolio web desarrollado en Angular 21 con tema oscuro, arquitectura standalone, routing lazy-loading y diseño responsive. Incluye secciones de proyectos, publicaciones, habilidades y perfil profesional.',
-    image: 'images/viajeros_con_B_web_de_viajes.webp',
-    technologies: ['Angular', 'TypeScript', 'SCSS', 'Angular Material'],
-    repoUrl: 'https://github.com/Horacioxbarrios',
-    repoPrivate: false,
-    liveUrl: undefined,
-    featured: false,
-  },
+  }
 ];

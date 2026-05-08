@@ -3,7 +3,13 @@
     "allow": [
       "Bash(git commit *)",
       "Bash(git push *)",
-      "Bash(git add *)"
+      "Bash(git add *)",
+      "Bash(Get-ChildItem -Path \"C:\\\\Users\\\\Hora\\\\Desktop\\\\Proyectos\\\\mi-portafolio-en-angular-v21\\\\src\" -Recurse -Directory)",
+      "Bash(Select-Object FullName)",
+      "Read(//c/Users/Hora/.claude/projects/c--Users-Hora-Desktop-Proyectos-mi-portafolio-en-angular-v21/memory/**)"
+    ],
+    "additionalDirectories": [
+      "c:\\Users\\Hora\\.claude\\projects\\c--Users-Hora-Desktop-Proyectos-mi-portafolio-en-angular-v21\\memory"
     ]
   }
 }

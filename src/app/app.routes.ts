@@ -15,10 +15,6 @@ export const routes: Routes = [
         loadComponent: () => import('./features/home/home').then(m => m.Home)
       },
       {
-        path: 'publicaciones',
-        loadComponent: () => import('./features/publicaciones/publicaciones').then(m => m.Publicaciones)
-      },
-      {
         path: 'proyectos',
         loadComponent: () => import('./features/proyectos/proyectos').then(m => m.Proyectos)
       },
