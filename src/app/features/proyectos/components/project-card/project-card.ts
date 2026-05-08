@@ -21,7 +21,14 @@ export class ProjectCard {
   @Input() liveUrl?: string;
   @Input() showDetailButton = true;
 
+  showPrivateRepoMsg = false;
+
   constructor(private dialog: MatDialog) {}
+
+  onPrivateRepoClick(): void {
+    this.showPrivateRepoMsg = true;
+    setTimeout(() => (this.showPrivateRepoMsg = false), 4000);
+  }
 
   openProjectDetail(): void {
     const projectData: ProjectDetail = {

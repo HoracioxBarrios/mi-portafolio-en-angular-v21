@@ -29,7 +29,7 @@
         <button
           class="project-card__action project-card__action--private"
           type="button"
-          disabled
+          (click)="onPrivateRepoClick()"
           title="Este repositorio es privado"
           aria-label="Repositorio privado"
         >
@@ -61,6 +61,13 @@
         </a>
       }
     </div>
+
+    @if (showPrivateRepoMsg) {
+      <p class="project-card__private-msg">
+        <mat-icon>info</mat-icon>
+        El administrador marcó este repo como privado
+      </p>
+    }
 
     @if (technologies.length) {
       <div class="project-card__tags">
