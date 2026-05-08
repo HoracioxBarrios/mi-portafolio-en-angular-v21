@@ -7,7 +7,7 @@ export const routes: Routes = [
     children: [  // ← IMPORTANTE: children aquí
       {
         path: '',
-        redirectTo: 'publicaciones',
+        redirectTo: 'home',
         pathMatch: 'full'
       },
             {
@@ -30,7 +30,7 @@ export const routes: Routes = [
   },
   {
     path: '**',
-    redirectTo: 'publicaciones',
+    redirectTo: 'home',
     pathMatch: 'full'
   }
 ];

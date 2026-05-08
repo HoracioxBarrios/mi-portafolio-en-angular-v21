@@ -1,11 +1,10 @@
 export interface Project {
-  id: string;
   title: string;
   description: string;
+  image: string;
   technologies: string[];
-  imageUrl: string;
-  githubUrl?: string;
+  repoUrl?: string;
+  repoPrivate: boolean;
   liveUrl?: string;
-  featured: boolean;
-  createdAt: Date;
+  featured?: boolean;
 }

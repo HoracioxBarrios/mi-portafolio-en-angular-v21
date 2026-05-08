@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, HostListener, Input } from '@angular/core';
 import { MatIcon } from "@angular/material/icon";
 import { MatDialog } from '@angular/material/dialog';
 import { ProjectDetailModal, ProjectDetail } from '../project-detail-modal/project-detail-modal';
@@ -25,9 +25,14 @@ export class ProjectCard {
 
   constructor(private dialog: MatDialog) {}
 
-  onPrivateRepoClick(): void {
+  onPrivateRepoClick(event: MouseEvent): void {
+    event.stopPropagation();
     this.showPrivateRepoMsg = true;
-    setTimeout(() => (this.showPrivateRepoMsg = false), 4000);
+  }
+
+  @HostListener('document:click')
+  onDocumentClick(): void {
+    if (this.showPrivateRepoMsg) this.showPrivateRepoMsg = false;
   }
 
   openProjectDetail(): void {
