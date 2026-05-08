@@ -71,7 +71,7 @@
         $color-primary 180deg,
         rgba(33, 150, 243, 0.05) 280deg
       );
-      animation: ring-oscillate 4s ease-in-out infinite;
+      animation: ring-oscillate 15s ease-in-out infinite;
       z-index: 0;
     }
 
@@ -89,7 +89,7 @@
       );
       filter: blur(8px);
       opacity: 0.5;
-      animation: ring-oscillate 4s ease-in-out infinite;
+      animation: ring-oscillate 10s ease-in-out infinite;
       z-index: 0;
     }
 
