@@ -23,7 +23,7 @@ export class MainLayout {
     name : "Horacio",
     secondName: "Javier",
     lastName : "Barrios",
-    tecnologias: ["Angular Developer", "AI-Augmented Development"],
+    tecnologias: ["Frontend Developer (Angular)", "AI-Augmented Development"],
     location: "Buenos Aires - Argentina",
     photo: 'images/user-profile.webp',
     redesSociales: [

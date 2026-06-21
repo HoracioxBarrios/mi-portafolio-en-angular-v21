@@ -74,7 +74,8 @@ export const EN: Record<string, string> = {
   'skills.group.ia': 'AI',
 
   // Footer
-  'footer.text': 'Built by me',
+  'footer.text': 'Development',
+  'footer.credit': 'Design inspired by a template from',
 
   // Project descriptions
   'project.lineage2Eternal.desc':

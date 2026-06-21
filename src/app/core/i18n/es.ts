@@ -75,7 +75,8 @@ export const ES: Record<string, string> = {
   'skills.group.ia': 'IA',
 
   // Footer
-  'footer.text': 'Desarrollado por mí',
+  'footer.text': 'Desarrollo',
+  'footer.credit': 'Diseño inspirado en una plantilla de',
 
   // Descripciones de proyectos
   'project.lineage2Eternal.desc':
