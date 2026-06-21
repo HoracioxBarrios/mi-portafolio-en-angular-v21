@@ -36,7 +36,9 @@
   &__subtitle {
     font-size: 1.3rem;
     margin-bottom: 2rem;
-    opacity: 0.95;
+    // Texto siempre claro: el hero es un degradado azul fijo en ambos temas.
+    // (sobrescribe la regla global `p { color: var(--text-secondary) }`)
+    color: rgba(255, 255, 255, 0.92);
 
     @media (max-width: 768px) {
       font-size: 1rem;
@@ -54,7 +56,7 @@
 // About Preview
 .about-preview {
   padding: 40px 20px;
-  background-color: var(--color-surface);
+  background-color: var(--surface);
 
   &__container {
     max-width: 1200px;
@@ -65,7 +67,7 @@
 // Skills Section
 .skills-section {
   padding: 50px 20px;
-  background-color: var(--color-background);
+  background-color: var(--bg-primary);
 
   &__container {
     max-width: 1200px;
@@ -83,7 +85,7 @@
 // Featured Projects
 .featured-projects {
   padding: 50px 20px;
-  background-color: var(--color-surface);
+  background-color: var(--surface);
 
   &__container {
     max-width: 1200px;
@@ -122,7 +124,7 @@
   &__empty {
     grid-column: 1 / -1;
     text-align: center;
-    color: var(--color-text-secondary);
+    color: var(--text-secondary);
     padding: 2rem;
   }
 
@@ -156,7 +158,8 @@
   p {
     font-size: 1.1rem;
     margin-bottom: 2rem;
-    opacity: 0.95;
+    // Texto siempre claro sobre el degradado fijo del CTA.
+    color: rgba(255, 255, 255, 0.92);
 
     @media (max-width: 768px) {
       font-size: 1rem;

@@ -1,8 +1,14 @@
 @use 'abstracts/variables' as *;
 @use 'abstracts/mixins' as *;
 
+:host {
+  display: flex; // ocupa toda la celda del grid para igualar alturas
+}
+
 .skills-group {
-  background-color: $color-background-dark;
+  flex: 1; // la card rellena el alto del host (celda del grid)
+  background-color: var(--surface);
+  border: 1px solid var(--border-subtle);
   border-radius: 16px;
   padding: 1.75rem 1.5rem;
   min-height: 240px;
@@ -10,9 +16,7 @@
   flex-direction: column;
   gap: 1.5rem;
 
-  box-shadow:
-    0 12px 40px rgba(0, 0, 0, 0.45),
-    0 0 0 1px rgba(255, 255, 255, 0.04);
+  box-shadow: var(--shadow-lg);
 
   &__title {
     margin: 0;
@@ -21,7 +25,7 @@
     text-align: center;
     letter-spacing: 0.05em;
     text-transform: uppercase;
-    color: $color-text-primary;
+    color: var(--text-primary);
 
     position: relative;
 
@@ -31,7 +35,7 @@
       width: 36px;
       height: 2px;
       margin: 0.6rem auto 0;
-      background-color: $color-primary;
+      background-color: var(--accent);
       border-radius: 2px;
     }
   }

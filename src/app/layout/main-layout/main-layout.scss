@@ -2,22 +2,22 @@
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  
+
   &__header {
     position: sticky;
     top: 0;
     z-index: 1000;
   }
-  
+
   &__main {
     flex: 1;
-    padding: 2rem;
-    
-    @media (max-width: 768px) {
-      padding: 1rem;
-    }
+    width: 100%;
+    max-width: 1200px;
+    margin-inline: auto;
+    // Padding fluido: ~1rem en mobile, hasta 2rem en desktop.
+    padding: clamp(1rem, 3vw, 2rem);
   }
-  
+
   &__footer {
     margin-top: auto;
   }

@@ -1,101 +1,153 @@
 @use 'abstracts/variables' as *;
 
 .skill-dialog {
-  background: linear-gradient(
-    180deg,
-    rgba($color-background-dark, 0.98),
-    rgba($color-background-main, 0.98)
-  );
-  border-radius: 16px;
-  border: 1px solid rgba(255, 255, 255, 0.06);
-  box-shadow: $shadow-lg, 0 0 0 1px rgba(255, 255, 255, 0.05);
+  position: relative;
+  // Acento por categoría (fallback al acento global del tema).
+  --skill-accent: var(--accent);
+  --skill-accent-soft: var(--accent-soft-bg);
+
+  &[data-stack='backend'] {
+    --skill-accent: #2e9e6b;
+    --skill-accent-soft: rgba(46, 158, 107, 0.14);
+  }
+
+  &[data-stack='tools'] {
+    --skill-accent: #8b5cf6;
+    --skill-accent-soft: rgba(139, 92, 246, 0.16);
+  }
+
+  &[data-stack='ia'] {
+    --skill-accent: #e8833a;
+    --skill-accent-soft: rgba(232, 131, 58, 0.16);
+  }
+
+  background: var(--surface);
+  border-radius: 18px;
+  border: 1px solid var(--border-subtle);
+  box-shadow: var(--shadow-lg);
   padding: 0;
-  min-width: 320px;
-  max-width: 420px;
+  min-width: 300px;
+  max-width: 400px;
   overflow: hidden;
 }
 
-.skill-dialog__header {
+// ── Banda superior con degradado de acento ──────────────
+.skill-dialog__banner {
+  position: relative;
+  height: 96px;
+  background:
+    radial-gradient(120% 140% at 50% 0%, var(--skill-accent-soft) 0%, transparent 70%),
+    linear-gradient(135deg, var(--skill-accent-soft), transparent 60%);
+  border-bottom: 1px solid var(--border-subtle);
   display: flex;
-  justify-content: flex-end;
-  padding: $spacing-sm $spacing-md 0;
+  justify-content: center;
 }
 
-.skill-dialog__close {
+// ── Ícono elevado, “montado” sobre la banda ─────────────
+.skill-dialog__icon-wrap {
+  position: absolute;
+  bottom: -34px;
+  width: 84px;
+  height: 84px;
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 40px;
-  height: 40px;
-  border: none;
-  background: rgba(255, 255, 255, 0.06);
+  background: var(--surface-raised);
+  border-radius: 20px;
+  border: 1px solid var(--border-medium);
+  box-shadow: var(--shadow-md);
+}
+
+.skill-dialog__icon {
+  width: 46px;
+  height: 46px;
+  object-fit: contain;
+}
+
+// ── Botón cerrar ────────────────────────────────────────
+.skill-dialog__close {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border: 1px solid var(--border-subtle);
+  background: var(--overlay-bg);
   border-radius: 10px;
-  color: $color-text-secondary;
+  color: var(--text-secondary);
   cursor: pointer;
-  transition: background $transition-fast, color $transition-fast;
+  transition: background $transition-fast, color $transition-fast, border-color $transition-fast;
 
   &:hover {
-    background: rgba(255, 255, 255, 0.1);
-    color: $color-text-primary;
+    background: var(--overlay-bg-hover);
+    border-color: var(--border-hover);
+    color: var(--text-primary);
   }
 
   mat-icon {
-    font-size: 22px;
-    width: 22px;
-    height: 22px;
+    font-size: 20px;
+    width: 20px;
+    height: 20px;
   }
 }
 
+// ── Cuerpo ──────────────────────────────────────────────
 .skill-dialog__body {
-  padding: $spacing-sm $spacing-xl $spacing-xl;
+  padding: 3rem $spacing-xl $spacing-xl; // top deja espacio al ícono montado
   text-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: $spacing-md;
-}
-
-.skill-dialog__icon-wrap {
-  width: 80px;
-  height: 80px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: rgba(255, 255, 255, 0.04);
-  border-radius: 16px;
-  border: 1px solid rgba(255, 255, 255, 0.08);
-}
-
-.skill-dialog__icon {
-  width: 48px;
-  height: 48px;
-  object-fit: contain;
+  gap: $spacing-sm;
 }
 
 .skill-dialog__name {
   margin: 0;
   font-size: 1.5rem;
-  font-weight: 600;
-  color: $color-text-primary;
+  font-weight: 700;
+  color: var(--text-primary);
   letter-spacing: -0.02em;
 }
 
 .skill-dialog__stack {
-  display: inline-block;
-  font-size: 0.75rem;
-  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.72rem;
+  font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  color: $color-primary;
-  padding: 0.25rem 0.75rem;
-  background: rgba($color-primary, 0.12);
-  border-radius: 8px;
+  color: var(--skill-accent);
+  padding: 0.3rem 0.8rem;
+  background: var(--skill-accent-soft);
+  border: 1px solid var(--skill-accent-soft);
+  border-radius: 999px;
+}
+
+.skill-dialog__stack-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--skill-accent);
+}
+
+.skill-dialog__divider {
+  width: 48px;
+  height: 3px;
+  border-radius: 2px;
+  background: var(--skill-accent);
+  opacity: 0.85;
+  margin: 0.25rem 0 0.1rem;
 }
 
 .skill-dialog__description {
   margin: 0;
   font-size: 0.95rem;
-  line-height: 1.65;
-  color: $color-text-secondary;
+  line-height: 1.7;
+  color: var(--text-secondary);
   text-align: center;
 }

@@ -1,7 +1,8 @@
-import { Component, HostListener, Input } from '@angular/core';
+import { Component, HostListener, Input, inject } from '@angular/core';
 import { MatIcon } from "@angular/material/icon";
 import { MatDialog } from '@angular/material/dialog';
 import { ProjectDetailModal, ProjectDetail } from '../project-detail-modal/project-detail-modal';
+import { Translation } from '@app/core/services/translation';
 
 @Component({
   selector: 'app-project-card',
@@ -10,6 +11,8 @@ import { ProjectDetailModal, ProjectDetail } from '../project-detail-modal/proje
   styleUrl: './project-card.scss',
 })
 export class ProjectCard {
+
+  protected readonly tr = inject(Translation);
 
   @Input({ required: true }) title!: string;
   @Input({ required: true }) description!: string;

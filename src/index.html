@@ -1,13 +1,24 @@
 <!doctype html>
-<html lang="en">
+<html lang="es" data-theme="dark">
 <head>
   <meta charset="utf-8">
-  <title>MiPortafolioEnAngularV21</title>
+  <title>Horacio Barrios — Angular Developer</title>
   <base href="/">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <script>
+    // Anti-FOUC: aplica el tema e idioma guardados antes del primer render.
+    (function () {
+      try {
+        var t = localStorage.getItem('theme');
+        document.documentElement.setAttribute('data-theme', t === 'light' ? 'light' : 'dark');
+        var l = localStorage.getItem('lang');
+        document.documentElement.setAttribute('lang', l === 'en' ? 'en' : 'es');
+      } catch (e) {}
+    })();
+  </script>
 </head>
 <body>
   <app-root></app-root>

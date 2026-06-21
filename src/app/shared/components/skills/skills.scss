@@ -17,7 +17,7 @@
 
   &__title {
     font-weight: 600;
-    color: $color-text-primary;
+    color: var(--text-primary);
     text-align: center;
     position: relative;
     margin: 0;
@@ -27,7 +27,7 @@
       width: 60px;
       height: 3px;
       margin: 0.75rem auto 0;
-      background-color: $color-primary;
+      background-color: var(--accent);
       border-radius: 2px;
     }
   }
@@ -39,6 +39,7 @@
 
     @include from-tablet {
       grid-template-columns: repeat(2, 1fr);
+      grid-auto-rows: 1fr; // todas las cards con la misma altura (la mayor)
       gap: 3rem;
     }
 

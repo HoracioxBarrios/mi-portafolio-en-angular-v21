@@ -2,11 +2,11 @@
 <section class="hero">
   <div class="hero__container">
     <div class="hero__content">
-      <h1 class="hero__title">Hola, soy Hora</h1>
-      <p class="hero__subtitle">Construyo apps que resuelven problemas reales con foco en la experiencia del usuario</p>
+      <h1 class="hero__title">{{ tr.t('home.hero.title') }}</h1>
+      <p class="hero__subtitle">{{ tr.t('home.hero.subtitle') }}</p>
       <div class="hero__cta">
-        <a routerLink="/sobre-mi" class="btn btn--primary">Conóceme más</a>
-        <a routerLink="/proyectos" class="btn btn--secondary">Ver mis proyectos</a>
+        <a routerLink="/sobre-mi" class="btn btn--primary">{{ tr.t('home.hero.ctaAbout') }}</a>
+        <a routerLink="/proyectos" class="btn btn--secondary">{{ tr.t('home.hero.ctaProjects') }}</a>
       </div>
     </div>
   </div>
@@ -17,13 +17,13 @@
 <!-- Featured Projects Section -->
 <section class="featured-projects">
   <div class="featured-projects__container">
-    <h2 class="featured-projects__title">Proyectos Destacados</h2>
+    <h2 class="featured-projects__title">{{ tr.t('home.featured.title') }}</h2>
     <div class="featured-projects__grid">
       @if (featuredProjects.length > 0) {
         @for (project of featuredProjects; track $index) {
           <app-project-card
             [title]="project.title"
-            [description]="project.description"
+            [description]="tr.t(project.descKey)"
             [image]="project.image"
             [technologies]="project.technologies"
             [repoUrl]="project.repoUrl"
@@ -33,11 +33,11 @@
           />
         }
       } @else {
-        <p class="featured-projects__empty">Cargando proyectos...</p>
+        <p class="featured-projects__empty">{{ tr.t('home.featured.loading') }}</p>
       }
     </div>
     <div class="featured-projects__cta">
-      <a routerLink="/proyectos" class="btn btn--outline">Ver todos los proyectos</a>
+      <a routerLink="/proyectos" class="btn btn--outline">{{ tr.t('home.featured.viewAll') }}</a>
     </div>
   </div>
 </section>
@@ -52,8 +52,8 @@
 <!-- CTA Section -->
 <section class="cta-section">
   <div class="cta-section__container">
-    <h2>¿Buscás un Angular Developer?</h2>
-    <p>Estoy abierto a posiciones full-time y proyectos freelance. Respondo en menos de 24 horas.</p>
-    <a href="mailto:horacioxbarrios@gmail.com" class="btn btn--primary btn--large">Escribime</a>
+    <h2>{{ tr.t('home.cta.title') }}</h2>
+    <p>{{ tr.t('home.cta.text') }}</p>
+    <a href="mailto:horacioxbarrios@gmail.com" class="btn btn--primary btn--large">{{ tr.t('home.cta.button') }}</a>
   </div>
 </section>

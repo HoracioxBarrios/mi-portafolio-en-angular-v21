@@ -4,10 +4,10 @@
 @use '@angular/material' as mat;
 @use './styles/abstracts/variables';
 @use './styles/abstracts/mixins';
+@use './styles/themes/tokens';
 @use './styles/base/reset';
 @use './styles/base/typography';
 @use './styles/base/base';
-@use './styles/themes/dark-theme';
 
 // ========================================
 // 2. INCLUIR CORE
@@ -15,7 +15,7 @@
 @include mat.core();
 
 // ========================================
-// 3. DEFINIR TEMA (Material Design 3 - Simplificado)
+// 3. DEFINIR TEMAS (Material Design 3) — dark y light
 // ========================================
 $dark-theme: mat.define-theme((
   color: (
@@ -24,7 +24,19 @@ $dark-theme: mat.define-theme((
   ),
 ));
 
+$light-theme: mat.define-theme((
+  color: (
+    theme-type: light,
+    primary: mat.$blue-palette,
+  ),
+));
+
+// Estructura/typography una sola vez; los colores se alternan por tema.
 @include mat.all-component-themes($dark-theme);
+
+:root[data-theme='light'] {
+  @include mat.all-component-colors($light-theme);
+}
 
 // ========================================
 // 4. GLOBAL STYLES
@@ -43,8 +55,9 @@ html, body {
 
 body {
   font-family: Roboto, "Helvetica Neue", sans-serif;
-  background-color: #0a0a0a;
-  color: #ffffff;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .material-icons {
@@ -68,7 +81,7 @@ body {
 .mat-mdc-tab-group
   .mat-mdc-tab.mdc-tab--active
   .mdc-tab-indicator__content--underline {
-  border-color: #2196F3 !important;
+  border-color: var(--accent) !important;
 }
 
 /* Texto activo */
@@ -78,7 +91,7 @@ body {
 .mat-mdc-tab-group
   .mat-mdc-tab.mdc-tab--active
   a {
-  color: #2196F3 !important;
+  color: var(--accent) !important;
 }
 
 /* === Skill detail dialog (modal) === */
@@ -89,7 +102,7 @@ body {
 }
 
 .skill-detail-dialog-backdrop {
-  background: rgba(0, 0, 0, 0.65) !important;
+  background: var(--backdrop) !important;
 }
 
 /* === Project detail modal === */

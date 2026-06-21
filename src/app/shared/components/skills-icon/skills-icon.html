@@ -1,3 +1,13 @@
 <div class="skill-icon" (click)="openSkillModal()">
-  <img [src]="skill.icon" [alt]="skill.name" />
+  @if (tinted) {
+    <span
+      class="skill-icon__glyph"
+      role="img"
+      [attr.aria-label]="skill.name"
+      [style.--glyph]="glyphUrl"
+      [style.--tint]="tint"
+    ></span>
+  } @else {
+    <img [src]="skill.icon" [alt]="skill.name" />
+  }
 </div>

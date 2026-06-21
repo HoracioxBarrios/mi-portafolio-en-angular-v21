@@ -1,0 +1,68 @@
+// ============================================================
+// DESIGN TOKENS — colores temáticos como CSS custom properties
+// Se alternan en runtime con el atributo data-theme en <html>.
+// El tema por defecto es dark (sin atributo o data-theme="dark").
+// ============================================================
+
+:root,
+:root[data-theme='dark'] {
+  --bg-primary: #0a0a0a;
+  --bg-secondary: #1a1a1a;
+  --surface: #1a1a1a;
+  --surface-raised: #222222;
+
+  --text-primary: #ffffff;
+  --text-secondary: #b0b0b0;
+  --text-on-accent: #ffffff;
+
+  --accent: #2196f3;
+  --accent-strong: #1976d2;
+  --accent-soft-bg: rgba(33, 150, 243, 0.12);
+  --accent-soft-border: rgba(33, 150, 243, 0.28);
+
+  --danger: #d32f2f;
+
+  --border-subtle: rgba(255, 255, 255, 0.06);
+  --border-medium: rgba(255, 255, 255, 0.08);
+  --border-hover: rgba(255, 255, 255, 0.14);
+  --border-strong: rgba(255, 255, 255, 0.18);
+
+  --overlay-bg: rgba(255, 255, 255, 0.08);
+  --overlay-bg-hover: rgba(255, 255, 255, 0.15);
+  --backdrop: rgba(0, 0, 0, 0.65);
+
+  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.15);
+  --shadow-md: 0 4px 10px rgba(0, 0, 0, 0.25);
+  --shadow-lg: 0 10px 30px rgba(0, 0, 0, 0.35);
+}
+
+:root[data-theme='light'] {
+  --bg-primary: #eaedf2;
+  --bg-secondary: #ffffff;
+  --surface: #ffffff;
+  --surface-raised: #ffffff;
+
+  --text-primary: #1a1d21;
+  --text-secondary: #555b66;
+  --text-on-accent: #ffffff;
+
+  --accent: #1769c4;
+  --accent-strong: #115293;
+  --accent-soft-bg: rgba(23, 105, 196, 0.10);
+  --accent-soft-border: rgba(23, 105, 196, 0.28);
+
+  --danger: #c62828;
+
+  --border-subtle: rgba(0, 0, 0, 0.08);
+  --border-medium: rgba(0, 0, 0, 0.10);
+  --border-hover: rgba(0, 0, 0, 0.16);
+  --border-strong: rgba(0, 0, 0, 0.18);
+
+  --overlay-bg: rgba(0, 0, 0, 0.05);
+  --overlay-bg-hover: rgba(0, 0, 0, 0.10);
+  --backdrop: rgba(0, 0, 0, 0.45);
+
+  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.06);
+  --shadow-md: 0 4px 10px rgba(0, 0, 0, 0.08);
+  --shadow-lg: 0 10px 30px rgba(0, 0, 0, 0.12);
+}

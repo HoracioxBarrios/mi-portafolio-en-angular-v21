@@ -20,7 +20,7 @@
         type="button"
         (click)="openProjectDetail()"
       >
-        Ver más...
+        {{ tr.t('card.seeMore') }}
       </button>
     }
 
@@ -30,11 +30,11 @@
           class="project-card__action project-card__action--private"
           type="button"
           (click)="onPrivateRepoClick($event)"
-          title="Este repositorio es privado"
-          aria-label="Repositorio privado"
+          [title]="tr.t('card.privateTitle')"
+          [attr.aria-label]="tr.t('card.privateAria')"
         >
           <mat-icon>lock</mat-icon>
-          <span>Repositorio</span>
+          <span>{{ tr.t('card.repo') }}</span>
         </button>
       } @else if (repoUrl) {
         <a
@@ -42,10 +42,10 @@
           [href]="repoUrl"
           target="_blank"
           rel="noopener"
-          aria-label="Ver repositorio en GitHub"
+          [attr.aria-label]="tr.t('card.repoAria')"
         >
           <mat-icon>code</mat-icon>
-          <span>Repositorio</span>
+          <span>{{ tr.t('card.repo') }}</span>
         </a>
       }
       @if (liveUrl) {
@@ -54,16 +54,16 @@
           [href]="liveUrl"
           target="_blank"
           rel="noopener"
-          aria-label="Ver proyecto en vivo"
+          [attr.aria-label]="tr.t('card.liveAria')"
         >
           <mat-icon>open_in_new</mat-icon>
-          <span>Ver proyecto</span>
+          <span>{{ tr.t('card.viewProject') }}</span>
         </a>
       }
       @if (showPrivateRepoMsg) {
         <p class="project-card__private-msg">
           <mat-icon>info</mat-icon>
-          El administrador marcó este repo como privado
+          {{ tr.t('card.privateMsg') }}
         </p>
       }
     </div>

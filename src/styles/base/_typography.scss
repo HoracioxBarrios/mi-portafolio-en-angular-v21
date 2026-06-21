@@ -1,10 +1,9 @@
 @use '../abstracts/variables' as *;
-@use 'sass:color';
 
 body {
   font-family: 'Roboto', 'Helvetica Neue', sans-serif;
   font-size: 1rem;
-  color: $color-text-primary;
+  color: var(--text-primary);
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -31,14 +30,14 @@ h4 {
 
 p {
   margin-bottom: 1rem;
-  color: $color-text-secondary;
+  color: var(--text-secondary);
 }
 
 a {
-  color: $color-primary;
+  color: var(--accent);
   transition: color $transition-fast;
 
   &:hover {
-    color: color.adjust($color-primary, $lightness: 10%);
+    color: var(--accent-strong);
   }
 }

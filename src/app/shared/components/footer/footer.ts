@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, computed, inject } from '@angular/core';
+import { Translation } from '@app/core/services/translation';
 
 @Component({
   selector: 'app-footer',
@@ -7,11 +8,8 @@ import { Component } from '@angular/core';
   styleUrl: './footer.scss',
 })
 export class Footer {
-  text: string = "";
+  private readonly tr = inject(Translation);
+  private readonly year = new Date().getFullYear();
 
-    constructor() {
-    const year = new Date().getFullYear();
-    this.text = `Desarrollado por mí · © ${year}`;
-  }
-
+  readonly text = computed(() => `${this.tr.t('footer.text')} · © ${this.year}`);
 }

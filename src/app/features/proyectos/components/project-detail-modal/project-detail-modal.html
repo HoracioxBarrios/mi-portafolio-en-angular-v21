@@ -5,7 +5,7 @@
       class="modal__close"
       type="button"
       (click)="onClose()"
-      aria-label="Cerrar"
+      [attr.aria-label]="tr.lang() === 'es' ? 'Cerrar' : 'Close'"
     >
       <mat-icon>close</mat-icon>
     </button>
@@ -34,7 +34,7 @@
             rel="noopener"
           >
             <mat-icon>code</mat-icon>
-            <span>Repositorio</span>
+            <span>{{ tr.t('card.repo') }}</span>
           </a>
         }
         @if (project.repoPrivate) {
@@ -42,10 +42,10 @@
             class="modal__action modal__action--private"
             type="button"
             disabled
-            title="Este repositorio es privado"
+            [title]="tr.t('card.privateTitle')"
           >
             <mat-icon>lock</mat-icon>
-            <span>Repositorio</span>
+            <span>{{ tr.t('card.repo') }}</span>
           </button>
         }
         @if (project.liveUrl) {
@@ -56,7 +56,7 @@
             rel="noopener"
           >
             <mat-icon>open_in_new</mat-icon>
-            <span>Ver proyecto</span>
+            <span>{{ tr.t('card.viewProject') }}</span>
           </a>
         }
       </div>

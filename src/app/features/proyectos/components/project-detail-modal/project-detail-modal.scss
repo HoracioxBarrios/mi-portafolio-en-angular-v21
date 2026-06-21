@@ -1,11 +1,10 @@
 @use 'abstracts/variables' as *;
-@use 'sass:color';
 
 .project-detail-modal {
   width: 100%;
 //   max-width: 900px;
   padding: 2rem;
-  background-color: #0a0a0a;
+  background-color: var(--surface);
   border-radius: 12px;
   backdrop-filter: blur(10px);
 }
@@ -17,7 +16,7 @@
     align-items: center;
     gap: 1rem;
     margin-bottom: 2rem;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid var(--border-medium);
     padding-bottom: 1.5rem;
   }
 
@@ -25,13 +24,13 @@
     font-size: 1.5rem;
     font-weight: 700;
     margin: 0;
-    color: $color-text-primary;
+    color: var(--text-primary);
   }
 
   &__close {
     background: none;
     border: none;
-    color: $color-text-secondary;
+    color: var(--text-secondary);
     cursor: pointer;
     padding: 0.5rem;
     display: flex;
@@ -40,7 +39,7 @@
     transition: color 0.3s ease;
 
     &:hover {
-      color: $color-text-primary;
+      color: var(--text-primary);
     }
 
     mat-icon {
@@ -63,7 +62,7 @@
   &__image-wrapper {
     overflow: hidden;
     border-radius: 8px;
-    background-color: $color-background-dark;
+    background-color: var(--bg-secondary);
     aspect-ratio: 16 / 10;
   }
 
@@ -80,7 +79,7 @@
   }
 
   &__description {
-    color: $color-text-secondary;
+    color: var(--text-secondary);
     font-size: 1rem;
     line-height: 1.75;
     margin-bottom: 1.5rem;
@@ -104,9 +103,9 @@
     font-size: 0.9rem;
     font-weight: 500;
     text-decoration: none;
-    color: $color-text-primary;
-    background: rgba(255, 255, 255, 0.08);
-    border: 1px solid rgba(255, 255, 255, 0.18);
+    color: var(--text-primary);
+    background: var(--overlay-bg);
+    border: 1px solid var(--border-strong);
     cursor: pointer;
     transition:
       background 0.3s ease,
@@ -121,35 +120,35 @@
     }
 
     &:hover:not(:disabled) {
-      background: rgba(255, 255, 255, 0.15);
-      border-color: rgba(255, 255, 255, 0.4);
+      background: var(--overlay-bg-hover);
+      border-color: var(--border-hover);
       transform: translateY(-2px);
     }
 
     &--primary {
-      background: $color-primary;
-      border-color: $color-primary;
-      color: #fff;
+      background: var(--accent);
+      border-color: var(--accent);
+      color: var(--text-on-accent);
 
       &:hover {
-        background: color.adjust($color-primary, $lightness: -8%);
-        border-color: color.adjust($color-primary, $lightness: -8%);
-        box-shadow: 0 4px 14px rgba(33, 150, 243, 0.45);
+        background: var(--accent-strong);
+        border-color: var(--accent-strong);
+        box-shadow: 0 4px 14px var(--accent-soft-border);
       }
     }
 
     &--secondary {
-      color: $color-text-primary;
+      color: var(--text-primary);
 
       &:hover {
-        background: rgba(255, 255, 255, 0.15);
-        border-color: rgba(255, 255, 255, 0.4);
+        background: var(--overlay-bg-hover);
+        border-color: var(--border-hover);
       }
     }
 
     &--private {
-      background: #d32f2f;
-      border-color: #d32f2f;
+      background: var(--danger);
+      border-color: var(--danger);
       color: #fff;
       cursor: not-allowed;
       opacity: 0.95;
@@ -160,7 +159,7 @@
     display: flex;
     flex-wrap: wrap;
     gap: 0.5rem;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    border-top: 1px solid var(--border-medium);
     padding-top: 1rem;
   }
 
@@ -169,8 +168,8 @@
     font-weight: 500;
     padding: 0.35rem 0.75rem;
     border-radius: 4px;
-    background: rgba(33, 150, 243, 0.12);
-    color: $color-primary;
-    border: 1px solid rgba(33, 150, 243, 0.28);
+    background: var(--accent-soft-bg);
+    color: var(--accent);
+    border: 1px solid var(--accent-soft-border);
   }
 }

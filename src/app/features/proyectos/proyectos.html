@@ -2,16 +2,16 @@
   <div class="proyectos__container">
 
     <div class="proyectos__header">
-      <span class="proyectos__label">Proyectos</span>
-      <h2 class="proyectos__title">Una selección de mi trabajo</h2>
-      <p class="proyectos__subtitle">Apps desarrolladas con foco en performance, accesibilidad y experiencia de usuario</p>
+      <span class="proyectos__label">{{ tr.t('proyectos.label') }}</span>
+      <h2 class="proyectos__title">{{ tr.t('proyectos.title') }}</h2>
+      <p class="proyectos__subtitle">{{ tr.t('proyectos.subtitle') }}</p>
     </div>
 
     <div class="proyectos__grid">
       @for (project of projects; track $index) {
         <app-project-card
           [title]="project.title"
-          [description]="project.description"
+          [description]="tr.t(project.descKey)"
           [image]="project.image"
           [technologies]="project.technologies"
           [repoUrl]="project.repoUrl"
