@@ -7,16 +7,12 @@ export const routes: Routes = [
     children: [  // ← IMPORTANTE: children aquí
       {
         path: '',
-        redirectTo: 'publicaciones',
+        redirectTo: 'home',
         pathMatch: 'full'
       },
             {
         path: 'home',
         loadComponent: () => import('./features/home/home').then(m => m.Home)
-      },
-      {
-        path: 'publicaciones',
-        loadComponent: () => import('./features/publicaciones/publicaciones').then(m => m.Publicaciones)
       },
       {
         path: 'proyectos',
@@ -30,7 +26,7 @@ export const routes: Routes = [
   },
   {
     path: '**',
-    redirectTo: 'publicaciones',
+    redirectTo: 'home',
     pathMatch: 'full'
   }
 ];

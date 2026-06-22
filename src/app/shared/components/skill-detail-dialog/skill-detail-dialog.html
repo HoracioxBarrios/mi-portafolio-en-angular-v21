@@ -1,16 +1,29 @@
-<div class="skill-dialog">
-  <header class="skill-dialog__header">
-    <button type="button" class="skill-dialog__close" (click)="close()" aria-label="Cerrar">
-      <mat-icon>close</mat-icon>
-    </button>
-  </header>
+<div class="skill-dialog" [attr.data-stack]="skill.stack">
+  <button
+    type="button"
+    class="skill-dialog__close"
+    (click)="close()"
+    [attr.aria-label]="tr.lang() === 'es' ? 'Cerrar' : 'Close'"
+  >
+    <mat-icon>close</mat-icon>
+  </button>
 
-  <div class="skill-dialog__body">
+  <div class="skill-dialog__banner">
     <div class="skill-dialog__icon-wrap">
       <img [src]="skill.icon" [alt]="skill.name" class="skill-dialog__icon" />
     </div>
+  </div>
+
+  <div class="skill-dialog__body">
     <h2 class="skill-dialog__name">{{ skill.name }}</h2>
-    <span class="skill-dialog__stack">{{ stackLabel }}</span>
+
+    <span class="skill-dialog__stack">
+      <span class="skill-dialog__stack-dot"></span>
+      {{ stackLabel }}
+    </span>
+
+    <div class="skill-dialog__divider"></div>
+
     <p class="skill-dialog__description">{{ skill.description }}</p>
   </div>
 </div>

@@ -1,8 +1,8 @@
 @use '../abstracts/variables' as *;
 
 body {
-  background-color: $color-background-main;
-  color: $color-text-primary;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
 }
 
 .container {

@@ -420,9 +420,14 @@ FodyWeavers.xsd
 
 # Angular / Node
 dist/
+out-tsc/
 .angular/
 *.tsbuildinfo
 coverage/
 .nyc_output/
 .npm
 .eslintcache
+
+
+# claude
+.claude/

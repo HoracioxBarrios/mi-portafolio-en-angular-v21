@@ -1,17 +1,12 @@
-import { Component, Inject } from '@angular/core';
+import { Component, Inject, inject } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialogModule, MatDialogRef } from '@angular/material/dialog';
 import { MatIconModule } from '@angular/material/icon';
 import { Skill } from '@app/core/models/skill.interface';
+import { Translation } from '@app/core/services/translation';
 
 export interface SkillDetailDialogData {
   skill: Skill;
 }
-
-const STACK_LABELS: Record<Skill['stack'], string> = {
-  frontend: 'Frontend',
-  backend: 'Backend',
-  tools: 'Herramientas',
-};
 
 @Component({
   selector: 'app-skill-detail-dialog',
@@ -21,15 +16,18 @@ const STACK_LABELS: Record<Skill['stack'], string> = {
   styleUrl: './skill-detail-dialog.scss',
 })
 export class SkillDetailDialog {
+  protected readonly tr = inject(Translation);
   skill: Skill;
-  stackLabel: string;
 
   constructor(
     private dialogRef: MatDialogRef<SkillDetailDialog>,
     @Inject(MAT_DIALOG_DATA) data: SkillDetailDialogData
   ) {
     this.skill = data.skill;
-    this.stackLabel = STACK_LABELS[this.skill.stack];
+  }
+
+  get stackLabel(): string {
+    return this.tr.t('skills.group.' + this.skill.stack);
   }
 
   close(): void {

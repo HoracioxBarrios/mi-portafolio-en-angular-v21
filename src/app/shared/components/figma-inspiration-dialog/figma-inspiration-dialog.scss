@@ -1,0 +1,214 @@
+@use 'abstracts/variables' as *;
+
+.figma-modal {
+  background: var(--surface);
+  border-radius: 16px;
+  border: 1px solid var(--border-subtle);
+  box-shadow: var(--shadow-lg);
+  overflow: hidden;
+  width: 100%;
+
+  &__header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 1.25rem 1.5rem 1rem;
+    border-bottom: 1px solid var(--border-subtle);
+  }
+
+  &__heading {
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+  }
+
+  &__title {
+    margin: 0;
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--text-primary);
+  }
+
+  &__author {
+    margin: 0;
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+  }
+
+  &__close {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border: 1px solid var(--border-subtle);
+    background: var(--overlay-bg);
+    border-radius: 10px;
+    color: var(--text-secondary);
+    cursor: pointer;
+    transition: background $transition-fast, color $transition-fast, border-color $transition-fast;
+
+    &:hover {
+      background: var(--overlay-bg-hover);
+      border-color: var(--border-hover);
+      color: var(--text-primary);
+    }
+
+    mat-icon {
+      font-size: 20px;
+      width: 20px;
+      height: 20px;
+    }
+  }
+
+  // ── Visor ───────────────────────────────────────────────
+  &__viewer {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1rem;
+  }
+
+  &__stage {
+    flex: 1;
+    min-width: 0;
+    // Proporción rectangular fija: modal apaisado y estable entre imágenes.
+    aspect-ratio: 16 / 9;
+    max-height: 62vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    border-radius: 10px;
+    background: transparent;
+  }
+
+  &__image {
+    display: block;
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    border-radius: 10px;
+    // Cursor personalizado con forma de lupa (blanco con contorno negro, visible
+    // sobre cualquier fondo). El "13 13" es el punto activo (centro del cristal).
+    cursor:
+      url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='32'%20height='32'%20viewBox='0%200%2032%2032'%3E%3Cg%20fill='none'%20stroke-linecap='round'%3E%3Ccircle%20cx='13'%20cy='13'%20r='9'%20stroke='%23000'%20stroke-width='5'/%3E%3Cline%20x1='20'%20y1='20'%20x2='30'%20y2='30'%20stroke='%23000'%20stroke-width='5'/%3E%3Ccircle%20cx='13'%20cy='13'%20r='9'%20stroke='%23fff'%20stroke-width='2.5'/%3E%3Cline%20x1='20'%20y1='20'%20x2='30'%20y2='30'%20stroke='%23fff'%20stroke-width='2.5'/%3E%3Cline%20x1='13'%20y1='9'%20x2='13'%20y2='17'%20stroke='%23fff'%20stroke-width='2'/%3E%3Cline%20x1='9'%20y1='13'%20x2='17'%20y2='13'%20stroke='%23fff'%20stroke-width='2'/%3E%3C/g%3E%3C/svg%3E")
+        13 13,
+      zoom-in;
+    transition: transform 0.18s ease;
+    will-change: transform;
+
+    // Mientras está ampliada: lupa con "−" (alejar). El zoom (transform) se
+    // aplica inline desde el componente según click / rueda del mouse.
+    &.is-zoomed {
+      cursor:
+        url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='32'%20height='32'%20viewBox='0%200%2032%2032'%3E%3Cg%20fill='none'%20stroke-linecap='round'%3E%3Ccircle%20cx='13'%20cy='13'%20r='9'%20stroke='%23000'%20stroke-width='5'/%3E%3Cline%20x1='20'%20y1='20'%20x2='30'%20y2='30'%20stroke='%23000'%20stroke-width='5'/%3E%3Ccircle%20cx='13'%20cy='13'%20r='9'%20stroke='%23fff'%20stroke-width='2.5'/%3E%3Cline%20x1='20'%20y1='20'%20x2='30'%20y2='30'%20stroke='%23fff'%20stroke-width='2.5'/%3E%3Cline%20x1='9'%20y1='13'%20x2='17'%20y2='13'%20stroke='%23fff'%20stroke-width='2'/%3E%3C/g%3E%3C/svg%3E")
+          13 13,
+        zoom-out;
+    }
+  }
+
+  &__nav {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    height: 42px;
+    border: 1px solid var(--border-subtle);
+    background: var(--overlay-bg);
+    border-radius: 50%;
+    color: var(--text-primary);
+    cursor: pointer;
+    transition: background $transition-fast, border-color $transition-fast, color $transition-fast;
+
+    &:hover {
+      background: var(--overlay-bg-hover);
+      border-color: var(--border-hover);
+      color: var(--accent);
+    }
+
+    mat-icon {
+      font-size: 26px;
+      width: 26px;
+      height: 26px;
+    }
+  }
+
+  // ── Indicadores ─────────────────────────────────────────
+  &__dots {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0 1rem 1.25rem;
+  }
+
+  &__dot {
+    width: 9px;
+    height: 9px;
+    padding: 0;
+    border: none;
+    border-radius: 50%;
+    background: var(--border-strong);
+    cursor: pointer;
+    transition: background $transition-fast, transform $transition-fast;
+
+    &:hover {
+      background: var(--text-secondary);
+    }
+
+    &.is-active {
+      background: var(--accent);
+      transform: scale(1.25);
+    }
+  }
+}
+
+// ── Mobile: visor más alto y la imagen se ve grande con scroll ──────────
+@media (max-width: 600px) {
+  .figma-modal {
+    &__header {
+      padding: 1rem 1rem 0.75rem;
+    }
+
+    &__viewer {
+      padding: 0.5rem;
+      gap: 0.25rem;
+    }
+
+    &__stage {
+      display: block;
+      aspect-ratio: auto;
+      height: 60vh; // mucho más alto que el 16/9 de desktop
+      max-height: none;
+      overflow: auto; // scroll para recorrer la imagen ampliada
+    }
+
+    &__image {
+      display: block;
+      height: 100%; // llena el alto del visor → imagen grande y legible
+      width: auto;
+      max-width: none;
+      max-height: none;
+      // En mobile se navega con scroll, no con el zoom de hover/rueda.
+      transform: none !important;
+      cursor: default;
+    }
+
+    &__nav {
+      width: 34px;
+      height: 34px;
+
+      mat-icon {
+        font-size: 22px;
+        width: 22px;
+        height: 22px;
+      }
+    }
+  }
+}

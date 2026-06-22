@@ -5,6 +5,8 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { Router, RouterModule } from '@angular/router';
+import { Theme } from '@app/core/services/theme';
+import { Translation } from '@app/core/services/translation';
 
 @Component({
   selector: 'app-header',
@@ -22,12 +24,13 @@ export class Header {
 
   private router = inject(Router);
   private destroyRef = inject(DestroyRef);
+  protected readonly theme = inject(Theme);
+  protected readonly tr = inject(Translation);
 
   navLinks = [
-    { id: 1, path: 'home', label: 'Home' },
-    { id: 2, path: 'proyectos', label: 'Proyectos' },
-    { id: 3, path: 'publicaciones', label: 'Publicaciones' },
-    { id: 4, path: 'sobre-mi', label: 'Sobre Mí' }
+    { id: 1, path: 'home', key: 'nav.home' },
+    { id: 2, path: 'proyectos', key: 'nav.proyectos' },
+    { id: 3, path: 'sobre-mi', key: 'nav.sobreMi' }
   ];
   activeIndex = 0;
 

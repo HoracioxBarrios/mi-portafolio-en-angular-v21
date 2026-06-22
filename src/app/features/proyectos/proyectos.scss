@@ -3,7 +3,7 @@
 
 .proyectos {
   width: 100%;
-  background-color: $color-background-main;
+  background-color: var(--bg-primary);
   padding: $spacing-xl 0;
 
   &__container {
@@ -15,19 +15,36 @@
   &__header {
     text-align: center;
     margin-bottom: $spacing-xl;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  &__label {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--accent);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    padding-bottom: 0.4rem;
+    border-bottom: 1px solid var(--accent-soft-border);
+    padding-inline: 1rem;
   }
 
   &__title {
     font-size: 2rem;
-    font-weight: 600;
-    color: $color-text-primary;
-    margin-bottom: $spacing-xs;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin: 0;
   }
 
   &__subtitle {
-    font-size: 1rem;
-    color: $color-text-secondary;
-    margin-bottom: 0;
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    max-width: 560px;
+    line-height: 1.6;
+    margin: 0;
   }
 
   &__grid {

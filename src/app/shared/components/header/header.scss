@@ -2,25 +2,86 @@
 @use 'abstracts/mixins' as *;
 
 .header {
-  background-color: $color-background-dark;
+  background-color: var(--surface);
+  border-bottom: 1px solid var(--border-medium);
+  box-shadow: var(--shadow-sm);
   padding: $spacing-lg 0;
-  
-  
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+
+
   &__container {
     max-width: 1200px;
-    height: 52px;
+    min-height: 52px;
     margin: 0 auto;
     padding: 0 $spacing-xs;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
-    gap: $spacing-lg;
+    gap: $spacing-sm;
 
     @include from-tablet{
       padding: 0 $spacing-md;
-      gap: 1rem;
     }
 
+  }
+
+  &__controls {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    z-index: 2;
+  }
+
+  &__icon-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border: 1px solid var(--border-subtle);
+    border-radius: 50%;
+    background: var(--overlay-bg);
+    color: var(--text-primary);
+    cursor: pointer;
+    transition: background 0.25s ease, border-color 0.25s ease, color 0.25s ease;
+
+    mat-icon {
+      font-size: 20px;
+      width: 20px;
+      height: 20px;
+      line-height: 20px;
+    }
+
+    &:hover {
+      background: var(--overlay-bg-hover);
+      border-color: var(--border-hover);
+      color: var(--accent);
+    }
+  }
+
+  &__lang-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+    min-width: 40px;
+    padding: 0 0.5rem;
+    border: 1px solid var(--border-subtle);
+    border-radius: 20px;
+    background: var(--overlay-bg);
+    color: var(--text-primary);
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    cursor: pointer;
+    transition: background 0.25s ease, border-color 0.25s ease, color 0.25s ease;
+
+    &:hover {
+      background: var(--overlay-bg-hover);
+      border-color: var(--border-hover);
+      color: var(--accent);
+    }
   }
   &__informacion-container{
     display: flex;
@@ -70,44 +131,44 @@
     height: 150px;
     border-radius: 50%;
     object-fit: cover;
-    border: 3px solid $color-primary;
+    border: 3px solid var(--accent);
 
     @include from-desktop{
       width: 160px;
       height: 160px;
     }
   }
-  
+
   &__name {
     font-size: 2rem;
-    color: $color-text-primary;
+    color: var(--text-primary);
     margin-bottom: $spacing-xs;
   }
-  
+
   &__title {
-    color: $color-text-secondary;
+    color: var(--text-secondary);
     font-size: 1rem;
     margin-bottom: $spacing-xs;
   }
-  
+
   &__location {
-    color: $color-text-secondary;
+    color: var(--text-secondary);
     font-size: 0.9rem;
   }
-  
+
   &__social {
     display: flex;
     gap: $spacing-md;
-    
+
     &-link {
       display: flex;
       align-items: center;
       gap: 0.5rem;
-      color: $color-text-secondary;
+      color: var(--text-secondary);
       transition: color $transition-fast;
-      
+
       &:hover {
-        color: $color-primary;
+        color: var(--accent);
       }
     }
 
@@ -118,7 +179,8 @@
   }
   
   &__nav {
-    width: 100%;
+    flex: 1 1 auto;
+    min-width: 0;
 
     ::ng-deep {
       .mat-mdc-tab {
@@ -135,6 +197,12 @@
 
       .mdc-tab__text-label {
         cursor: pointer;
+      }
+
+      // Las tabs se usan solo para navegar: ocultamos el "cuerpo" vacío de la
+      // mat-tab-group, cuya animación de alto provocaba el salto del navbar.
+      .mat-mdc-tab-body-wrapper {
+        display: none;
       }
     }
   }

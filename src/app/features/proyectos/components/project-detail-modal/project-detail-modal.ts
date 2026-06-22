@@ -1,6 +1,7 @@
-import { Component, Inject } from '@angular/core';
+import { Component, Inject, inject } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { MatIcon } from '@angular/material/icon';
+import { Translation } from '@app/core/services/translation';
 
 export interface ProjectDetail {
   title: string;
@@ -21,6 +22,8 @@ export interface ProjectDetail {
   styleUrl: './project-detail-modal.scss',
 })
 export class ProjectDetailModal {
+  protected readonly tr = inject(Translation);
+
   constructor(
     public dialogRef: MatDialogRef<ProjectDetailModal>,
     @Inject(MAT_DIALOG_DATA) public project: ProjectDetail

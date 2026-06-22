@@ -3,18 +3,44 @@
 
 
 .footer{
-    background-color: $color-background-dark;
+    background-color: var(--surface);
+    border-top: 1px solid var(--border-medium);
+    box-shadow: var(--shadow-sm);
     padding: $spacing-lg 0;
-  
+
     &__container{
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
         align-items: center;
         justify-content: center;
+        gap: 0.35rem;
+        text-align: center;
     }
 
     &__text{
-        color: $color-text-secondary;
+        color: var(--text-secondary);
         font-size: 0.9rem;
+        margin: 0;
+    }
+
+    &__credit{
+        color: var(--text-secondary);
+        font-size: 0.78rem;
+        opacity: 0.85;
+        margin: 0;
+    }
+
+    &__credit-link{
+        padding: 0;
+        border: none;
+        background: none;
+        font: inherit;
+        color: var(--accent);
+        cursor: pointer;
+        text-decoration: none;
+
+        &:hover{
+            text-decoration: underline;
+        }
     }
 }

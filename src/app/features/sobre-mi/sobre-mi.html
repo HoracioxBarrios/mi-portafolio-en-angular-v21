@@ -2,13 +2,43 @@
   <div class="sobre-mi__container">
 
     <div class="sobre-mi__header">
-      <h3 class="sobre-mi__title">Quién soy</h3>
+      <h3 class="sobre-mi__title">{{ tr.t('about.title') }}</h3>
       <p class="sobre-mi__description">
-        Soy desarrollador Frontend especializado en Angular (12+),
-        con más de 2 años de experiencia en aplicaciones web modernas.
+        {{ tr.t('about.description') }}
       </p>
     </div>
 
-    <app-skills />
+    <div class="sobre-mi__experiencia">
+      <h3 class="sobre-mi__section-title">{{ tr.t('about.experience.title') }}</h3>
+      <div class="sobre-mi__job">
+        <div class="sobre-mi__job-header">
+          <h4 class="sobre-mi__job-company">{{ tr.t('about.experience.company') }}</h4>
+          <span class="sobre-mi__job-period">{{ tr.t('about.experience.period') }}</span>
+        </div>
+        <p class="sobre-mi__job-role">{{ tr.t('about.experience.role') }}</p>
+        <ul class="sobre-mi__job-logros">
+          <li class="highlight">{{ tr.t('about.experience.l1') }}</li>
+          <li>{{ tr.t('about.experience.l2') }}</li>
+          <li>{{ tr.t('about.experience.l3') }}</li>
+          <li>{{ tr.t('about.experience.l4') }}</li>
+          <li>{{ tr.t('about.experience.l5') }}</li>
+          <li>{{ tr.t('about.experience.l6') }}</li>
+          <li>{{ tr.t('about.experience.l7') }}</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="sobre-mi__educacion">
+      <h3 class="sobre-mi__section-title">{{ tr.t('about.education.title') }}</h3>
+      <div class="sobre-mi__edu-item">
+        <span class="sobre-mi__edu-titulo">{{ tr.t('about.education.degree') }}</span>
+        <span class="sobre-mi__edu-inst">{{ tr.t('about.education.inst') }}</span>
+      </div>
+    </div>
+
+    <div class="sobre-mi__skills-section">
+      <app-skills />
+    </div>
+
   </div>
 </section>

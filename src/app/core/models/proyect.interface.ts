@@ -1,11 +1,11 @@
 export interface Project {
-  id: string;
   title: string;
-  description: string;
+  /** Clave de traducción para la descripción (ver i18n/es.ts · en.ts). */
+  descKey: string;
+  image: string;
   technologies: string[];
-  imageUrl: string;
-  githubUrl?: string;
+  repoUrl?: string;
+  repoPrivate: boolean;
   liveUrl?: string;
-  featured: boolean;
-  createdAt: Date;
+  featured?: boolean;
 }
