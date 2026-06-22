@@ -95,7 +95,8 @@ body {
 }
 
 /* === Skill detail dialog (modal) === */
-.skill-detail-dialog-panel .mat-mdc-dialog-container {
+.skill-detail-dialog-panel .mat-mdc-dialog-container,
+.figma-modal-panel .mat-mdc-dialog-container {
   padding: 0;
   background: transparent;
   box-shadow: none;

@@ -1,0 +1,67 @@
+<div class="figma-modal">
+  <header class="figma-modal__header">
+    <div class="figma-modal__heading">
+      <h2 class="figma-modal__title">{{ tr.t('figma.title') }}</h2>
+      <p class="figma-modal__author">Ricardo Quebrada R. · Figma Community</p>
+    </div>
+    <button
+      type="button"
+      class="figma-modal__close"
+      (click)="close()"
+      [attr.aria-label]="tr.lang() === 'es' ? 'Cerrar' : 'Close'"
+    >
+      <mat-icon>close</mat-icon>
+    </button>
+  </header>
+
+  <div class="figma-modal__viewer">
+    @if (images.length > 1) {
+      <button
+        type="button"
+        class="figma-modal__nav figma-modal__nav--prev"
+        (click)="prev()"
+        [attr.aria-label]="tr.lang() === 'es' ? 'Anterior' : 'Previous'"
+      >
+        <mat-icon>chevron_left</mat-icon>
+      </button>
+    }
+
+    <div class="figma-modal__stage">
+      <img
+        class="figma-modal__image"
+        [class.is-zoomed]="isZoomed()"
+        [style.transform]="'scale(' + zoomLevel() + ')'"
+        [style.transform-origin]="zoomOrigin()"
+        (mousemove)="onMove($event)"
+        (mouseleave)="onLeave()"
+        (click)="onClick()"
+        (wheel)="onWheel($event)"
+        [src]="current()"
+        [alt]="'Figma ' + (index() + 1)"
+      />
+    </div>
+
+    @if (images.length > 1) {
+      <button
+        type="button"
+        class="figma-modal__nav figma-modal__nav--next"
+        (click)="next()"
+        [attr.aria-label]="tr.lang() === 'es' ? 'Siguiente' : 'Next'"
+      >
+        <mat-icon>chevron_right</mat-icon>
+      </button>
+    }
+  </div>
+
+  <div class="figma-modal__dots">
+    @for (img of images; track $index) {
+      <button
+        type="button"
+        class="figma-modal__dot"
+        [class.is-active]="$index === index()"
+        (click)="goTo($index)"
+        [attr.aria-label]="(tr.lang() === 'es' ? 'Imagen ' : 'Image ') + ($index + 1)"
+      ></button>
+    }
+  </div>
+</div>

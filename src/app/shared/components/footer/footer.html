@@ -2,7 +2,10 @@
     <div class="footer__container">
         <p class="footer__text">{{ text() }}</p>
         <p class="footer__credit">
-            {{ tr.t('footer.credit') }} {{ designAuthor }} · Figma Community
+            {{ tr.t('footer.credit') }} {{ designAuthor }} ·
+            <button type="button" class="footer__credit-link" (click)="openFigmaInspiration()">
+                Figma Community
+            </button>
         </p>
     </div>
 </div>

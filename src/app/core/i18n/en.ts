@@ -77,6 +77,9 @@ export const EN: Record<string, string> = {
   'footer.text': 'Development',
   'footer.credit': 'Design inspired by a template from',
 
+  // Figma inspiration modal
+  'figma.title': 'Design that inspired this portfolio',
+
   // Project descriptions
   'project.lineage2Eternal.desc':
     'Web app for the Lineage 2 Eternal server (High Five chronicle), built with Angular 21, responsive and SEO-optimized, offering detailed information about the server, events, guides and community.',
