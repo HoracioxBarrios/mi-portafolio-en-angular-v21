@@ -198,6 +198,12 @@
       .mdc-tab__text-label {
         cursor: pointer;
       }
+
+      // Las tabs se usan solo para navegar: ocultamos el "cuerpo" vacío de la
+      // mat-tab-group, cuya animación de alto provocaba el salto del navbar.
+      .mat-mdc-tab-body-wrapper {
+        display: none;
+      }
     }
   }
 

@@ -36,6 +36,7 @@
         (mouseleave)="onLeave()"
         (click)="onClick()"
         (wheel)="onWheel($event)"
+        (load)="centerScroll($event)"
         [src]="current()"
         [alt]="'Figma ' + (index() + 1)"
       />

@@ -77,6 +77,16 @@ export class FigmaInspirationDialog {
     this.resetZoom();
   }
 
+  // Al cargar cada imagen, centra el scroll horizontal (útil en mobile, donde
+  // la imagen es más ancha que el visor). En desktop no hay overflow → queda en 0.
+  centerScroll(event: Event): void {
+    const stage = (event.target as HTMLElement).parentElement;
+    if (!stage) return;
+    requestAnimationFrame(() => {
+      stage.scrollLeft = (stage.scrollWidth - stage.clientWidth) / 2;
+    });
+  }
+
   close(): void {
     this.dialogRef.close();
   }
