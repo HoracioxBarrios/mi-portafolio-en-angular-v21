@@ -85,9 +85,9 @@ export const ES: Record<string, string> = {
   'project.kickToAzar.desc':
     'Aplicación web full-stack de análisis estadístico para juegos de lotería. Actualmente enfocada en el Quini 6, con la visión de expandirse a Loto, Telekino y otros juegos. Frontend en Angular 21 y backend en NestJS con autenticación JWT, TypeORM y PostgreSQL (deploy en Railway + Neon).',
   'project.lineage2Eternal.desc':
-    'Aplicación web para el servidor Lineage 2 Eternal crónica High Five, desarrollada en Angular 21, con diseño responsive y optimizada para SEO, que ofrece información detallada sobre el servidor, eventos, guías y comunidad.',
+    'Aplicación web para el servidor Lineage 2 Eternal crónica High Five, desarrollada en Angular 21, con diseño responsive y optimizada para SEO, que ofrece información detallada sobre el servidor, eventos, guías y comunidad. Desplegada en Vercel.',
   'project.lineage2Alika.desc':
-    'Aplicación web para el servidor Lineage 2 Alika, crónica Essence. Desarrollada en Angular 21 con diseño responsive, información del servidor, guías para nuevos jugadores y sección de comunidad.',
+    'Aplicación web para el servidor Lineage 2 Alika, crónica Essence. Desarrollada en Angular 21 con diseño responsive, información del servidor, guías para nuevos jugadores y sección de comunidad. Desplegada en Vercel.',
   'project.colvin.desc':
     'TheColvinCo.com es una tienda online especializada en la venta y envío de flores, plantas y regalos a domicilio, con enfoque en ramos y arreglos florales para ocasiones especiales.',
   'project.viajerosConB.desc':
