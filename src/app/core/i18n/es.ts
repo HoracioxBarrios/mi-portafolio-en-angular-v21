@@ -82,6 +82,8 @@ export const ES: Record<string, string> = {
   'figma.title': 'Diseño que inspiró este portfolio',
 
   // Descripciones de proyectos
+  'project.kickToAzar.desc':
+    'Aplicación web full-stack de análisis estadístico para juegos de lotería. Actualmente enfocada en el Quini 6, con la visión de expandirse a Loto, Telekino y otros juegos. Frontend en Angular 21 y backend en NestJS con autenticación JWT, TypeORM y PostgreSQL (deploy en Railway + Neon).',
   'project.lineage2Eternal.desc':
     'Aplicación web para el servidor Lineage 2 Eternal crónica High Five, desarrollada en Angular 21, con diseño responsive y optimizada para SEO, que ofrece información detallada sobre el servidor, eventos, guías y comunidad.',
   'project.lineage2Alika.desc':

@@ -2,9 +2,21 @@ import { Project } from '../models/proyect.interface';
 
 export const PROJECTS: Project[] = [
   {
+    title: 'Kick to Azar',
+    descKey: 'project.kickToAzar.desc',
+    image: 'images/Kick-to-azar-dashboard.png',
+    images: ['images/Kick-to-azar-dashboard.png', 'images/Kick-to-azar.png'],
+    technologies: ['Angular 21', 'TypeScript', 'NestJS', 'Node.js', 'PostgreSQL', 'TypeORM'],
+    repoUrl: 'https://github.com/HoracioxBarrios/kick-to-azar',
+    repoPrivate: true,
+    liveUrl: 'https://www.google.com',
+    featured: true,
+  },
+  {
     title: 'Lineage 2 Eternal',
     descKey: 'project.lineage2Eternal.desc',
     image: 'images/lineage2-eternal.png',
+    images: ['images/lineage2-eternal.png', 'images/lineage2-eternal-2.png'],
     technologies: ['Angular 21', 'TypeScript', 'SCSS', 'Node.js'],
     repoUrl: 'https://github.com/HoracioxBarrios/Lineage2-Eternal-web-angular-21-responsive.git',
     repoPrivate: true,
@@ -15,6 +27,7 @@ export const PROJECTS: Project[] = [
     title: 'Lineage 2 Alika',
     descKey: 'project.lineage2Alika.desc',
     image: 'images/lineage2-alika.png',
+    images: ['images/lineage2-alika.png', 'images/lineage2-alika-2.png'],
     technologies: ['Angular 21', 'TypeScript', 'SCSS', 'Node.js'],
     repoUrl: 'https://github.com/HoracioxBarrios/lineage2-Alika-web-angular-21-responsive.git',
     repoPrivate: true,
