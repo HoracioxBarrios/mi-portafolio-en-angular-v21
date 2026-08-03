@@ -18,6 +18,7 @@ export class ProjectCard {
   @Input({ required: true }) description!: string;
   @Input({ required: true }) image!: string;
 
+  @Input() images?: string[];
   @Input() technologies: string[] = [];
   @Input() repoUrl?: string;
   @Input() repoPrivate = false;
@@ -43,6 +44,7 @@ export class ProjectCard {
       title: this.title,
       description: this.description,
       image: this.image,
+      images: this.images,
       technologies: this.technologies,
       repoUrl: this.repoUrl,
       repoPrivate: this.repoPrivate,

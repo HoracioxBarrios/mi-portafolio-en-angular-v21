@@ -12,12 +12,47 @@
   </div>
 
   <div class="modal__content">
-    <div class="modal__image-wrapper">
-      <img
-        class="modal__image"
-        [src]="project.image"
-        [alt]="project.title"
-      />
+    <div class="modal__gallery">
+      <div class="modal__image-wrapper">
+        <img
+          class="modal__image"
+          [src]="slides[index()]"
+          [alt]="project.title"
+        />
+
+        @if (slides.length > 1) {
+          <button
+            type="button"
+            class="modal__nav modal__nav--prev"
+            (click)="prev()"
+            [attr.aria-label]="tr.lang() === 'es' ? 'Anterior' : 'Previous'"
+          >
+            <mat-icon>chevron_left</mat-icon>
+          </button>
+          <button
+            type="button"
+            class="modal__nav modal__nav--next"
+            (click)="next()"
+            [attr.aria-label]="tr.lang() === 'es' ? 'Siguiente' : 'Next'"
+          >
+            <mat-icon>chevron_right</mat-icon>
+          </button>
+        }
+      </div>
+
+      @if (slides.length > 1) {
+        <div class="modal__dots">
+          @for (slide of slides; track $index) {
+            <button
+              type="button"
+              class="modal__dot"
+              [class.is-active]="$index === index()"
+              (click)="goTo($index)"
+              [attr.aria-label]="(tr.lang() === 'es' ? 'Imagen ' : 'Image ') + ($index + 1)"
+            ></button>
+          }
+        </div>
+      }
     </div>
 
     <div class="modal__body">
