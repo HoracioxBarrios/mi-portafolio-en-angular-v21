@@ -83,7 +83,9 @@ export const ES: Record<string, string> = {
 
   // Descripciones de proyectos
   'project.kickToAzar.desc':
-    'Aplicación web full-stack de análisis estadístico para juegos de lotería. Actualmente enfocada en el Quini 6, con la visión de expandirse a Loto, Telekino y otros juegos. Frontend en Angular 21 y backend en NestJS con autenticación JWT, TypeORM y PostgreSQL (deploy en Railway + Neon).',
+    'Aplicación web full-stack para el análisis estadístico de Loterias con scrapping de datos. Actualmente enfocada en el Quini 6, con la visión de expandirse a Loto, Telekino y otros juegos. Frontend en Angular 21 y backend en NestJS con autenticación JWT, TypeORM y PostgreSQL (deploy en Railway + Neon).',
+  'project.machJobs.desc':
+    'Aplicación web full-stack de búsqueda de empleo con matching por IA. El usuario importa su CV (PDF/Markdown/txt o texto) y la app lo estructura como perfil, agrega ofertas laborales reales de Argentina vía las APIs oficiales de agregadores de empleo (Careerjet y Jooble), evitando el scraping de portales y respetando así los términos y condiciones (ToS) de cada plataforma, y puntúa cada oferta contra su perfil con un score de ajuste según (skills que coinciden, faltantes y justificación). Las ofertas se ordenan por probabilidad de éxito y el usuario puede abrir la oferta original con un clic para postularse, marcando el estado (nueva/vista/descartada/postulada). Stack: Angular 22 (frontend) · Node + Express en TypeScript (backend) · MongoDB Atlas en producción y SQLite para desarrollo local · IA con Groq (free tier, enchufable) · despliegue serverless en Vercel.',
   'project.lineage2Eternal.desc':
     'Aplicación web para el servidor Lineage 2 Eternal crónica High Five, desarrollada en Angular 21, con diseño responsive y optimizada para SEO, que ofrece información detallada sobre el servidor, eventos, guías y comunidad. Desplegada en Vercel.',
   'project.lineage2Alika.desc':
