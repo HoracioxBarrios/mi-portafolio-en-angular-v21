@@ -82,7 +82,7 @@ export const EN: Record<string, string> = {
 
   // Project descriptions
   'project.kickToAzar.desc':
-    'Full-stack web app for statistical analysis of lottery games. Currently focused on Quini 6, with plans to expand to Loto, Telekino and other games. Angular 21 frontend and a NestJS backend with JWT authentication, TypeORM and PostgreSQL (deployed on Railway + Neon).',
+    'Full-stack web app for statistical analysis of lottery games with data scraping. Currently focused on Quini 6, with plans to expand to Loto, Telekino and other games. Angular 21 frontend (Material Design + ECharts charts) and a NestJS backend with JWT authentication, TypeORM and PostgreSQL (full-stack deploy on Vercel, with an automated scraper running twice a week via Cron).',
   'project.machJobs.desc':
     "Full-stack job search web app with AI-powered matching. The user imports their CV (PDF/Markdown/txt or text) and the app structures it as a profile, aggregates real job postings from Argentina via the official APIs of job aggregators (Careerjet and Jooble), avoiding portal scraping and thus respecting each platform's terms and conditions (ToS), and scores each posting against the profile with a fit score based on (matching skills, missing skills and justification). Job offers are sorted by likelihood of success and the user can open the original posting with a click to apply, marking the status (new/seen/discarded/applied). Stack: Angular 22 (frontend) · Node + Express in TypeScript (backend) · MongoDB Atlas in production and SQLite for local development · AI with Groq (free tier, pluggable) · serverless deployment on Vercel.",
   'project.lineage2Eternal.desc':
