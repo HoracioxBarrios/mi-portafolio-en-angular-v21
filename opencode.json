@@ -9,5 +9,8 @@
   },
   "instructions": [
     "AGENTS.md"
-  ]
+  ],
+  "skills": {
+    "paths": [".agents/skills"]
+  }
 }
