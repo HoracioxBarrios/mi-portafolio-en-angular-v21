@@ -1,20 +1,20 @@
-# App Knowledge — <project-name>
+# App Knowledge — MiPortafolioEnAngularV21
 
-Generated: <timestamp>
-Last updated: <timestamp>
+Generated: 2026-08-07
+Last updated: 2026-08-07
 
-Cross-change E2E knowledge. Updated by Step 4 exploration, read by Step 5/6.
+Conocimiento E2E transversal a changes. Actualizado por la exploración (Paso 4), leído por los Pasos 5/6.
 
 ## Routes
 
-Discovered routes from sitemap.xml or link extraction. Used by "all" mode to generate Page Objects.
+Rutas descubiertas desde `src/app/app.routes.ts` (sitemap.xml no existe). Usadas por el modo "all" para generar Page Objects.
 
 | Route | Auth | Page Object | Notes |
 |-------|------|-------------|-------|
-| `/` | guest | `HomePage.ts` | Landing page |
-| `/login` | guest | `LoginPage.ts` | Auth entry |
-| `/dashboard` | required | `DashboardPage.ts` | Protected |
-| | | | |
+| `/` | guest | `HomePage.ts` | Redirect a `/home` |
+| `/home` | guest | `HomePage.ts` | Landing + hero, `h1` "Horacio Javier Barrios" |
+| `/proyectos` | guest | `ProyectosPage.ts` | Grid de proyectos, botones "Ver más..." |
+| `/sobre-mi` | guest | `SobreMiPage.ts` | Links sociales |
 
 ## Credential Format
 
@@ -24,9 +24,11 @@ Discovered routes from sitemap.xml or link extraction. Used by "all" mode to gen
 | password | `<pattern>` | |
 | login endpoint | `<path>` | e.g. `/api/auth/login` |
 
+> **Nota**: esta app no requiere autenticación (landing pública). No aplicar auth setup.
+
 ## Common Selector Patterns
 
-Priority: `[data-testid]` > `getByRole` > `getByLabel` > `getByText` > CSS
+Prioridad: `[data-testid]` > `getByRole` > `getByLabel` > `getByText` > CSS
 
 ### Forms
 
@@ -36,12 +38,24 @@ Priority: `[data-testid]` > `getByRole` > `getByLabel` > `getByText` > CSS
 | text input | `getByLabel('...')` or `[data-testid="..."]` | |
 | password input | `getByLabel('...')` or `[name="..."]` | |
 
-### Navigation
+### Navegación (Material tabs)
 
 | Element | Selector | Notes |
 |---------|----------|-------|
-| nav link | `a:text("...")` or `nav >> text=...` | |
-| logout btn | `[data-testid="logout-btn"]` | |
+| tab Home | `getByRole('tab', { name: 'Home' })` | `mat-tab-group` |
+| tab Proyectos | `getByRole('tab', { name: 'Proyectos' })` | |
+| tab Sobre Mí | `getByRole('tab', { name: 'Sobre Mí' })` | |
+| botón idioma | `[aria-label="Switch to English"]` | `.header__lang-btn`, texto `EN` |
+| botón tema | `[aria-label="Activar tema claro"]` | `.header__icon-btn`, texto `light_mode` |
+
+### Links
+
+| Element | Selector | Notes |
+|---------|----------|-------|
+| link GitHub | `a[href*="github.com"]` | header/footer |
+| link LinkedIn | `a[href*="linkedin.com"]` | |
+| link Instagram | `a[href*="instagram.com"]` | |
+| link email | `a[href^="mailto:"]` | "Escribime" |
 
 ### Feedback
 
@@ -55,16 +69,16 @@ Priority: `[data-testid]` > `getByRole` > `getByLabel` > `getByText` > CSS
 
 | Aspect | Value | Notes |
 |--------|-------|-------|
-| Architecture | monolith / separated | Frontend + backend in one repo or separate? |
-| Backend server | `<port>` or `embedded` | e.g. `3001` or `embedded in frontend` |
-| How to restart backend | `<command>` | e.g. `cd backend && npm run dev` |
+| Architecture | frontend-only | SPA Angular 21 sin backend propio (verificado en `package.json`) |
+| Backend server | — | No requiere backend para E2E |
+| How to restart backend | — | No aplica |
 
 ## SPA Routing
 
-- Framework: <e.g. React Router / Vue Router / Next.js>
-- URL changes without page reload: <yes/no>
-- History API: <yes/no>
-- Hash routing: <yes/no>
+- Framework: Angular 21 (Router)
+- URL changes without page reload: sí
+- History API: sí
+- Hash routing: no
 
 ## Dynamic Content Conventions
 
@@ -72,14 +86,16 @@ Priority: `[data-testid]` > `getByRole` > `getByLabel` > `getByText` > CSS
 - Timestamps: normalize or use regex
 - Random IDs: avoid asserting on auto-generated values
 - Pagination: test first/last page, boundary conditions
+- Textos bilingües (ES/EN): los selectores de texto pueden cambiar al alternar idioma (`EN`); usar `aria-label` o `data-testid` cuando aplique.
 
 ## Project Conventions
 
 | Convention | Value | Notes |
 |------------|-------|-------|
-| BASE_URL | `<default>` | Override with env |
-| auth method | API / UI | See auth.setup.ts |
-| multi-user roles | `<roles>` | e.g. admin, user, guest |
+| BASE_URL | `http://localhost:4200` | Default de `playwright.config.ts` |
+| auth method | — | No requiere auth |
+| multi-user roles | — | Sin roles |
+| Framework UI | Angular + Angular Material | Tabs para nav, Material Icons |
 
 ## Selector Fixes (Healer memory)
 
