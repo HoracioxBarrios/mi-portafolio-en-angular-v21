@@ -2,6 +2,7 @@
 // 1. TODOS LOS @use PRIMERO
 // ========================================
 @use '@angular/material' as mat;
+@use 'sass:map';
 @use './styles/abstracts/variables';
 @use './styles/abstracts/mixins';
 @use './styles/themes/tokens';
@@ -17,17 +18,39 @@
 // ========================================
 // 3. DEFINIR TEMAS (Material Design 3) — dark y light
 // ========================================
+// Palette custom del acento azul Material (#2196f3): se reutilizan los submaps
+// (secondary/neutral/error) de mat.$blue-palette y se sobrescriben los tonos base
+// con la rampa azul clásica (MD2 50-900) alrededor del acento del portafolio.
+$azul-palette: map.merge(mat.$blue-palette, (
+  0: #000000,
+  10: #0d47a1,
+  20: #1565c0,
+  25: #1976d2,
+  30: #1e88e5,
+  35: #2196f3,
+  40: #1769c4,
+  50: #42a5f5,
+  60: #64b5f6,
+  70: #90caf9,
+  80: #bbdefb,
+  90: #e3f2fd,
+  95: #f1f8fe,
+  98: #f9fcff,
+  99: #fbfdff,
+  100: #ffffff,
+));
+
 $dark-theme: mat.define-theme((
   color: (
     theme-type: dark,
-    primary: mat.$chartreuse-palette,
+    primary: $azul-palette,
   ),
 ));
 
 $light-theme: mat.define-theme((
   color: (
     theme-type: light,
-    primary: mat.$chartreuse-palette,
+    primary: $azul-palette,
   ),
 ));
 

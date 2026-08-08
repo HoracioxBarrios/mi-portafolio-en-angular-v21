@@ -1,7 +1,7 @@
 # App Knowledge — MiPortafolioEnAngularV21
 
 Generated: 2026-08-07
-Last updated: 2026-08-07
+Last updated: 2026-08-08
 
 Conocimiento E2E transversal a changes. Actualizado por la exploración (Paso 4), leído por los Pasos 5/6.
 
@@ -105,6 +105,65 @@ Persists selector repairs across sessions. Prevents the same selector from being
 | Date | Route | Old Selector | New Selector | Reason |
 |------|-------|-------------|-------------|--------|
 | | | | | |
+
+---
+
+## Acento azul (cambio-acento-azul)
+
+Cambio de identidad de acento: lime/verde → azul Material (`#2196f3` family). Tokens en `src/styles/themes/_tokens.scss` y `src/styles/abstracts/_variables.scss`.
+
+### Tokens runtime dark (`<html data-theme="dark">`)
+
+| Token | Valor |
+|-------|-------|
+| `--accent` | `#2196f3` |
+| `--accent-strong` | `#1e88e5` |
+| `--accent-soft-bg` | `rgba(33,150,243,0.10)` |
+| `--accent-soft-border` | `rgba(33,150,243,0.28)` |
+| `--accent-glow` | `rgba(33,150,243,0.35)` |
+| `--cta-bg` | `#2196f3` |
+| `--cta-bg-hover` | `#1e88e5` |
+| `--cta-text` | `#0b0f0d` |
+
+### Tokens runtime light
+
+| Token | Valor |
+|-------|-------|
+| `--accent` | `#1769c4` |
+| `--accent-strong` | `#115293` |
+| `--accent-soft-bg` | `rgba(23,105,196,0.10)` |
+| `--cta-bg` | `#1769c4` |
+| `--cta-bg-hover` | `#115293` |
+| `--cta-text` | `#ffffff` |
+
+### Selectores con acento (verificados)
+
+| Elemento | Selector | dark | light |
+|----------|----------|------|-------|
+| Marca | `.header__brand` | `#1e88e5` | `#115293` |
+| Nav activo | `.header__nav-link.is-active` / `[aria-current="page"]` | `#2196f3` | `#1769c4` |
+| CTA hero | `.btn--primary` | bg `#2196f3`, texto `#0b0f0d` | bg `#1769c4`, texto `#ffffff` |
+| CTA card | `.project-card__action--primary` | bg `#2196f3` | bg `#1769c4` |
+| Tag | `.project-card__tag` | bg `rgba(33,150,243,0.1)`, texto `#1e88e5` | bg `rgba(23,105,196,0.1)`, texto `#115293` |
+| Sticky CTA (móvil, tras scroll) | `.sticky-cta` | bg `#2196f3`, texto `#0b0f0d` | — |
+| Dot activo modal | `.figma-modal__dot.is-active` | `#1e88e5` | — |
+| Nav modal | `.modal__nav` | bg `#2196f3` | — |
+| Tag modal | `.modal__tag` | bg `rgba(33,150,243,0.1)`, texto `#1e88e5` | — |
+| Stack skill | `.skill-dialog__stack` | bg `rgba(33,150,243,0.1)`, texto `#2196f3` | — |
+
+### Controles
+
+| Control | Selector | Notas |
+|---------|----------|-------|
+| Tema | `.header__icon-btn` (`aria-label="Activar tema claro"`) | El `aria-label` NO cambia al alternar; leer estado por token `--bg-primary` o icono |
+| Idioma | `.header__lang-btn` (`aria-label="Switch to English"`) | texto `EN` (ES) / `ES` (EN) |
+
+### Convenciones de aserción de color
+
+- Leer colores con `getComputedStyle` (rgb/rgba), comparar con valores esperados como rgb.
+- Los acentos de categoría de skill (backend `#2e9e6b`, tools `#8b5cf6`, ia `#e8833a`) son intencionales, no restos lime.
+- CTA en light usa texto `#ffffff`; CTA en dark usa texto `#0b0f0d`.
+- Sticky CTA solo en viewport móvil (<769px) y tras scroll.
 
 ---
 

@@ -25,8 +25,8 @@ export class Particles implements AfterViewInit, OnDestroy {
   private particles: Particle[] = [];
   private rafId = 0;
   private running = false;
-  private accentColor = '#bef264';
-  private accentGlow = 'rgba(190, 242, 100, 0.35)';
+  private accentColor = '#2196f3';
+  private accentGlow = 'rgba(33, 150, 243, 0.35)';
   private themeObserver?: MutationObserver;
   private visibilityHandler = () => this.handleVisibility();
 
@@ -67,8 +67,8 @@ export class Particles implements AfterViewInit, OnDestroy {
 
   private readThemeColors() {
     const style = getComputedStyle(document.documentElement);
-    this.accentColor = style.getPropertyValue('--accent').trim() || '#bef264';
-    this.accentGlow = style.getPropertyValue('--accent-glow').trim() || 'rgba(190, 242, 100, 0.35)';
+    this.accentColor = style.getPropertyValue('--accent').trim() || '#2196f3';
+    this.accentGlow = style.getPropertyValue('--accent-glow').trim() || 'rgba(33, 150, 243, 0.35)';
   }
 
   private spawn() {

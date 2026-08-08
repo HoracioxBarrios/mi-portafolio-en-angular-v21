@@ -2,7 +2,7 @@
 // DESIGN TOKENS — colores temáticos como CSS custom properties
 // Se alternan en runtime con el atributo data-theme en <html>.
 // El tema por defecto es dark (sin atributo o data-theme="dark").
-// Paleta: dark-first con acento lima/verde neón (#bef264).
+// Paleta: dark-first con acento azul Material (#2196f3).
 // ============================================================
 
 // Escala de radios (compartida por ambos temas) — D5
@@ -24,15 +24,15 @@
   --text-secondary: #a8b3ac;
   --text-on-accent: #0b0f0d;
 
-  --accent: #bef264;
-  --accent-strong: #a3e635;
-  --accent-soft-bg: rgba(190, 242, 100, 0.10);
-  --accent-soft-border: rgba(190, 242, 100, 0.28);
-  --accent-glow: rgba(190, 242, 100, 0.35);
+  --accent: #2196f3;
+  --accent-strong: #1e88e5;
+  --accent-soft-bg: rgba(33, 150, 243, 0.10);
+  --accent-soft-border: rgba(33, 150, 243, 0.28);
+  --accent-glow: rgba(33, 150, 243, 0.35);
 
   // CTA reservado: acento pleno solo en acciones primarias (D2)
-  --cta-bg: #bef264;
-  --cta-bg-hover: #d9f99d;
+  --cta-bg: #2196f3;
+  --cta-bg-hover: #1e88e5;
   --cta-text: #0b0f0d;
 
   --danger: #f87171;
@@ -61,15 +61,15 @@
   --text-secondary: #555b66;
   --text-on-accent: #ffffff;
 
-  --accent: #4d7c0f;
-  --accent-strong: #3f6212;
-  --accent-soft-bg: rgba(101, 163, 13, 0.10);
-  --accent-soft-border: rgba(101, 163, 13, 0.28);
-  --accent-glow: rgba(101, 163, 13, 0.18);
+  --accent: #1769c4;
+  --accent-strong: #115293;
+  --accent-soft-bg: rgba(23, 105, 196, 0.10);
+  --accent-soft-border: rgba(23, 105, 196, 0.28);
+  --accent-glow: rgba(23, 105, 196, 0.18);
 
-  // CTA reservado: lime-700 pleno con texto blanco (WCAG AA 4.5:1)
-  --cta-bg: #4d7c0f;
-  --cta-bg-hover: #3f6212;
+  // CTA reservado: blue-800 pleno con texto blanco (WCAG AA 4.5:1)
+  --cta-bg: #1769c4;
+  --cta-bg-hover: #115293;
   --cta-text: #ffffff;
 
   --danger: #c62828;
