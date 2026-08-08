@@ -22,9 +22,10 @@
   }
 
   &__label {
+    font-family: 'JetBrains Mono', ui-monospace, monospace;
     font-size: 0.75rem;
     font-weight: 700;
-    color: var(--accent);
+    color: var(--accent-strong);
     text-transform: uppercase;
     letter-spacing: 0.1em;
     padding-bottom: 0.4rem;
@@ -33,7 +34,6 @@
   }
 
   &__title {
-    font-size: 2rem;
     font-weight: 700;
     color: var(--text-primary);
     margin: 0;

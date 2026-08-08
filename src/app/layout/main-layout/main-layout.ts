@@ -4,6 +4,8 @@ import { Header } from '../../shared/components/header/header';
 import { Footer } from '../../shared/components/footer/footer';
 import { Profile } from "@app/shared/components/profile/profile";
 import { RedSocial } from '@app/core/models/redSocial';
+import { Particles } from '@app/shared/components/particles/particles';
+import { StickyCta } from '@app/shared/components/sticky-cta/sticky-cta';
 
 
 @Component({
@@ -12,7 +14,9 @@ import { RedSocial } from '@app/core/models/redSocial';
     Footer, 
     RouterOutlet, 
     Header, 
-    Profile
+    Profile,
+    Particles,
+    StickyCta
   ],
   templateUrl: './main-layout.html',
   styleUrl: './main-layout.scss',

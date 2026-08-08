@@ -9,8 +9,9 @@ export const ES: Record<string, string> = {
 
   // Home — Hero
   'home.hero.title': 'Hola, soy Hora',
+  'home.hero.badge': 'Angular Developer · IA generativa',
   'home.hero.subtitle':
-    'Construyo apps que resuelven problemas reales con foco en la experiencia del usuario',
+    'Llevé a producción la primera solución con IA generativa de mi proyecto — un asistente conversacional en Angular — y reduje los reportes de errores en un 40%.',
   'home.hero.ctaAbout': 'Conóceme más',
   'home.hero.ctaProjects': 'Ver mis proyectos',
 
@@ -57,6 +58,15 @@ export const ES: Record<string, string> = {
   'about.education.degree': 'Tecnicatura Universitaria en Programación',
   'about.education.inst': 'UTN · 2023 – Actualidad',
 
+  // Sobre mí — Certificados
+  'about.certificados.title': 'Certificados',
+  'about.certificados.subtitle': 'Formación y certificaciones',
+  'about.certificados.verCertificado': 'Ver certificado',
+  'about.certificados.claudeCode.title': 'Claude Code',
+  'about.certificados.claudeCodeInAction.title': 'Claude Code in Action',
+  'about.certificados.cSharp.title': 'Curso de C#',
+  'about.certificados.angular.title': 'Curso de Angular',
+
   // Project card
   'card.seeMore': 'Ver más...',
   'card.repo': 'Repositorio',
@@ -77,6 +87,10 @@ export const ES: Record<string, string> = {
   // Footer
   'footer.text': 'Desarrollo',
   'footer.credit': 'Diseño inspirado en una plantilla de',
+
+  // Sticky CTA (móvil)
+  'stickyCta.label': 'Contactar a Horacio Barrios',
+  'stickyCta.text': 'Contactar',
 
   // Modal de inspiración Figma
   'figma.title': 'Diseño que inspiró este portfolio',

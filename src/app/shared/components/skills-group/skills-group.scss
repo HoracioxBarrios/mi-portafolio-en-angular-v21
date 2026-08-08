@@ -9,7 +9,7 @@
   flex: 1; // la card rellena el alto del host (celda del grid)
   background-color: var(--surface);
   border: 1px solid var(--border-subtle);
-  border-radius: 16px;
+  border-radius: var(--radius-lg);
   padding: 1.75rem 1.5rem;
   min-height: 240px;
   display: flex;
@@ -35,7 +35,7 @@
       width: 36px;
       height: 2px;
       margin: 0.6rem auto 0;
-      background-color: var(--accent);
+      background-color: var(--accent-strong);
       border-radius: 2px;
     }
   }

@@ -17,8 +17,8 @@
     background:
       linear-gradient(135deg, var(--accent-soft-bg) 0%, transparent 55%),
       var(--surface);
-    border-radius: 14px;
-    border-left: 3px solid var(--accent);
+    border-radius: var(--radius-lg);
+    border-left: 3px solid var(--accent-strong);
     border-top: 1px solid var(--border-subtle);
     padding: 2.5rem 2.5rem;
     box-shadow: var(--shadow-lg);
@@ -44,15 +44,16 @@
   &__skills-section {
     background: var(--surface);
     border: 1px solid var(--border-subtle);
-    border-radius: 14px;
+    border-radius: var(--radius-lg);
     padding: 2rem 2.5rem;
     box-shadow: var(--shadow-lg);
   }
 
   &__section-title {
+    font-family: 'JetBrains Mono', ui-monospace, monospace;
     font-size: 0.75rem;
     font-weight: 700;
-    color: var(--accent);
+    color: var(--accent-strong);
     text-transform: uppercase;
     letter-spacing: 0.1em;
     margin-bottom: 1.4rem;
@@ -82,12 +83,13 @@
   }
 
   &__job-period {
+    font-family: 'JetBrains Mono', ui-monospace, monospace;
     font-size: 0.78rem;
     font-weight: 600;
-    color: var(--accent);
+    color: var(--accent-strong);
     background: var(--accent-soft-bg);
     border: 1px solid var(--accent-soft-border);
-    border-radius: 20px;
+    border-radius: var(--radius-pill);
     padding: 0.15rem 0.75rem;
     white-space: nowrap;
   }
@@ -117,7 +119,7 @@
         content: '›';
         position: absolute;
         left: 0;
-        color: var(--accent);
+        color: var(--accent-strong);
         font-weight: 700;
       }
 
@@ -150,12 +152,13 @@
   }
 
   &__edu-inst {
+    font-family: 'JetBrains Mono', ui-monospace, monospace;
     font-size: 0.78rem;
     font-weight: 600;
-    color: var(--accent);
+    color: var(--accent-strong);
     background: var(--accent-soft-bg);
     border: 1px solid var(--accent-soft-border);
-    border-radius: 20px;
+    border-radius: var(--radius-pill);
     padding: 0.15rem 0.75rem;
   }
 

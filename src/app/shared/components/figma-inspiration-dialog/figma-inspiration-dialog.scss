@@ -2,7 +2,7 @@
 
 .figma-modal {
   background: var(--surface);
-  border-radius: 16px;
+  border-radius: var(--radius-lg);
   border: 1px solid var(--border-subtle);
   box-shadow: var(--shadow-lg);
   overflow: hidden;
@@ -45,7 +45,7 @@
     height: 36px;
     border: 1px solid var(--border-subtle);
     background: var(--overlay-bg);
-    border-radius: 10px;
+    border-radius: var(--radius-sm);
     color: var(--text-secondary);
     cursor: pointer;
     transition: background $transition-fast, color $transition-fast, border-color $transition-fast;
@@ -81,7 +81,7 @@
     align-items: center;
     justify-content: center;
     overflow: hidden;
-    border-radius: 10px;
+    border-radius: var(--radius-sm);
     background: transparent;
   }
 
@@ -92,7 +92,7 @@
     width: auto;
     height: auto;
     object-fit: contain;
-    border-radius: 10px;
+    border-radius: var(--radius-sm);
     // Cursor personalizado con forma de lupa (blanco con contorno negro, visible
     // sobre cualquier fondo). El "13 13" es el punto activo (centro del cristal).
     cursor:
@@ -121,7 +121,7 @@
     height: 42px;
     border: 1px solid var(--border-subtle);
     background: var(--overlay-bg);
-    border-radius: 50%;
+    border-radius: var(--radius-pill);
     color: var(--text-primary);
     cursor: pointer;
     transition: background $transition-fast, border-color $transition-fast, color $transition-fast;
@@ -163,7 +163,7 @@
     }
 
     &.is-active {
-      background: var(--accent);
+      background: var(--accent-strong);
       transform: scale(1.25);
     }
   }

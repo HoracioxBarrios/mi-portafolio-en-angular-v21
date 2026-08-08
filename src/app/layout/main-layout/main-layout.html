@@ -1,5 +1,6 @@
 <div class="layout">
-  <app-profile [fullName]="fullName" [tecnologiasArr]="tecnologiasArr" [location]="location" [photo]="photo" [redesSociales]="redesSociales"></app-profile>
+  <app-particles class="layout__particles"></app-particles>
+  <app-profile class="layout__profile" [fullName]="fullName" [tecnologiasArr]="tecnologiasArr" [location]="location" [photo]="photo" [redesSociales]="redesSociales"></app-profile>
   <app-header class="layout__header"></app-header>
   
   <main class="layout__main">
@@ -7,4 +8,5 @@
   </main>
   
   <app-footer class="layout__footer"></app-footer>
+  <app-sticky-cta></app-sticky-cta>
 </div>

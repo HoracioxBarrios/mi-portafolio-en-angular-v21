@@ -9,8 +9,9 @@ export const EN: Record<string, string> = {
 
   // Home — Hero
   'home.hero.title': "Hi, I'm Hora",
+  'home.hero.badge': 'Angular Developer · Generative AI',
   'home.hero.subtitle':
-    'I build apps that solve real problems with a focus on user experience',
+    'I shipped the first generative-AI solution of my project to production — a conversational assistant built with Angular — and cut bug reports by 40%.',
   'home.hero.ctaAbout': 'Get to know me',
   'home.hero.ctaProjects': 'See my projects',
 
@@ -56,6 +57,15 @@ export const EN: Record<string, string> = {
   'about.education.degree': 'University Technical Degree in Programming',
   'about.education.inst': 'UTN · 2023 – Present',
 
+  // About — Certificates
+  'about.certificados.title': 'Certificates',
+  'about.certificados.subtitle': 'Training & certifications',
+  'about.certificados.verCertificado': 'View certificate',
+  'about.certificados.claudeCode.title': 'Claude Code',
+  'about.certificados.claudeCodeInAction.title': 'Claude Code in Action',
+  'about.certificados.cSharp.title': 'C# Course',
+  'about.certificados.angular.title': 'Angular Course',
+
   // Project card
   'card.seeMore': 'See more...',
   'card.repo': 'Repository',
@@ -76,6 +86,10 @@ export const EN: Record<string, string> = {
   // Footer
   'footer.text': 'Development',
   'footer.credit': 'Design inspired by a template from',
+
+  // Sticky CTA (mobile)
+  'stickyCta.label': 'Contact Horacio Barrios',
+  'stickyCta.text': 'Contact',
 
   // Figma inspiration modal
   'figma.title': 'Design that inspired this portfolio',

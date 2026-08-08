@@ -1,18 +1,21 @@
 <header class="header">
   <div class="header__container">
-    <nav class="header__nav">
-      <mat-tab-group
-        [selectedIndex]="activeIndex"
-        (selectedIndexChange)="onTabChange($event)"
-      >
-        @for (link of navLinks; track link.id) {
-          <mat-tab>
-            <ng-template mat-tab-label>
-              {{ tr.t(link.key) }}
-            </ng-template>
-          </mat-tab>
-        }
-      </mat-tab-group>
+    <a class="header__brand" routerLink="/home" #brandRla="routerLinkActive" routerLinkActive="is-active" [attr.aria-current]="brandRla.isActive ? 'page' : null">
+      <span class="header__brand-name font-mono">HB</span>
+    </a>
+
+    <nav class="header__nav" aria-label="Navegación principal">
+      @for (link of navLinks; track link.path) {
+        <a
+          class="header__nav-link"
+          routerLink="/{{ link.path }}"
+          #rla="routerLinkActive"
+          routerLinkActive="is-active"
+          [attr.aria-current]="rla.isActive ? 'page' : null"
+        >
+          {{ tr.t(link.key) }}
+        </a>
+      }
     </nav>
 
     <div class="header__controls">

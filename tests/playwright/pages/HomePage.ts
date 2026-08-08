@@ -6,7 +6,7 @@ import { BasePage } from './BasePage';
 
 export class HomePage extends BasePage {
   get heroHeading() {
-    return this.byRole('heading', { name: 'Horacio Javier Barrios', exact: true });
+    return this.byRole('heading', { name: 'Hola, soy Hora', exact: true });
   }
   get aboutLink() {
     return this.byRole('link', { name: 'Conóceme más' });

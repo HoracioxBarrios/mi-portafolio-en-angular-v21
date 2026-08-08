@@ -12,7 +12,7 @@ Rutas descubiertas desde `src/app/app.routes.ts` (sitemap.xml no existe). Usadas
 | Route | Auth | Page Object | Notes |
 |-------|------|-------------|-------|
 | `/` | guest | `HomePage.ts` | Redirect a `/home` |
-| `/home` | guest | `HomePage.ts` | Landing + hero, `h1` "Horacio Javier Barrios" |
+| `/home` | guest | `HomePage.ts` | Landing + hero, `h1` "Hola, soy Hora" (ES) |
 | `/proyectos` | guest | `ProyectosPage.ts` | Grid de proyectos, botones "Ver más..." |
 | `/sobre-mi` | guest | `SobreMiPage.ts` | Links sociales |
 
@@ -38,15 +38,16 @@ Prioridad: `[data-testid]` > `getByRole` > `getByLabel` > `getByText` > CSS
 | text input | `getByLabel('...')` or `[data-testid="..."]` | |
 | password input | `getByLabel('...')` or `[name="..."]` | |
 
-### Navegación (Material tabs)
+### Navegación (header propio, sin tabs de Material)
 
 | Element | Selector | Notes |
 |---------|----------|-------|
-| tab Home | `getByRole('tab', { name: 'Home' })` | `mat-tab-group` |
-| tab Proyectos | `getByRole('tab', { name: 'Proyectos' })` | |
-| tab Sobre Mí | `getByRole('tab', { name: 'Sobre Mí' })` | |
-| botón idioma | `[aria-label="Switch to English"]` | `.header__lang-btn`, texto `EN` |
-| botón tema | `[aria-label="Activar tema claro"]` | `.header__icon-btn`, texto `light_mode` |
+| marca | `a.header__brand` | link a `/home`, texto `HB`, `aria-current="page"` cuando activo |
+| nav Home | `getByRole('link', { name: 'Home' })` | `.header__nav-link`, `routerLinkActive="is-active"`, `aria-current="page"` cuando activo |
+| nav Proyectos | `getByRole('link', { name: 'Proyectos' })` | |
+| nav Sobre Mí | `getByRole('link', { name: 'Sobre Mí' })` | |
+| botón idioma | `[aria-label="Switch to English"]` | `.header__lang-btn`, texto `EN` (en ES) / `ES` (en EN) |
+| botón tema | `[aria-label="Activar tema claro"]` | `.header__icon-btn`, icono `light_mode` (dark) / `dark_mode` (light) |
 
 ### Links
 
@@ -95,7 +96,7 @@ Prioridad: `[data-testid]` > `getByRole` > `getByLabel` > `getByText` > CSS
 | BASE_URL | `http://localhost:4200` | Default de `playwright.config.ts` |
 | auth method | — | No requiere auth |
 | multi-user roles | — | Sin roles |
-| Framework UI | Angular + Angular Material | Tabs para nav, Material Icons |
+| Framework UI | Angular + Angular Material | Nav propia en header (sin tabs), Material Icons, i18n ES/EN |
 
 ## Selector Fixes (Healer memory)
 

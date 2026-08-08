@@ -2,10 +2,11 @@ import { Component, Input } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
 import { RedSocial } from '@app/core/models/redSocial';
 import { JoinTextPipe } from '@app/shared/pipes/join-text-pipe';
+import { Reveal } from '@app/shared/directives/reveal';
 
 @Component({
   selector: 'app-profile',
-  imports: [MatIconModule, JoinTextPipe],
+  imports: [MatIconModule, JoinTextPipe, Reveal],
   templateUrl: './profile.html',
   styleUrl: './profile.scss',
 })

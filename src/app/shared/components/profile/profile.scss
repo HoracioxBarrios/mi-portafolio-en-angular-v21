@@ -67,8 +67,8 @@
       border-radius: 50%;
       background: conic-gradient(
         var(--accent-soft-bg) 0deg,
-        var(--accent) 100deg,
-        var(--accent) 180deg,
+        var(--accent-strong) 100deg,
+        var(--accent-strong) 180deg,
         var(--accent-soft-bg) 280deg
       );
       animation: ring-oscillate 15s ease-in-out infinite;
@@ -153,7 +153,7 @@
       transition: color $transition-fast;
 
       &:hover {
-        color: var(--accent);
+        color: var(--accent-strong);
       }
     }
 

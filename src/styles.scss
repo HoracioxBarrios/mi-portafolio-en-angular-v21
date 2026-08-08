@@ -20,14 +20,14 @@
 $dark-theme: mat.define-theme((
   color: (
     theme-type: dark,
-    primary: mat.$blue-palette,
+    primary: mat.$chartreuse-palette,
   ),
 ));
 
 $light-theme: mat.define-theme((
   color: (
     theme-type: light,
-    primary: mat.$blue-palette,
+    primary: mat.$chartreuse-palette,
   ),
 ));
 
@@ -54,7 +54,7 @@ html, body {
 }
 
 body {
-  font-family: Roboto, "Helvetica Neue", sans-serif;
+  font-family: 'Space Grotesk', 'Helvetica Neue', sans-serif;
   background-color: var(--bg-primary);
   color: var(--text-primary);
   transition: background-color 0.3s ease, color 0.3s ease;
@@ -75,25 +75,6 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-/* === MAT TAB INDICATOR COLOR para las opciones en el navbar === */
-
-/* Línea inferior activa */
-.mat-mdc-tab-group
-  .mat-mdc-tab.mdc-tab--active
-  .mdc-tab-indicator__content--underline {
-  border-color: var(--accent) !important;
-}
-
-/* Texto activo */
-.mat-mdc-tab-group
-  .mat-mdc-tab.mdc-tab--active
-  .mdc-tab__text-label,
-.mat-mdc-tab-group
-  .mat-mdc-tab.mdc-tab--active
-  a {
-  color: var(--accent) !important;
-}
-
 /* === Skill detail dialog (modal) === */
 .skill-detail-dialog-panel .mat-mdc-dialog-container,
 .figma-modal-panel .mat-mdc-dialog-container {
@@ -112,4 +93,28 @@ body {
     0 20px 60px rgba(0, 0, 0, 0.85),
     0 0 40px rgba(200, 200, 200, 0.2),
     0 0 80px rgba(200, 200, 200, 0.08) !important;
+}
+
+/* === Scroll reveal (directiva appReveal) ===
+   Estado inicial oculto; al intersectar, .is-revealed aplica el fade-in.
+   Solo opacity/transform para evitar CLS. prefers-reduced-motion: sin animación. */
+.reveal-init {
+  opacity: 0;
+  transform: translateY(16px);
+}
+
+.is-revealed {
+  opacity: 1;
+  transform: translateY(0);
+  transition:
+    opacity 0.45s ease-out,
+    transform 0.45s ease-out;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal-init {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
 }

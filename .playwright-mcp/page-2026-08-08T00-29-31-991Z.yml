@@ -1,0 +1,133 @@
+- generic [ref=f1e4]:
+  - generic [ref=f1e8]:
+    - img "Profile" [ref=f1e10]
+    - generic [ref=f1e11]:
+      - generic [ref=f1e12]:
+        - heading "Horacio Javier Barrios" [level=1] [ref=f1e13]
+        - paragraph [ref=f1e14]: Frontend Developer (Angular) | AI-Augmented Development
+        - paragraph [ref=f1e15]: Buenos Aires - Argentina
+      - generic [ref=f1e16]:
+        - link "GitHub" [ref=f1e17] [cursor=pointer]:
+          - /url: https://github.com/HoracioxBarrios
+          - img [ref=f1e18]: code
+          - text: GitHub
+        - link "LinkedIn" [ref=f1e19] [cursor=pointer]:
+          - /url: https://linkedin.com/in/horacioxbarrios
+          - img [ref=f1e20]: work
+          - text: LinkedIn
+        - link "Instagram" [ref=f1e21] [cursor=pointer]:
+          - /url: https://instagram.com
+          - img [ref=f1e22]: photo_camera
+          - text: Instagram
+  - banner [ref=f1e24]:
+    - generic [ref=f1e25]:
+      - link "HB" [ref=f1e26] [cursor=pointer]:
+        - /url: /home
+      - navigation "Navegación principal" [ref=f1e28]:
+        - link "Home" [ref=f1e29] [cursor=pointer]:
+          - /url: /home
+        - link "Projects" [ref=f1e30] [cursor=pointer]:
+          - /url: /proyectos
+        - link "About Me" [ref=f1e31] [cursor=pointer]:
+          - /url: /sobre-mi
+      - generic [ref=f1e32]:
+        - button "Cambiar a Español" [ref=f1e33] [cursor=pointer]: ES
+        - button "Activar tema claro" [ref=f1e34] [cursor=pointer]:
+          - img [ref=f1e35]: light_mode
+  - main [ref=f1e36]:
+    - generic [ref=f1e39]:
+      - generic [ref=f1e40]:
+        - heading "Who I am" [level=3] [ref=f1e41]
+        - paragraph [ref=f1e42]: Angular developer with experience on large-scale public-sector projects — I shipped the project’s first generative-AI solution to production as a conversational assistant. I combine technical expertise in Angular (v12–v21) with modern AI-assisted development tools to deliver higher-quality solutions in less time.
+      - generic [ref=f1e43]:
+        - heading "Professional experience" [level=3] [ref=f1e44]
+        - generic [ref=f1e45]:
+          - generic [ref=f1e46]:
+            - heading "Consultores en Desarrollos Tecnológicos S.A. — CABA" [level=4] [ref=f1e47]
+            - generic [ref=f1e48]: April 2024 – Present
+          - paragraph [ref=f1e49]: Frontend Developer (Angular / Ionic)
+          - list [ref=f1e50]:
+            - listitem [ref=f1e51]: ★ Shipped a generative-AI conversational assistant to production — the first solution of its kind in the project.
+            - listitem [ref=f1e52]: › Improved performance, reducing bug reports by 40%.
+            - listitem [ref=f1e53]: › Refactored the services layer, removing duplicate calls and reducing load times.
+            - listitem [ref=f1e54]: › Modernized the UI/UX by implementing full redesigns from Figma prototypes.
+            - listitem [ref=f1e55]: › Implemented ARIA labels, improving accessibility for users with low vision.
+            - listitem [ref=f1e56]: › Independently migrated 3 Angular projects from versions 9 and 12 to version 16.
+            - listitem [ref=f1e57]: › Built and maintained a mobile app with Angular and Ionic published on the Play Store and App Store.
+      - generic [ref=f1e58]:
+        - heading "Education" [level=3] [ref=f1e59]
+        - generic [ref=f1e60]:
+          - generic [ref=f1e61]: University Technical Degree in Programming
+          - generic [ref=f1e62]: UTN · 2023 – Present
+      - generic [ref=f1e65]:
+        - heading "Certificates" [level=3] [ref=f1e66]
+        - paragraph [ref=f1e67]: Training & certifications
+        - generic [ref=f1e68]:
+          - article [ref=f1e69]:
+            - generic [ref=f1e70]:
+              - heading "Claude Code" [level=4] [ref=f1e71]
+              - generic [ref=f1e72]: Claude Code (Anthropic)
+          - article [ref=f1e73]:
+            - generic [ref=f1e74]:
+              - heading "Claude Code in Action" [level=4] [ref=f1e75]
+              - generic [ref=f1e76]: Udemy
+          - article [ref=f1e77]:
+            - generic [ref=f1e78]:
+              - heading "C# Course" [level=4] [ref=f1e79]
+              - generic [ref=f1e80]: Udemy
+          - article [ref=f1e81]:
+            - generic [ref=f1e82]:
+              - heading "Angular Course" [level=4] [ref=f1e83]
+              - generic [ref=f1e84]: Udemy
+      - generic [ref=f1e87]:
+        - heading "Tools & technologies" [level=4] [ref=f1e88]
+        - generic [ref=f1e89]:
+          - generic [ref=f1e91]:
+            - heading "Frontend" [level=4] [ref=f1e92]
+            - generic [ref=f1e93]:
+              - img "HTML5" [ref=f1e96] [cursor=pointer]
+              - img "CSS3" [ref=f1e99] [cursor=pointer]
+              - img "JavaScript" [ref=f1e102] [cursor=pointer]
+              - img "Sass" [ref=f1e105] [cursor=pointer]
+              - img "Angular" [ref=f1e108] [cursor=pointer]
+              - img "TypeScript" [ref=f1e111] [cursor=pointer]
+              - img "Ionic" [ref=f1e114] [cursor=pointer]
+              - img "RxJS" [ref=f1e117] [cursor=pointer]
+          - generic [ref=f1e119]:
+            - heading "Backend" [level=4] [ref=f1e120]
+            - generic [ref=f1e121]:
+              - img "C#" [ref=f1e124] [cursor=pointer]
+              - img "Node.js" [ref=f1e127] [cursor=pointer]
+              - img "Python" [ref=f1e130] [cursor=pointer]
+              - img ".NET" [ref=f1e133] [cursor=pointer]
+              - img "MySQL" [ref=f1e136] [cursor=pointer]
+              - img "PostgreSQL" [ref=f1e139] [cursor=pointer]
+              - img "Postman" [ref=f1e142] [cursor=pointer]
+          - generic [ref=f1e144]:
+            - heading "Tools" [level=4] [ref=f1e145]
+            - generic [ref=f1e146]:
+              - img "Git" [ref=f1e149] [cursor=pointer]
+              - img "GitHub" [ref=f1e152] [cursor=pointer]
+              - img "GitLab" [ref=f1e155] [cursor=pointer]
+              - img "Jira" [ref=f1e158] [cursor=pointer]
+              - img "Visual Studio Code" [ref=f1e161] [cursor=pointer]
+              - img "Visual Studio" [ref=f1e164] [cursor=pointer]
+              - img "Android Studio" [ref=f1e167] [cursor=pointer]
+              - img "Figma" [ref=f1e170] [cursor=pointer]
+              - img "Jenkins" [ref=f1e173] [cursor=pointer]
+              - img "Azure DevOps" [ref=f1e176] [cursor=pointer]
+              - img "Trello" [ref=f1e179] [cursor=pointer]
+              - img "Miro" [ref=f1e182] [cursor=pointer]
+          - generic [ref=f1e184]:
+            - heading "AI" [level=4] [ref=f1e185]
+            - generic [ref=f1e186]:
+              - img "Claude Code" [ref=f1e189] [cursor=pointer]
+              - img "GitHub Copilot" [ref=f1e192] [cursor=pointer]
+              - img "Cursor" [ref=f1e195] [cursor=pointer]
+              - img "Spec-Driven Development" [ref=f1e198] [cursor=pointer]
+              - img "BMAD Method" [ref=f1e201] [cursor=pointer]
+  - generic [ref=f1e204]:
+    - paragraph [ref=f1e205]: Development 2026
+    - paragraph [ref=f1e206]:
+      - text: Design inspired by a template from Ricardo Quebrada R. ·
+      - button "Figma Community" [ref=f1e207] [cursor=pointer]

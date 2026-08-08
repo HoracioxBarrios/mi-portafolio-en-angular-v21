@@ -2,25 +2,40 @@
 // DESIGN TOKENS — colores temáticos como CSS custom properties
 // Se alternan en runtime con el atributo data-theme en <html>.
 // El tema por defecto es dark (sin atributo o data-theme="dark").
+// Paleta: dark-first con acento lima/verde neón (#bef264).
 // ============================================================
+
+// Escala de radios (compartida por ambos temas) — D5
+:root {
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-pill: 999px;
+}
 
 :root,
 :root[data-theme='dark'] {
-  --bg-primary: #0a0a0a;
-  --bg-secondary: #1a1a1a;
-  --surface: #1a1a1a;
-  --surface-raised: #222222;
+  --bg-primary: #0b0f0d;
+  --bg-secondary: #131a16;
+  --surface: #131a16;
+  --surface-raised: #1b241e;
 
-  --text-primary: #ffffff;
-  --text-secondary: #b0b0b0;
-  --text-on-accent: #ffffff;
+  --text-primary: #f4faf5;
+  --text-secondary: #a8b3ac;
+  --text-on-accent: #0b0f0d;
 
-  --accent: #2196f3;
-  --accent-strong: #1976d2;
-  --accent-soft-bg: rgba(33, 150, 243, 0.12);
-  --accent-soft-border: rgba(33, 150, 243, 0.28);
+  --accent: #bef264;
+  --accent-strong: #a3e635;
+  --accent-soft-bg: rgba(190, 242, 100, 0.10);
+  --accent-soft-border: rgba(190, 242, 100, 0.28);
+  --accent-glow: rgba(190, 242, 100, 0.35);
 
-  --danger: #d32f2f;
+  // CTA reservado: acento pleno solo en acciones primarias (D2)
+  --cta-bg: #bef264;
+  --cta-bg-hover: #d9f99d;
+  --cta-text: #0b0f0d;
+
+  --danger: #f87171;
 
   --border-subtle: rgba(255, 255, 255, 0.06);
   --border-medium: rgba(255, 255, 255, 0.08);
@@ -37,7 +52,7 @@
 }
 
 :root[data-theme='light'] {
-  --bg-primary: #eaedf2;
+  --bg-primary: #f4f6f0;
   --bg-secondary: #ffffff;
   --surface: #ffffff;
   --surface-raised: #ffffff;
@@ -46,10 +61,16 @@
   --text-secondary: #555b66;
   --text-on-accent: #ffffff;
 
-  --accent: #1769c4;
-  --accent-strong: #115293;
-  --accent-soft-bg: rgba(23, 105, 196, 0.10);
-  --accent-soft-border: rgba(23, 105, 196, 0.28);
+  --accent: #4d7c0f;
+  --accent-strong: #3f6212;
+  --accent-soft-bg: rgba(101, 163, 13, 0.10);
+  --accent-soft-border: rgba(101, 163, 13, 0.28);
+  --accent-glow: rgba(101, 163, 13, 0.18);
+
+  // CTA reservado: lime-700 pleno con texto blanco (WCAG AA 4.5:1)
+  --cta-bg: #4d7c0f;
+  --cta-bg-hover: #3f6212;
+  --cta-text: #ffffff;
 
   --danger: #c62828;
 

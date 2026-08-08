@@ -1,0 +1,110 @@
+- generic [ref=e4]:
+  - generic [ref=e8]:
+    - img "Profile" [ref=e10]
+    - generic [ref=e11]:
+      - generic [ref=e12]:
+        - heading "Horacio Javier Barrios" [level=1] [ref=e13]
+        - paragraph [ref=e14]: Frontend Developer (Angular) | AI-Augmented Development
+        - paragraph [ref=e15]: Buenos Aires - Argentina
+      - generic [ref=e16]:
+        - link "GitHub" [ref=e17] [cursor=pointer]:
+          - /url: https://github.com/HoracioxBarrios
+          - img [ref=e18]: code
+          - text: GitHub
+        - link "LinkedIn" [ref=e19] [cursor=pointer]:
+          - /url: https://linkedin.com/in/horacioxbarrios
+          - img [ref=e20]: work
+          - text: LinkedIn
+        - link "Instagram" [ref=e21] [cursor=pointer]:
+          - /url: https://instagram.com
+          - img [ref=e22]: photo_camera
+          - text: Instagram
+  - banner [ref=e24]:
+    - generic [ref=e25]:
+      - link "HB" [ref=e26] [cursor=pointer]:
+        - /url: /home
+      - navigation "Navegación principal" [ref=e28]:
+        - link "Home" [ref=e29] [cursor=pointer]:
+          - /url: /home
+        - link "Projects" [ref=e114] [cursor=pointer]:
+          - /url: /proyectos
+        - link "About Me" [ref=e115] [cursor=pointer]:
+          - /url: /sobre-mi
+      - generic [ref=e32]:
+        - button "Cambiar a Español" [ref=e116] [cursor=pointer]: ES
+        - button "Activar tema oscuro" [active] [ref=e128] [cursor=pointer]:
+          - img [ref=e35]: dark_mode
+  - main [ref=e36]:
+    - generic [ref=e37]:
+      - generic [ref=e40]:
+        - paragraph [ref=e41]: Angular Developer · Generative AI
+        - heading "Hi, I'm Hora" [level=1] [ref=e117]
+        - paragraph [ref=e43]: I shipped the first generative-AI solution of my project to production — a conversational assistant built with Angular — and cut bug reports by 40%.
+        - generic [ref=e44]:
+          - link "Get to know me" [ref=e118] [cursor=pointer]:
+            - /url: /sobre-mi
+          - link "See my projects" [ref=e119] [cursor=pointer]:
+            - /url: /proyectos
+      - generic [ref=e48]:
+        - heading "Featured Projects" [level=2] [ref=e120]
+        - generic [ref=e50]:
+          - article [ref=e52]:
+            - img "Kick to Azar" [ref=e54]
+            - generic [ref=e55]:
+              - heading "Kick to Azar" [level=3] [ref=e56]
+              - paragraph [ref=e57]: Full-stack web app for statistical analysis of lottery games with data scraping. Currently focused on Quini 6, with plans to expand to Loto, Telekino and other games. Angular 21 frontend (Material Design + ECharts charts) and a NestJS backend with JWT authentication, TypeORM and PostgreSQL (full-stack deploy on Vercel, with an automated scraper running twice a week via Cron).
+              - generic [ref=e58]:
+                - button "Private repository" [ref=e121] [cursor=pointer]:
+                  - img [ref=e60]: lock
+                  - generic [ref=e61]: Repository
+                - link "View live project" [ref=e122] [cursor=pointer]:
+                  - /url: https://kick-to-azar-web.vercel.app/
+                  - img [ref=e63]: open_in_new
+                  - generic [ref=e64]: View project
+              - generic [ref=e65]:
+                - generic [ref=e66]: Angular 21
+                - generic [ref=e67]: TypeScript
+                - generic [ref=e68]: Angular Material
+                - generic [ref=e69]: NestJS
+                - generic [ref=e70]: Node.js
+                - generic [ref=e71]: PostgreSQL
+                - generic [ref=e72]: TypeORM
+                - generic [ref=e73]: SQLite
+                - generic [ref=e74]: JWT
+                - generic [ref=e75]: Puppeteer
+                - generic [ref=e76]: Vercel
+          - article [ref=e78]:
+            - img "Mach Jobs" [ref=e80]
+            - generic [ref=e81]:
+              - heading "Mach Jobs" [level=3] [ref=e82]
+              - paragraph [ref=e83]: "Full-stack job search web app with AI-powered matching. The user imports their CV (PDF/Markdown/txt or text) and the app structures it as a profile, aggregates real job postings from Argentina via the official APIs of job aggregators (Careerjet and Jooble), avoiding portal scraping and thus respecting each platform's terms and conditions (ToS), and scores each posting against the profile with a fit score based on (matching skills, missing skills and justification). Job offers are sorted by likelihood of success and the user can open the original posting with a click to apply, marking the status (new/seen/discarded/applied). Stack: Angular 22 (frontend) · Node + Express in TypeScript (backend) · MongoDB Atlas in production and SQLite for local development · AI with Groq (free tier, pluggable) · serverless deployment on Vercel."
+              - generic [ref=e84]:
+                - button "Private repository" [ref=e123] [cursor=pointer]:
+                  - img [ref=e86]: lock
+                  - generic [ref=e87]: Repository
+                - link "View live project" [ref=e124] [cursor=pointer]:
+                  - /url: https://match-jobs-web-ar.vercel.app/
+                  - img [ref=e89]: open_in_new
+                  - generic [ref=e90]: View project
+              - generic [ref=e91]:
+                - generic [ref=e92]: Angular 22
+                - generic [ref=e93]: TypeScript
+                - generic [ref=e94]: Express 4
+                - generic [ref=e95]: Node.js
+                - generic [ref=e96]: MongoDB
+                - generic [ref=e97]: Zod
+                - generic [ref=e98]: Groq (LLM)
+                - generic [ref=e99]: Careerjet API
+                - generic [ref=e100]: Jooble API
+        - link "View all projects" [ref=e125] [cursor=pointer]:
+          - /url: /proyectos
+      - generic [ref=e104]:
+        - heading "Looking for an Angular Developer?" [level=2] [ref=e126]
+        - paragraph [ref=e106]: I'm open to full-time positions and freelance projects. I reply within 24 hours.
+        - link "Get in touch" [ref=e127] [cursor=pointer]:
+          - /url: mailto:horacioxbarrios@gmail.com
+  - generic [ref=e110]:
+    - paragraph [ref=e111]: Development 2026
+    - paragraph [ref=e112]:
+      - text: Design inspired by a template from Ricardo Quebrada R. ·
+      - button "Figma Community" [ref=e113] [cursor=pointer]
