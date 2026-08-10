@@ -38,14 +38,13 @@ Prioridad: `[data-testid]` > `getByRole` > `getByLabel` > `getByText` > CSS
 | text input | `getByLabel('...')` or `[data-testid="..."]` | |
 | password input | `getByLabel('...')` or `[name="..."]` | |
 
-### Navegación (header propio, sin tabs de Material)
+### Navegación (tabbar de Material)
 
 | Element | Selector | Notes |
 |---------|----------|-------|
-| marca | `a.header__brand` | link a `/home`, texto `HB`, `aria-current="page"` cuando activo |
-| nav Home | `getByRole('link', { name: 'Home' })` | `.header__nav-link`, `routerLinkActive="is-active"`, `aria-current="page"` cuando activo |
-| nav Proyectos | `getByRole('link', { name: 'Proyectos' })` | |
-| nav Sobre Mí | `getByRole('link', { name: 'Sobre Mí' })` | |
+| tab Inicio | `getByRole('tab', { name: 'Inicio' })` | `mat-tab-group`, `[aria-selected="true"]` cuando activo; en EN el nombre es `Home` |
+| tab Proyectos | `getByRole('tab', { name: 'Proyectos' })` | |
+| tab Sobre Mí | `getByRole('tab', { name: 'Sobre Mí' })` | |
 | botón idioma | `[aria-label="Switch to English"]` | `.header__lang-btn`, texto `EN` (en ES) / `ES` (en EN) |
 | botón tema | `[aria-label="Activar tema claro"]` | `.header__icon-btn`, icono `light_mode` (dark) / `dark_mode` (light) |
 
@@ -140,8 +139,7 @@ Cambio de identidad de acento: lime/verde → azul Material (`#2196f3` family). 
 
 | Elemento | Selector | dark | light |
 |----------|----------|------|-------|
-| Marca | `.header__brand` | `#1e88e5` | `#115293` |
-| Nav activo | `.header__nav-link.is-active` / `[aria-current="page"]` | `#2196f3` | `#1769c4` |
+| Nav activo | `[role="tab"][aria-selected="true"]` | `#e5e1e6` (color del tema MD3, no acento) | `#1b1b1f` |
 | CTA hero | `.btn--primary` | bg `#2196f3`, texto `#0b0f0d` | bg `#1769c4`, texto `#ffffff` |
 | CTA card | `.project-card__action--primary` | bg `#2196f3` | bg `#1769c4` |
 | Tag | `.project-card__tag` | bg `rgba(33,150,243,0.1)`, texto `#1e88e5` | bg `rgba(23,105,196,0.1)`, texto `#115293` |
@@ -181,7 +179,8 @@ Persists assertion repairs (typos, spec drift) across sessions.
 
 | Date | Change | By |
 |------|--------|-----|
-| | | |
+| 2026-08-08 | Eliminada marca `.header__brand` (HB) del navbar; tab de inicio renombrado a "Inicio" (ES) / "Home" (EN) | cambio `navbar-quitar-hb-y-home-inicio` |
+| 2026-08-10 | Navegación del header restaurada a tabbar de Material (`mat-tab-group`); activo via `[aria-selected="true"]` | cambio `restaurar-tabbar-original-header` |
 
 ---
 

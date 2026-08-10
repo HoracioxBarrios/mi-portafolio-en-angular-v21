@@ -3,7 +3,7 @@
 
 export const ES: Record<string, string> = {
   // Navegación
-  'nav.home': 'Home',
+  'nav.home': 'Inicio',
   'nav.proyectos': 'Proyectos',
   'nav.sobreMi': 'Sobre Mí',
 
