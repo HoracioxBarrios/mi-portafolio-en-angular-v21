@@ -28,6 +28,11 @@ const AZUL_LIGHT = 'rgb(23, 105, 196)';
 const AZUL_STRONG_LIGHT = 'rgb(17, 82, 147)';
 const CTA_TEXT_LIGHT = 'rgb(255, 255, 255)';
 
+// Color del texto de la pestaña activa del tabbar de Material: lo define el
+// tema MD3 (on-surface), no el acento azul. dark = #e5e1e6, light = #1b1b1f.
+const NAV_ACTIVO_DARK = 'rgb(229, 225, 230)';
+const NAV_ACTIVO_LIGHT = 'rgb(27, 27, 31)';
+
 // Valores de la palette lime/charteuse sustituida (restos prohibidos).
 const LIME_RGB: Array<[number, number, number]> = [
   [190, 242, 100], // #bef264 (dark accent)
@@ -40,8 +45,7 @@ const LIME_RGB: Array<[number, number, number]> = [
 
 // Selectores con acento verificados en app-exploration.md
 const SELECTORES_ACENTO = [
-  '.header__brand',
-  '.header__nav-link.is-active',
+  '[role="tab"][aria-selected="true"]',
   '.btn--primary',
   '.project-card__action--primary',
   '.project-card__tag',
@@ -135,19 +139,16 @@ test.describe('Acento azul en tema oscuro por defecto', () => {
     expect(await tokenDe(page, '--cta-text')).toBe(CTA_TEXT_DARK_HEX);
   });
 
-  test('nav activo y marca usan azul (no lime)', async ({ page }) => {
+  test('nav activo usa color del tema (no lime)', async ({ page }) => {
     await page.goto('/home');
-    await expect(page.locator('.header__brand')).toBeVisible();
+    await expect(page.locator('[role="tab"][aria-selected="true"]')).toBeVisible();
 
-    const marca = await colorDe(page, '.header__brand', 'color');
-    expect(marca).toBe(AZUL_STRONG_DARK);
-
+    // La pestaña activa del tabbar usa el color del tema MD3, no el acento.
     await expect
-      .poll(async () => colorDe(page, '.header__nav-link.is-active', 'color'))
-      .toBe(AZUL_DARK);
+      .poll(async () => colorDe(page, '[role="tab"][aria-selected="true"] .mdc-tab__text-label', 'color'))
+      .toBe(NAV_ACTIVO_DARK);
 
-    const navActivo = await colorDe(page, '.header__nav-link.is-active', 'color');
-    expect(esLime(rgbNormalizado(marca))).toBe(false);
+    const navActivo = await colorDe(page, '[role="tab"][aria-selected="true"] .mdc-tab__text-label', 'color');
     expect(esLime(rgbNormalizado(navActivo))).toBe(false);
   });
 
@@ -272,7 +273,7 @@ test.describe('Contraste WCAG AA del acento', () => {
 test.describe('Componentes sin restos lime/verde', () => {
   test('ningún elemento visible usa colores de la palette lime sustituida', async ({ page }) => {
     await page.goto('/home');
-    await expect(page.locator('.header__brand')).toBeVisible();
+    await expect(page.locator('[role="tab"][aria-selected="true"]')).toBeVisible();
 
     const restos = await page.evaluate((selectores) => {
       const prohibidos: Array<[number, number, number]> = [
