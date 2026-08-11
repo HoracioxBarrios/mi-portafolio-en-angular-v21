@@ -1,7 +1,7 @@
 <div class="layout">
   <app-particles class="layout__particles"></app-particles>
   <app-profile class="layout__profile" [fullName]="fullName" [tecnologiasArr]="tecnologiasArr" [location]="location" [photo]="photo" [redesSociales]="redesSociales"></app-profile>
-  <app-header class="layout__header"></app-header>
+  <app-header class="layout__header" [cvUrl]="cvUrl"></app-header>
   
   <main class="layout__main">
     <router-outlet></router-outlet>

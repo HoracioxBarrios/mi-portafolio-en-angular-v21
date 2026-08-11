@@ -6,12 +6,14 @@ export const ES: Record<string, string> = {
   'nav.home': 'Inicio',
   'nav.proyectos': 'Proyectos',
   'nav.sobreMi': 'Sobre Mí',
+  'header.cvButton': 'Mi CV',
+  'header.cvAria': 'Descargar mi CV actualizado',
 
   // Home — Hero
   'home.hero.title': 'Hola, soy Hora',
-  'home.hero.badge': 'Angular Developer · IA generativa',
+  'home.hero.badge': 'Software Developer | Angular & Ionic | AI Solutions & AI-Augmented Development',
   'home.hero.subtitle':
-    'Llevé a producción la primera solución con IA generativa de mi proyecto — un asistente conversacional en Angular — y reduje los reportes de errores en un 40%.',
+    'Desarrollador Frontend (Angular/Ionic) enfocado en construir productos sólidos, con experiencia integrando IA al flujo de desarrollo para trabajar más rápido y mejor.',
   'home.hero.ctaAbout': 'Conóceme más',
   'home.hero.ctaProjects': 'Ver mis proyectos',
 
@@ -21,7 +23,7 @@ export const ES: Record<string, string> = {
   'home.featured.viewAll': 'Ver todos los proyectos',
 
   // Home — CTA
-  'home.cta.title': '¿Buscás un Angular Developer?',
+  'home.cta.title': '¿Te interesa mi perfil?',
   'home.cta.text':
     'Estoy abierto a posiciones full-time y proyectos freelance. Respondo en menos de 24 horas.',
   'home.cta.button': 'Escribime',
@@ -38,9 +40,9 @@ export const ES: Record<string, string> = {
     'Desarrollador Angular con experiencia en proyectos de gran escala para el sector público — llevé a producción la primera solución de IA generativa del proyecto como asistente conversacional. Combino expertise técnico en Angular (v12–v21) con herramientas modernas de desarrollo asistido por IA para entregar soluciones de mayor calidad en menos tiempo.',
   'about.experience.title': 'Experiencia profesional',
   'about.experience.company': 'Consultores en Desarrollos Tecnológicos S.A. — CABA',
-  'about.experience.period': 'Abril 2024 – Actualidad',
+  'about.experience.period': 'Agosto 2023 – Actualidad',
   'about.experience.role':
-    'Desarrollador Frontend (Angular / Ionic)',
+    'Software Developer (Angular / Ionic)',
   'about.experience.l1':
     'Implementé un asistente conversacional con IA generativa en producción, siendo la primera solución de este tipo en el proyecto.',
   'about.experience.l2': 'Optimicé el rendimiento reduciendo los reportes de errores en un 40%.',

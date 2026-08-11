@@ -6,12 +6,14 @@ export const EN: Record<string, string> = {
   'nav.home': 'Home',
   'nav.proyectos': 'Projects',
   'nav.sobreMi': 'About Me',
+  'header.cvButton': 'My CV',
+  'header.cvAria': 'Download my updated CV',
 
   // Home — Hero
   'home.hero.title': "Hi, I'm Hora",
-  'home.hero.badge': 'Angular Developer · Generative AI',
+  'home.hero.badge': 'Software Developer | Angular & Ionic | AI Solutions & AI-Augmented Development',
   'home.hero.subtitle':
-    'I shipped the first generative-AI solution of my project to production — a conversational assistant built with Angular — and cut bug reports by 40%.',
+    'Frontend Developer (Angular/Ionic) focused on building solid products, with experience integrating AI into the development flow to work faster and better.',
   'home.hero.ctaAbout': 'Get to know me',
   'home.hero.ctaProjects': 'See my projects',
 
@@ -21,7 +23,7 @@ export const EN: Record<string, string> = {
   'home.featured.viewAll': 'View all projects',
 
   // Home — CTA
-  'home.cta.title': 'Looking for an Angular Developer?',
+  'home.cta.title': 'Interested in my profile?',
   'home.cta.text':
     "I'm open to full-time positions and freelance projects. I reply within 24 hours.",
   'home.cta.button': 'Get in touch',
@@ -38,8 +40,8 @@ export const EN: Record<string, string> = {
     'Angular developer with experience on large-scale public-sector projects — I shipped the project’s first generative-AI solution to production as a conversational assistant. I combine technical expertise in Angular (v12–v21) with modern AI-assisted development tools to deliver higher-quality solutions in less time.',
   'about.experience.title': 'Professional experience',
   'about.experience.company': 'Consultores en Desarrollos Tecnológicos S.A. — CABA',
-  'about.experience.period': 'April 2024 – Present',
-  'about.experience.role': 'Frontend Developer (Angular / Ionic)',
+  'about.experience.period': 'August 2023 – Present',
+  'about.experience.role': 'Software Developer (Angular / Ionic)',
   'about.experience.l1':
     'Shipped a generative-AI conversational assistant to production — the first solution of its kind in the project.',
   'about.experience.l2': 'Improved performance, reducing bug reports by 40%.',

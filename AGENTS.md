@@ -76,6 +76,7 @@
 - 🟡 Renombrado total: llamadas, tipos, strings, imports, barrel files, test mocks; no asumir cobertura en una pasada.
 - 🟡 Investigación online → skill `agent-reach` prioritario.
 - 🟡 UI design frontend: secuencia `frontend-design` (dirección) → `ui-ux-pro-max` (estilo) → `web-design-guidelines` (revisión), tres pasos evitan "look genérico IA".
+- 🟡 Al recibir pedidos de diseño de UI/UX o copy de la landing (CTAs, textos del hero, botones, navegación): **obligatorio** cargar y aplicar la skill `landing-page-mastery` (copy de conversión + diseño) y la skill `angular-developer` (estándares de implementación Angular). Esto se aplica también en el workflow OpenSpec al redactar proposal/design de cambios de UI.
 - 🟡 Editar → releer confirmación → lint+typecheck → si falla, revertir.
 - 🟡 Cambio completado → avisar zonas posiblemente olvidadas, sugerir revisión manual.
 
