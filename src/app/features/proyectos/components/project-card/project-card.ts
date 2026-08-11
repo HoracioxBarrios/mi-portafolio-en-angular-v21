@@ -55,6 +55,7 @@ export class ProjectCard {
       data: projectData,
       width: '90%',
       maxWidth: '950px',
+      height: 'min(80vh, 720px)',
       panelClass: 'project-detail-panel',
     });
   }

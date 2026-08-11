@@ -77,6 +77,8 @@ export const EN: Record<string, string> = {
   'card.repoAria': 'View repository on GitHub',
   'card.liveAria': 'View live project',
   'card.privateMsg': 'The administrator marked this repo as private',
+  'card.lightboxOpen': 'Enlarge image of',
+  'card.lightboxClose': 'Close image',
 
   // Skills
   'skills.title': 'Tools & technologies',

@@ -89,6 +89,15 @@
 - Usar formateadores (ruff fmt / prettier excluidos — no cambian semántica).
 - Secrets y .env **nunca** en control de versiones. Ejemplos con placeholders (`YOUR_API_KEY`). Logs de debug sin credenciales.
 
+### MCP disponibles (configurados globalmente en esta PC)
+
+Ambos servidores MCP están activos para cualquier proyecto de la máquina. Elegir según el caso:
+
+- **Playwright** (`npx @playwright/mcp@latest --browser chromium --headless`): interactuar con la UI del portafolio. Abre Chromium headless y navega `http://localhost:4200` (dev server de Angular). Usar para snapshots/screenshots, clicks, flujos de usuario y verificar respuestas visuales. Requiere `ng serve` corriendo en el puerto 4200.
+- **Docling** (`uvx --from=docling-mcp[local] docling-mcp-server --transport stdio`, modo local): leer y convertir **documentos e imágenes** desde rutas locales o URLs (PDF, DOCX, imágenes, HTML) a documento estructurado o Markdown. El modelo de IA **no soporta imágenes pegadas en el chat**: pedir la ruta del archivo y usar docling para procesarla. Requiere env vars ya fijadas en la config global (`HF_HUB_DISABLE_SYMLINKS=1`, `DOCLING_INFERENCE_COMPILE_TORCH_MODELS=false`).
+
+Criterio de uso: **Playwright = UI del portafolio**; **Docling = lectura/conversión de documentos e imágenes** externas.
+
 ---
 
 ## 4. Tareas grandes

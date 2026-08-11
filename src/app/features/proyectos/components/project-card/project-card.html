@@ -24,6 +24,14 @@
       </button>
     }
 
+    @if (technologies.length) {
+      <div class="project-card__tags">
+        @for (tech of technologies; track tech) {
+          <span class="project-card__tag">{{ tech }}</span>
+        }
+      </div>
+    }
+
     <div class="project-card__actions">
       @if (repoPrivate) {
         <button
@@ -38,7 +46,7 @@
         </button>
       } @else if (repoUrl) {
         <a
-          class="project-card__action"
+          class="project-card__action project-card__action--repo"
           [href]="repoUrl"
           target="_blank"
           rel="noopener"
@@ -67,14 +75,6 @@
         </p>
       }
     </div>
-
-    @if (technologies.length) {
-      <div class="project-card__tags">
-        @for (tech of technologies; track tech) {
-          <span class="project-card__tag">{{ tech }}</span>
-        }
-      </div>
-    }
   </div>
 
 </article>
