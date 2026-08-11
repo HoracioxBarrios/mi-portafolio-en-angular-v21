@@ -442,3 +442,6 @@ coverage/
 /playwright/.cache/
 /playwright/.auth/
 .playwright-mcp/
+
+# captures for docling
+/proyect-captures

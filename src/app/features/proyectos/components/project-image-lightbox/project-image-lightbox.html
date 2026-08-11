@@ -1,0 +1,21 @@
+<div
+  class="project-lightbox"
+  role="dialog"
+  aria-modal="true"
+  [attr.aria-label]="data.alt"
+>
+  <button
+    type="button"
+    class="project-lightbox__close"
+    (click)="close()"
+    [attr.aria-label]="tr.t('card.lightboxClose')"
+  >
+    <mat-icon>close</mat-icon>
+  </button>
+
+  <img
+    class="project-lightbox__image"
+    [src]="data.image"
+    [alt]="data.alt"
+  />
+</div>

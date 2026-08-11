@@ -12,5 +12,8 @@
   ],
   "skills": {
     "paths": [".agents/skills"]
+  },
+  "experimental": {
+    "mcp_timeout": 120000
   }
 }

@@ -37,6 +37,14 @@
 
   --danger: #f87171;
 
+  // Colores semánticos de los botones de la card de proyecto (ajustes-cards-proyecto):
+  // repo privado rojo fijo, repo público verde original del sitio y "Ver proyecto" azul fijo.
+  --repo-private: #d32f2f;
+  --repo-public-bg: #bef264;
+  --repo-public-text: #0b0f0d;
+  --repo-live: #2196f3;
+  --repo-live-text: #0b0f0d;
+
   --border-subtle: rgba(255, 255, 255, 0.06);
   --border-medium: rgba(255, 255, 255, 0.08);
   --border-hover: rgba(255, 255, 255, 0.14);
@@ -73,6 +81,12 @@
   --cta-text: #ffffff;
 
   --danger: #c62828;
+
+  --repo-private: #d32f2f;
+  --repo-public-bg: #4d7c0f;
+  --repo-public-text: #ffffff;
+  --repo-live: #2196f3;
+  --repo-live-text: #0b0f0d;
 
   --border-subtle: rgba(0, 0, 0, 0.08);
   --border-medium: rgba(0, 0, 0, 0.10);
