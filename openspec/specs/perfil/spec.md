@@ -29,15 +29,6 @@ El perfil principal SHALL mostrar únicamente las redes sociales reales del auto
 - **WHEN** el visitante carga el perfil principal
 - **THEN** se muestran los enlaces de GitHub y LinkedIn y no aparece ningún enlace de Instagram
 
-### Requirement: Mostrar enlace al portafolio público
-
-El perfil principal SHALL mostrar un enlace al portafolio público del autor (`https://mi-portafolio-horacio-barrios.vercel.app`) accesible para el visitante.
-
-#### Scenario: Enlace de portafolio disponible
-
-- **WHEN** el visitante carga el perfil principal
-- **THEN** se muestra un enlace a `https://mi-portafolio-horacio-barrios.vercel.app`
-
 ### Requirement: Mostrar periodo de experiencia actualizado
 
 La sección "Sobre Mí" SHALL mostrar el periodo de la experiencia laboral actual como "Agosto 2023 – Actualidad".
