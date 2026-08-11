@@ -25,6 +25,9 @@ export class Particles implements AfterViewInit, OnDestroy {
   private particles: Particle[] = [];
   private rafId = 0;
   private running = false;
+  // Dimensiones del área visible en px CSS (el buffer del canvas usa px físicos con dpr).
+  private width = 0;
+  private height = 0;
   private accentColor = '#2196f3';
   private accentGlow = 'rgba(33, 150, 243, 0.35)';
   private themeObserver?: MutationObserver;
@@ -56,12 +59,14 @@ export class Particles implements AfterViewInit, OnDestroy {
   private readonly resizeHandler = () => this.resize();
 
   private resize() {
+    this.width = window.innerWidth;
+    this.height = window.innerHeight;
     const dpr = Math.min(window.devicePixelRatio || 1, 2);
-    this.canvas.width = window.innerWidth * dpr;
-    this.canvas.height = window.innerHeight * dpr;
+    this.canvas.width = this.width * dpr;
+    this.canvas.height = this.height * dpr;
     this.ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-    this.canvas.style.width = `${window.innerWidth}px`;
-    this.canvas.style.height = `${window.innerHeight}px`;
+    this.canvas.style.width = `${this.width}px`;
+    this.canvas.style.height = `${this.height}px`;
     this.spawn();
   }
 
@@ -78,8 +83,8 @@ export class Particles implements AfterViewInit, OnDestroy {
 
   private createParticle(): Particle {
     return {
-      x: Math.random() * this.canvas.width,
-      y: Math.random() * this.canvas.height,
+      x: Math.random() * this.width,
+      y: Math.random() * this.height,
       r: 2 + Math.random() * 2,
       vx: (Math.random() - 0.5) * 0.4,
       vy: (Math.random() - 0.5) * 0.4,
@@ -115,22 +120,26 @@ export class Particles implements AfterViewInit, OnDestroy {
   }
 
   private update() {
-    const w = this.canvas.width;
-    const h = this.canvas.height;
+    const w = this.width;
+    const h = this.height;
     for (const p of this.particles) {
       p.x += p.vx;
       p.y += p.vy;
-      if (p.x < 0 || p.x > w) p.vx *= -1;
-      if (p.y < 0 || p.y > h) p.vy *= -1;
+      if (p.x < 0 || p.x > w) {
+        p.vx *= -1;
+        p.x = Math.min(w, Math.max(0, p.x));
+      }
+      if (p.y < 0 || p.y > h) {
+        p.vy *= -1;
+        p.y = Math.min(h, Math.max(0, p.y));
+      }
       p.alpha += Math.sin(Date.now() * p.flicker) * 0.01;
       p.alpha = Math.max(0.1, Math.min(0.9, p.alpha));
     }
   }
 
   private draw() {
-    const w = this.canvas.width;
-    const h = this.canvas.height;
-    this.ctx.clearRect(0, 0, w, h);
+    this.ctx.clearRect(0, 0, this.width, this.height);
     for (const p of this.particles) {
       this.ctx.beginPath();
       this.ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);

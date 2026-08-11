@@ -1,4 +1,4 @@
-import { Component, DestroyRef, inject } from '@angular/core';
+import { Component, DestroyRef, Input, inject } from '@angular/core';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
@@ -26,6 +26,8 @@ export class Header {
   private destroyRef = inject(DestroyRef);
   protected readonly theme = inject(Theme);
   protected readonly tr = inject(Translation);
+
+  @Input() cvUrl?: string;
 
   navLinks = [
     { id: 1, path: 'home', key: 'nav.home' },
