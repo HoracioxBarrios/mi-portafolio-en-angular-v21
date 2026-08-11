@@ -1,6 +1,6 @@
-# Guía de Configuración del Entorno
+# Herramientas y MCPs de Este Proyecto
 
-Guía paso a paso para reproducir este entorno de desarrollo (Windows + VS Code + Node + OpenCode + OpenSpec + Playwright).
+Guía paso a paso para reproducir este entorno de desarrollo (Windows + VS Code + Node + OpenCode + OpenSpec + Playwright + Docling + Excalidraw) y cómo cada herramienta se integra al flujo agentico.
 
 > **IMPORTANTE — Seguridad**: nunca publiques claves API reales en guías, commits o chats. En esta guía se usa el placeholder `sk-...`. La clave se obtiene en OpenCode (`/zen` → claves API) y se guarda localmente, nunca en el repositorio.
 
@@ -220,7 +220,12 @@ npm install -g openspec-playwright@latest
 openspec-pw init       # dentro del proyecto
 openspec-pw doctor
 
-# 7. Actualizaciones periódicas
+# 7. MCPs (detalles en secciones 6, 13 y 14)
+#   Playwright MCP → npx @playwright/mcp@latest --browser chromium --headless
+#   Docling MCP    → uvx --from=docling-mcp[local] docling-mcp-server --transport stdio
+#   Excalidraw MCP → npx -y mcp-excalidraw-server (en opencode.json del proyecto)
+
+# 8. Actualizaciones periódicas
 openspec update        # dentro del proyecto
 ```
 
@@ -234,6 +239,7 @@ npm -v
 opencode --version
 openspec --version
 openspec-pw --version
+opencode mcp list        # los MCPs deben aparecer "✓ connected"
 ```
 
 Todos deben imprimir su versión sin errores.
@@ -324,3 +330,55 @@ Esto ejecuta el pipeline completo:
 | `tests/playwright/pages/BasePage.ts` | Clase base Page Object |
 | `openspec/reports/app-bug-registry.md` | Registro acumulativo de bugs de la app |
 | `openspec-pw doctor` | Diagnóstico de prerequisitos |
+
+---
+
+## 13. MCPs: Docling y Excalidraw
+
+Estos dos servidores se suman al MCP de Playwright ya descrito en la sección 6. Docling es **global** (configurado en la PC, disponible en cualquier proyecto) y Excalidraw es **del proyecto** (declarado en `opencode.json`).
+
+### 13.1. Docling MCP (lectura de documentos e imágenes)
+
+- **Qué hace**: convierte documentos e imágenes (PDF, DOCX, HTML, imágenes) en documento estructurado o Markdown listo para que el agente lo procese.
+- **Cómo se instaló**: MCP global en modo **local** (sin API remota), vía `uvx`:
+
+  ```powershell
+  uvx --from=docling-mcp[local] docling-mcp-server --transport stdio
+  ```
+
+- **Requisitos**: variables de entorno globales fijadas (`HF_HUB_DISABLE_SYMLINKS=1`, `DOCLING_INFERENCE_COMPILE_TORCH_MODELS=false`).
+- **Integración al flujo agentico**:
+  - El modelo de IA no soporta imágenes pegadas en el chat: el agente pide la **ruta del archivo** y usa Docling para procesarla.
+  - **Criterio de uso**: Playwright = UI del portafolio; Docling = lectura/conversión de documentos e imágenes externas.
+  - El comando y el criterio están documentados en `AGENTS.md` (sección "MCP disponibles"), que el agente lee en cada sesión.
+
+### 13.2. Excalidraw MCP (diagramas)
+
+- **Qué hace**: canvas de diagramación (rectángulos, flechas, textos, agrupación) para que el agente dibuje flujos, arquitectura y wireframes.
+- **Cómo se instaló**: se agregó al bloque `mcp.excalidraw` de `opencode.json` del proyecto:
+
+  ```json
+  "excalidraw": {
+    "type": "local",
+    "command": ["npx", "-y", "mcp-excalidraw-server"],
+    "enabled": true
+  }
+  ```
+
+- **El error que hubo**: inicialmente se escribió el paquete `mcp-server-excalidraw`, que **no existe en npm** (404). `npx` fallaba al arrancar el servidor y opencode marcaba el MCP como "failed/disable".
+- **La corrección**: el paquete correcto es `mcp-excalidraw-server` (v1.1.0, binario `mcp-excalidraw-server`), cuyo README documenta esta configuración para opencode. Se verificó con `npm view mcp-excalidraw-server bin version`.
+- **Verificación**: `opencode mcp list` debe mostrar `excalidraw ✓ connected`.
+- **Importante**: tras editar `opencode.json`, **reiniciar opencode**; la configuración de MCP se carga al arrancar.
+- **Integración al flujo agentico**: el agente crea, actualiza y exporta diagramas en el canvas de Excalidraw para comunicar diseño, flujos y arquitectura de forma visual.
+
+---
+
+## 14. Cómo integrar un MCP nuevo (patrón general)
+
+1. Decidir el ámbito: **global** (la PC, cualquier proyecto) o **del proyecto** (`opencode.json`).
+2. Agregar la entrada `mcp.<nombre>` con `"type": "local"` y `"command": [...]` (array; si es vía npx, usar `npx -y <paquete>`).
+3. Verificar que el paquete exista en npm: `npm view <paquete> version bin`. Un error 404 indica que el paquete no existe (revisar el nombre).
+4. Reiniciar opencode.
+5. Verificar con `opencode mcp list`: el servidor debe figurar "✓ connected".
+6. Documentar el comando y el **criterio de uso** en `AGENTS.md` (sección "MCP disponibles") para que el agente sepa cuándo invocarlo.
+7. Registrar aquí la instalación y la integración al flujo agentico.
