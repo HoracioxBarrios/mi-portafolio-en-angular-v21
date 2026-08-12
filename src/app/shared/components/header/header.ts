@@ -30,7 +30,7 @@ export class Header {
   @Input() cvUrl?: string;
 
   navLinks = [
-    { id: 1, path: 'home', key: 'nav.home' },
+    { id: 1, path: 'inicio', key: 'nav.home' },
     { id: 2, path: 'proyectos', key: 'nav.proyectos' },
     { id: 3, path: 'sobre-mi', key: 'nav.sobreMi' }
   ];

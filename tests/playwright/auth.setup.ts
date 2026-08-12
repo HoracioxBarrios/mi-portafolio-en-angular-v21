@@ -85,7 +85,7 @@ setup('authenticate via UI', async ({ page }) => {
   // await page.click('text=Sign In');
 
   // Wait for redirect after login (adjust pattern to your app)
-  await page.waitForURL(/\/(dashboard|home|profile)/);
+  await page.waitForURL(/\/(dashboard|inicio|profile)/);
   await expect(page).not.toHaveURL(/.*login.*|.*signin.*/);
 
   await page.context().storageState({ path: './playwright/.auth/user.json' });

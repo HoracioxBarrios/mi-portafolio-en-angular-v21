@@ -11,8 +11,8 @@ Rutas descubiertas desde `src/app/app.routes.ts` (sitemap.xml no existe). Usadas
 
 | Route | Auth | Page Object | Notes |
 |-------|------|-------------|-------|
-| `/` | guest | `HomePage.ts` | Redirect a `/home` |
-| `/home` | guest | `HomePage.ts` | Landing + hero, `h1` "Hola, soy Hora" (ES) |
+| `/` | guest | `HomePage.ts` | Redirect a `/inicio` |
+| `/inicio` | guest | `HomePage.ts` | Landing + hero, `h1` "Hola, soy Hora" (ES) |
 | `/proyectos` | guest | `ProyectosPage.ts` | Grid de proyectos, botones "Ver más..." |
 | `/sobre-mi` | guest | `SobreMiPage.ts` | Links sociales |
 
