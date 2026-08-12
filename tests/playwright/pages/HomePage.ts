@@ -1,4 +1,4 @@
-// Page Object de la ruta Home (/home)
+// Page Object de la ruta Inicio (/inicio)
 // Selectores verificados en la exploración (2026-08-07)
 
 import { Page } from '@playwright/test';
@@ -32,6 +32,6 @@ export class HomePage extends BasePage {
   }
 
   async open() {
-    await this.goto('/home');
+    await this.goto('/inicio');
   }
 }

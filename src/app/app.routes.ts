@@ -7,12 +7,17 @@ export const routes: Routes = [
     children: [  // ← IMPORTANTE: children aquí
       {
         path: '',
-        redirectTo: 'home',
+        redirectTo: 'inicio',
         pathMatch: 'full'
       },
             {
-        path: 'home',
+        path: 'inicio',
         loadComponent: () => import('./features/home/home').then(m => m.Home)
+      },
+      {
+        path: 'home',
+        redirectTo: 'inicio',
+        pathMatch: 'full'
       },
       {
         path: 'proyectos',
@@ -26,7 +31,7 @@ export const routes: Routes = [
   },
   {
     path: '**',
-    redirectTo: 'home',
+    redirectTo: 'inicio',
     pathMatch: 'full'
   }
 ];

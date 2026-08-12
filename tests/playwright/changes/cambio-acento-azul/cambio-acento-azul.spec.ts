@@ -129,7 +129,7 @@ async function alternarTema(page: Page): Promise<void> {
 
 test.describe('Acento azul en tema oscuro por defecto', () => {
   test('la app carga en dark con tokens de acento azul', async ({ page }) => {
-    await page.goto('/home');
+    await page.goto('/inicio');
     await expect(page.getByRole('heading', { name: /Hola/i })).toBeVisible();
 
     expect(await temaActual(page)).toBe('dark');
@@ -140,7 +140,7 @@ test.describe('Acento azul en tema oscuro por defecto', () => {
   });
 
   test('nav activo usa color del tema (no lime)', async ({ page }) => {
-    await page.goto('/home');
+    await page.goto('/inicio');
     await expect(page.locator('[role="tab"][aria-selected="true"]')).toBeVisible();
 
     // La pestaña activa del tabbar usa el color del tema MD3, no el acento.
@@ -169,7 +169,7 @@ test.describe('Acento azul en tema oscuro por defecto', () => {
 
 test.describe('Acento coherente al alternar tema', () => {
   test('el acento conserva identidad azul en light y vuelve en dark', async ({ page }) => {
-    await page.goto('/home');
+    await page.goto('/inicio');
     await expect(page.locator('.header__icon-btn')).toBeVisible();
 
     // Dark → light
@@ -189,7 +189,7 @@ test.describe('Acento coherente al alternar tema', () => {
     expect(tagColorLight).toBe(AZUL_STRONG_LIGHT);
 
     // Light → dark: vuelve la identidad azul original
-    await page.goto('/home');
+    await page.goto('/inicio');
     await alternarTema(page);
     expect(await temaActual(page)).toBe('dark');
     expect(await tokenDe(page, '--accent')).toBe(AZUL_DARK_HEX);
@@ -203,7 +203,7 @@ test.describe('Acento coherente al alternar tema', () => {
 
 test.describe('CTA reservado con acento pleno azul', () => {
   test('CTA de hero usa acento pleno y texto de contraste', async ({ page }) => {
-    await page.goto('/home');
+    await page.goto('/inicio');
     const cta = page.getByRole('link', { name: /Escribime/i });
     await expect(cta).toBeVisible();
 
@@ -225,7 +225,7 @@ test.describe('CTA reservado con acento pleno azul', () => {
 
   test('sticky CTA en móvil usa acento pleno tras scroll', async ({ page }) => {
     await page.setViewportSize({ width: 390, height: 844 });
-    await page.goto('/home');
+    await page.goto('/inicio');
     await page.evaluate(() => window.scrollTo(0, document.body.scrollHeight));
     await page.waitForTimeout(500);
 
@@ -246,7 +246,7 @@ test.describe('Contraste WCAG AA del acento', () => {
   const AA_MIN = 4.5;
 
   test('texto de acento cumple AA en dark', async ({ page }) => {
-    await page.goto('/home');
+    await page.goto('/inicio');
     const fondoDark = rgbNormalizado(await tokenDe(page, '--bg-primary'));
 
     expect(ratioContraste(rgbNormalizado(AZUL_DARK), fondoDark)).toBeGreaterThanOrEqual(AA_MIN);
@@ -255,7 +255,7 @@ test.describe('Contraste WCAG AA del acento', () => {
   });
 
   test('texto de acento cumple AA en light', async ({ page }) => {
-    await page.goto('/home');
+    await page.goto('/inicio');
     await alternarTema(page);
     expect(await temaActual(page)).toBe('light');
     const fondoLight = rgbNormalizado(await tokenDe(page, '--bg-primary'));
@@ -272,7 +272,7 @@ test.describe('Contraste WCAG AA del acento', () => {
 
 test.describe('Componentes sin restos lime/verde', () => {
   test('ningún elemento visible usa colores de la palette lime sustituida', async ({ page }) => {
-    await page.goto('/home');
+    await page.goto('/inicio');
     await expect(page.locator('[role="tab"][aria-selected="true"]')).toBeVisible();
 
     const restos = await page.evaluate((selectores) => {
