@@ -1,0 +1,58 @@
+@use 'abstracts/variables' as *;
+@use 'abstracts/mixins' as *;
+
+:host {
+  display: flex; // ocupa toda la celda del grid para igualar alturas
+}
+
+.skills-group {
+  flex: 1; // la card rellena el alto del host (celda del grid)
+  background-color: var(--surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: 1.75rem 1.5rem;
+  min-height: 240px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+
+  box-shadow: var(--shadow-lg);
+
+  &__title {
+    margin: 0;
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-align: center;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--text-primary);
+
+    position: relative;
+
+    &::after {
+      content: '';
+      display: block;
+      width: 36px;
+      height: 2px;
+      margin: 0.6rem auto 0;
+      background-color: var(--accent-strong);
+      border-radius: 2px;
+    }
+  }
+
+  &__icons {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.25rem;
+
+    justify-items: center;
+
+    @include from-tablet {
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    @include from-desktop {
+      grid-template-columns: repeat(5, 1fr);
+    }
+  }
+}

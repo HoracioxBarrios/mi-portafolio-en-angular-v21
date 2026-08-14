@@ -82,100 +82,10 @@ export const EN: Record<string, string> = {
 
   // Skills
   'skills.title': 'Tools & technologies',
-  'skills.table.icon': 'Icon',
-  'skills.table.name': 'Name',
-  'skills.table.stack': 'Stack',
-  'skills.table.description': 'Description',
-  'skills.nav.prev': 'Scroll table left',
-  'skills.nav.next': 'Scroll table right',
   'skills.group.frontend': 'Frontend',
   'skills.group.backend': 'Backend',
   'skills.group.tools': 'Tools',
   'skills.group.ia': 'AI',
-
-  // Skills — Descriptions
-  'skills.item.html5.desc':
-    'Markup language used to structure web content in a semantic and accessible way.',
-  'skills.item.css3.desc':
-    'Defining visual styles, responsive layouts and animations for modern interfaces.',
-  'skills.item.javascript.desc':
-    'Core language for frontend logic and dynamic user interaction.',
-  'skills.item.sass.desc':
-    'CSS preprocessor that enables more organized, reusable and scalable styles.',
-  'skills.item.angular.desc':
-    'Framework for building SPA web applications, component-based with modular architecture.',
-  'skills.item.typescript.desc':
-    'JavaScript superset that adds static typing, improving code quality and maintainability.',
-  'skills.item.ionic.desc':
-    'Framework for building hybrid cross-platform mobile apps with web technologies and Angular.',
-  'skills.item.rxjs.desc':
-    'Reactive programming library for handling asynchronous data flows and events, widely used in Angular.',
-  'skills.item.angularMaterial.desc':
-    'Material Design-based UI component library, used across the portfolio projects.',
-  'skills.item.csharp.desc':
-    'Object-oriented language used to build business logic and backend services.',
-  'skills.item.nodejs.desc':
-    'JavaScript runtime for the server side, used for APIs, build tools and integrating REST APIs from job aggregators (Careerjet, Jooble).',
-  'skills.item.python.desc':
-    'Versatile, readable language used for scripting, automation and backend development.',
-  'skills.item.dotnet.desc':
-    'Framework for building robust, scalable backend APIs and applications.',
-  'skills.item.mysql.desc':
-    'Relational database management system widely used in web applications.',
-  'skills.item.postgresql.desc':
-    'Advanced relational database focused on performance, scalability and reliability.',
-  'skills.item.postman.desc': 'Tool for testing, validating and documenting REST APIs.',
-  'skills.item.nestjs.desc':
-    'Progressive Node.js framework for building scalable TypeScript backend APIs and applications.',
-  'skills.item.express.desc':
-    'Minimalist Node.js framework for building server-side APIs and web applications.',
-  'skills.item.mongodb.desc':
-    'NoSQL document-oriented database, widely used in modern applications.',
-  'skills.item.zod.desc':
-    'Schema and data validation library with TypeScript type inference.',
-  'skills.item.jwt.desc':
-    'Open standard for secure authentication based on signed tokens.',
-  'skills.item.typeorm.desc':
-    'TypeScript ORM for relational databases such as PostgreSQL, SQLite and MySQL.',
-  'skills.item.sqlite.desc':
-    'Embedded, lightweight, serverless relational database, ideal for local development.',
-  'skills.item.git.desc':
-    'Distributed version control system for source code management.',
-  'skills.item.github.desc':
-    'Platform for hosting repositories, collaborative work and version control.',
-  'skills.item.gitlab.desc':
-    'Repository platform with continuous integration and project management tools.',
-  'skills.item.jira.desc':
-    'Tool for task management, project tracking and agile methodologies.',
-  'skills.item.vscode.desc': 'Code editor used for frontend and backend development.',
-  'skills.item.visualstudio.desc':
-    'Integrated development environment for backend applications and .NET solutions.',
-  'skills.item.androidstudio.desc': 'Official IDE for Android app development.',
-  'skills.item.figma.desc': 'UI/UX design tool for prototyping and team collaboration.',
-  'skills.item.jenkins.desc':
-    'Automation server for continuous integration and delivery (CI/CD) of applications.',
-  'skills.item.azureDevops.desc':
-    'Microsoft platform for CI/CD, repositories and agile project management.',
-  'skills.item.trello.desc':
-    'Kanban board-based task management tool for organizing work.',
-  'skills.item.miro.desc':
-    'Collaborative online whiteboard for diagrams, brainstorming and real-time teamwork.',
-  'skills.item.puppeteer.desc':
-    'Node.js library that controls Chromium for scraping and browser automation.',
-  'skills.item.vercel.desc':
-    'Serverless deployment platform for frontend and full-stack applications.',
-  'skills.item.claudeCode.desc':
-    'AI terminal assistant for writing, refactoring and debugging code in an agentic way.',
-  'skills.item.copilot.desc':
-    'AI code completion integrated into the editor to speed up development.',
-  'skills.item.cursor.desc':
-    'AI-powered code editor for generating and editing code through natural language.',
-  'skills.item.specDriven.desc':
-    'AI-assisted development methodology based on defining clear specifications before coding.',
-  'skills.item.bmad.desc':
-    'Agile development framework assisted by AI through role-specialized agents.',
-  'skills.item.groq.desc':
-    'Ultra-fast LLM inference provider, used for AI matching across projects.',
 
   // Footer
   'footer.text': 'Development',
