@@ -23,7 +23,7 @@ export const EN: Record<string, string> = {
   'home.featured.viewAll': 'View all projects',
 
   // Home — CTA
-  'home.cta.title': 'Interested in my profile?',
+  'home.cta.title': 'Interested in what I do?',
   'home.cta.text':
     "I'm open to full-time positions and freelance projects. I reply within 24 hours.",
   'home.cta.button': 'Get in touch',
