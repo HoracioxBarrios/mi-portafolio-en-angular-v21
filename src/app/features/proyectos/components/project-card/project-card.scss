@@ -3,8 +3,7 @@
 
 .project-card {
   background-color: var(--surface);
-  border-radius: 12px;
-  overflow: hidden;
+  border-radius: var(--radius-lg);
   border: 1px solid var(--border-subtle);
   box-shadow: var(--shadow-md);
   display: flex;
@@ -19,12 +18,16 @@
     transform: translateY(-8px);
     box-shadow: var(--shadow-lg);
     border-color: var(--border-hover);
+
+    .project-card__image {
+      transform: scale(1.05);
+    }
   }
 
   // --- imagen ---
 
   &__image-wrapper {
-    height: clamp(160px, 22vw, 220px);
+    aspect-ratio: 2 / 1;
     overflow: hidden;
     background-color: var(--bg-secondary);
     flex-shrink: 0;
@@ -34,8 +37,9 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: center top;
+    object-position: center;
     display: block;
+    transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   }
 
   // --- contenido ---
@@ -66,13 +70,13 @@
     line-clamp: 4;
     -webkit-box-orient: vertical;
     overflow: hidden;
-    min-height: 110px;
+    height: 6.6em;
   }
 
   &__see-more {
     background: none;
     border: none;
-    color: var(--accent);
+    color: var(--accent-strong);
     cursor: pointer;
     padding: 0.5rem 0;
     font-size: 0.85rem;
@@ -81,7 +85,7 @@
     margin-top: 0.5rem;
 
     &:hover {
-      color: var(--accent-strong);
+      color: var(--accent);
       text-decoration: underline;
     }
   }
@@ -98,12 +102,13 @@
   }
 
   &__tag {
+    font-family: 'JetBrains Mono', ui-monospace, monospace;
     font-size: 0.72rem;
     font-weight: 500;
     padding: 0.2rem 0.55rem;
-    border-radius: 4px;
+    border-radius: var(--radius-sm);
     background: var(--accent-soft-bg);
-    color: var(--accent);
+    color: var(--accent-strong);
     border: 1px solid var(--accent-soft-border);
     letter-spacing: 0.01em;
   }
@@ -126,7 +131,7 @@
     flex: 1;
     gap: 0.35rem;
     padding: 0.45rem 1rem;
-    border-radius: 6px;
+    border-radius: var(--radius-md);
     font-size: 0.82rem;
     font-weight: 500;
     text-decoration: none;
@@ -162,29 +167,51 @@
       box-shadow: var(--shadow-md);
     }
 
-    &--primary {
-      background: var(--accent);
-      border-color: var(--accent);
-      color: var(--text-on-accent);
+    &--repo {
+      background: var(--repo-public-bg);
+      border-color: var(--repo-public-bg);
+      color: var(--repo-public-text);
 
       &,
       &:visited,
       &:focus {
-        color: var(--text-on-accent);
+        color: var(--repo-public-text);
       }
 
       &:hover {
-        background: var(--accent-strong);
-        border-color: var(--accent-strong);
-        color: var(--text-on-accent);
+        background: var(--repo-public-bg);
+        border-color: var(--repo-public-bg);
+        color: var(--repo-public-text);
+        filter: brightness(0.95);
         transform: translateY(-2px);
-        box-shadow: 0 4px 14px var(--accent-soft-border);
+        box-shadow: 0 4px 14px rgba(190, 242, 100, 0.35);
+      }
+    }
+
+    &--primary {
+      background: var(--repo-live);
+      border-color: var(--repo-live);
+      color: var(--repo-live-text);
+
+      &,
+      &:visited,
+      &:focus {
+        color: var(--repo-live-text);
+      }
+
+      &:hover {
+        background: var(--repo-live);
+        border-color: var(--repo-live);
+        color: var(--repo-live-text);
+        filter: brightness(0.92);
+        transform: translateY(-2px);
+        box-shadow: 0 4px 14px rgba(33, 150, 243, 0.45);
       }
     }
 
     &--private {
-      background: var(--danger);
-      border-color: var(--danger);
+      background: var(--repo-private);
+      border-color: var(--repo-private);
       color: #fff;
       cursor: pointer;
       opacity: 0.95;
@@ -207,7 +234,7 @@
     align-items: center;
     gap: 0.35rem;
     padding: 0.45rem 0.75rem;
-    border-radius: 6px;
+    border-radius: var(--radius-sm);
     background: var(--surface-raised);
     border: 1px solid var(--danger);
     color: var(--danger);
@@ -229,4 +256,14 @@
 @keyframes fadeInMsg {
   from { opacity: 0; transform: translateY(-4px); }
   to   { opacity: 1; transform: translateY(0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .project-card__image {
+    transition: none;
+  }
+
+  .project-card:hover .project-card__image {
+    transform: none;
+  }
 }

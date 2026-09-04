@@ -1,14 +1,14 @@
 <section class="sobre-mi">
   <div class="sobre-mi__container">
 
-    <div class="sobre-mi__header">
+    <div class="sobre-mi__header" appReveal>
       <h3 class="sobre-mi__title">{{ tr.t('about.title') }}</h3>
       <p class="sobre-mi__description">
         {{ tr.t('about.description') }}
       </p>
     </div>
 
-    <div class="sobre-mi__experiencia">
+    <div class="sobre-mi__experiencia" appReveal>
       <h3 class="sobre-mi__section-title">{{ tr.t('about.experience.title') }}</h3>
       <div class="sobre-mi__job">
         <div class="sobre-mi__job-header">
@@ -28,7 +28,7 @@
       </div>
     </div>
 
-    <div class="sobre-mi__educacion">
+    <div class="sobre-mi__educacion" appReveal>
       <h3 class="sobre-mi__section-title">{{ tr.t('about.education.title') }}</h3>
       <div class="sobre-mi__edu-item">
         <span class="sobre-mi__edu-titulo">{{ tr.t('about.education.degree') }}</span>
@@ -36,7 +36,11 @@
       </div>
     </div>
 
-    <div class="sobre-mi__skills-section">
+    <div class="sobre-mi__certificados" appReveal>
+      <app-certificados></app-certificados>
+    </div>
+
+    <div class="sobre-mi__skills-section" appReveal>
       <app-skills />
     </div>
 

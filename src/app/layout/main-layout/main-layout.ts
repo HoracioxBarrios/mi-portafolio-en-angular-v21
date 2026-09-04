@@ -4,6 +4,8 @@ import { Header } from '../../shared/components/header/header';
 import { Footer } from '../../shared/components/footer/footer';
 import { Profile } from "@app/shared/components/profile/profile";
 import { RedSocial } from '@app/core/models/redSocial';
+import { Particles } from '@app/shared/components/particles/particles';
+import { StickyCta } from '@app/shared/components/sticky-cta/sticky-cta';
 
 
 @Component({
@@ -12,7 +14,9 @@ import { RedSocial } from '@app/core/models/redSocial';
     Footer, 
     RouterOutlet, 
     Header, 
-    Profile
+    Profile,
+    Particles,
+    StickyCta
   ],
   templateUrl: './main-layout.html',
   styleUrl: './main-layout.scss',
@@ -23,13 +27,13 @@ export class MainLayout {
     name : "Horacio",
     secondName: "Javier",
     lastName : "Barrios",
-    tecnologias: ["Frontend Developer (Angular)", "AI-Augmented Development"],
+    tecnologias: ["Software Developer | Angular & Ionic | AI Solutions & AI-Augmented Development"],
     location: "Buenos Aires - Argentina",
     photo: 'images/user-profile.webp',
+    cvUrl: 'https://drive.google.com/file/d/1juiFa2ruwAO6TnKhPLkSBOxaKYLTNy_S/view?usp=sharing',
     redesSociales: [
       { label: 'GitHub', link: 'https://github.com/HoracioxBarrios', icon: 'code' },
-      { label: 'LinkedIn', link: 'https://linkedin.com/in/horacioxbarrios', icon: 'work' },
-      { label: 'Instagram', link: 'https://instagram.com', icon: 'photo_camera' }
+      { label: 'LinkedIn', link: 'https://linkedin.com/in/horacioxbarrios', icon: 'work' }
     ]
 
   }
@@ -48,6 +52,10 @@ export class MainLayout {
   }
   get photo(){
     return this.userInfo.photo;
+  }
+
+  get cvUrl(): string {
+    return this.userInfo.cvUrl;
   }
 
   get redesSociales(): RedSocial[] {

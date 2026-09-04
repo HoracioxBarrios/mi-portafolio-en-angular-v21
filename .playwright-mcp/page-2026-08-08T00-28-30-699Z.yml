@@ -1,0 +1,136 @@
+- generic [ref=e4]:
+  - generic [ref=e8]:
+    - img "Profile" [ref=e10]
+    - generic [ref=e11]:
+      - generic [ref=e12]:
+        - heading "Horacio Javier Barrios" [level=1] [ref=e13]
+        - paragraph [ref=e14]: Frontend Developer (Angular) | AI-Augmented Development
+        - paragraph [ref=e15]: Buenos Aires - Argentina
+      - generic [ref=e16]:
+        - link "GitHub" [ref=e17] [cursor=pointer]:
+          - /url: https://github.com/HoracioxBarrios
+          - img [ref=e18]: code
+          - text: GitHub
+        - link "LinkedIn" [ref=e19] [cursor=pointer]:
+          - /url: https://linkedin.com/in/horacioxbarrios
+          - img [ref=e20]: work
+          - text: LinkedIn
+        - link "Instagram" [ref=e21] [cursor=pointer]:
+          - /url: https://instagram.com
+          - img [ref=e22]: photo_camera
+          - text: Instagram
+  - banner [ref=e24]:
+    - generic [ref=e25]:
+      - link "HB" [ref=e26] [cursor=pointer]:
+        - /url: /home
+      - navigation "Navegación principal" [ref=e28]:
+        - link "Home" [ref=e29] [cursor=pointer]:
+          - /url: /home
+        - link "Projects" [active] [ref=e114] [cursor=pointer]:
+          - /url: /proyectos
+        - link "About Me" [ref=e115] [cursor=pointer]:
+          - /url: /sobre-mi
+      - generic [ref=e32]:
+        - button "Cambiar a Español" [ref=e116] [cursor=pointer]: ES
+        - button "Activar tema oscuro" [ref=e128] [cursor=pointer]:
+          - img [ref=e35]: dark_mode
+  - main [ref=e36]:
+    - generic [ref=e296]:
+      - generic [ref=e297]:
+        - generic [ref=e298]: Projects
+        - heading "A selection of my work" [level=2] [ref=e299]
+        - paragraph [ref=e300]: Apps built with a focus on performance, accessibility and user experience
+      - generic [ref=e301]:
+        - article [ref=e303]:
+          - img "Kick to Azar" [ref=e305]
+          - generic [ref=e306]:
+            - heading "Kick to Azar" [level=3] [ref=e307]
+            - paragraph [ref=e308]: Full-stack web app for statistical analysis of lottery games with data scraping. Currently focused on Quini 6, with plans to expand to Loto, Telekino and other games. Angular 21 frontend (Material Design + ECharts charts) and a NestJS backend with JWT authentication, TypeORM and PostgreSQL (full-stack deploy on Vercel, with an automated scraper running twice a week via Cron).
+            - button "See more..." [ref=e309] [cursor=pointer]
+            - generic [ref=e310]:
+              - button "Private repository" [ref=e311] [cursor=pointer]:
+                - img [ref=e312]: lock
+                - generic [ref=e313]: Repository
+              - link "View live project" [ref=e314] [cursor=pointer]:
+                - /url: https://kick-to-azar-web.vercel.app/
+                - img [ref=e315]: open_in_new
+                - generic [ref=e316]: View project
+            - generic [ref=e317]:
+              - generic [ref=e318]: Angular 21
+              - generic [ref=e319]: TypeScript
+              - generic [ref=e320]: Angular Material
+              - generic [ref=e321]: NestJS
+              - generic [ref=e322]: Node.js
+              - generic [ref=e323]: PostgreSQL
+              - generic [ref=e324]: TypeORM
+              - generic [ref=e325]: SQLite
+              - generic [ref=e326]: JWT
+              - generic [ref=e327]: Puppeteer
+              - generic [ref=e328]: Vercel
+        - article [ref=e330]:
+          - img "Mach Jobs" [ref=e332]
+          - generic [ref=e333]:
+            - heading "Mach Jobs" [level=3] [ref=e334]
+            - paragraph [ref=e335]: "Full-stack job search web app with AI-powered matching. The user imports their CV (PDF/Markdown/txt or text) and the app structures it as a profile, aggregates real job postings from Argentina via the official APIs of job aggregators (Careerjet and Jooble), avoiding portal scraping and thus respecting each platform's terms and conditions (ToS), and scores each posting against the profile with a fit score based on (matching skills, missing skills and justification). Job offers are sorted by likelihood of success and the user can open the original posting with a click to apply, marking the status (new/seen/discarded/applied). Stack: Angular 22 (frontend) · Node + Express in TypeScript (backend) · MongoDB Atlas in production and SQLite for local development · AI with Groq (free tier, pluggable) · serverless deployment on Vercel."
+            - button "See more..." [ref=e336] [cursor=pointer]
+            - generic [ref=e337]:
+              - button "Private repository" [ref=e338] [cursor=pointer]:
+                - img [ref=e339]: lock
+                - generic [ref=e340]: Repository
+              - link "View live project" [ref=e341] [cursor=pointer]:
+                - /url: https://match-jobs-web-ar.vercel.app/
+                - img [ref=e342]: open_in_new
+                - generic [ref=e343]: View project
+            - generic [ref=e344]:
+              - generic [ref=e345]: Angular 22
+              - generic [ref=e346]: TypeScript
+              - generic [ref=e347]: Express 4
+              - generic [ref=e348]: Node.js
+              - generic [ref=e349]: MongoDB
+              - generic [ref=e350]: Zod
+              - generic [ref=e351]: Groq (LLM)
+              - generic [ref=e352]: Careerjet API
+              - generic [ref=e353]: Jooble API
+        - article [ref=e355]:
+          - img "Lineage 2 Eternal" [ref=e357]
+          - generic [ref=e358]:
+            - heading "Lineage 2 Eternal" [level=3] [ref=e359]
+            - paragraph [ref=e360]: Web app for the Lineage 2 Eternal server (High Five chronicle), built with Angular 21, responsive and SEO-optimized, offering detailed information about the server, events, guides and community. Deployed on Vercel.
+            - button "See more..." [ref=e361] [cursor=pointer]
+            - generic [ref=e362]:
+              - button "Private repository" [ref=e363] [cursor=pointer]:
+                - img [ref=e364]: lock
+                - generic [ref=e365]: Repository
+              - link "View live project" [ref=e366] [cursor=pointer]:
+                - /url: https://lineage2-eternal-web-angular-22-res.vercel.app/home
+                - img [ref=e367]: open_in_new
+                - generic [ref=e368]: View project
+            - generic [ref=e369]:
+              - generic [ref=e370]: Angular 22
+              - generic [ref=e371]: TypeScript
+              - generic [ref=e372]: SCSS
+              - generic [ref=e373]: Node.js
+        - article [ref=e375]:
+          - img "Lineage 2 Alika" [ref=e377]
+          - generic [ref=e378]:
+            - heading "Lineage 2 Alika" [level=3] [ref=e379]
+            - paragraph [ref=e380]: Web app for the Lineage 2 Alika server (Essence chronicle). Built with Angular 21 with a responsive design, server information, guides for new players and a community section. Deployed on Vercel.
+            - button "See more..." [ref=e381] [cursor=pointer]
+            - generic [ref=e382]:
+              - button "Private repository" [ref=e383] [cursor=pointer]:
+                - img [ref=e384]: lock
+                - generic [ref=e385]: Repository
+              - link "View live project" [ref=e386] [cursor=pointer]:
+                - /url: https://lineage2-alika-web-angular-21-respo-lilac.vercel.app/
+                - img [ref=e387]: open_in_new
+                - generic [ref=e388]: View project
+            - generic [ref=e389]:
+              - generic [ref=e390]: Angular 21
+              - generic [ref=e391]: TypeScript
+              - generic [ref=e392]: SCSS
+              - generic [ref=e393]: Node.js
+  - generic [ref=e110]:
+    - paragraph [ref=e111]: Development 2026
+    - paragraph [ref=e112]:
+      - text: Design inspired by a template from Ricardo Quebrada R. ·
+      - button "Figma Community" [ref=e113] [cursor=pointer]

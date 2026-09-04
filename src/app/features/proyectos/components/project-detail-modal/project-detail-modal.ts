@@ -1,7 +1,8 @@
 import { Component, Inject, inject, signal } from '@angular/core';
-import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
+import { MAT_DIALOG_DATA, MatDialog, MatDialogRef } from '@angular/material/dialog';
 import { MatIcon } from '@angular/material/icon';
 import { Translation } from '@app/core/services/translation';
+import { ProjectImageLightbox } from '../project-image-lightbox/project-image-lightbox';
 
 export interface ProjectDetail {
   title: string;
@@ -31,9 +32,20 @@ export class ProjectDetailModal {
 
   constructor(
     public dialogRef: MatDialogRef<ProjectDetailModal>,
-    @Inject(MAT_DIALOG_DATA) public project: ProjectDetail
+    @Inject(MAT_DIALOG_DATA) public project: ProjectDetail,
+    private dialog: MatDialog
   ) {
     this.slides = project.images?.length ? project.images : [project.image];
+  }
+
+  openLightbox(): void {
+    this.dialog.open(ProjectImageLightbox, {
+      data: { image: this.slides[this.index()], alt: this.project.title },
+      width: '90%',
+      maxWidth: '950px',
+      panelClass: 'project-lightbox-panel',
+      backdropClass: 'project-lightbox-backdrop',
+    });
   }
 
   next(): void {

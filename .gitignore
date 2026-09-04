@@ -116,6 +116,9 @@ StyleCopReport.xml
 # Chutzpah Test files
 _Chutzpah*
 
+# Archivos temporales del proyecto (logs, screenshots, heapdumps)
+tmp/
+
 # Visual C++ cache files
 ipch/
 *.aps
@@ -431,3 +434,14 @@ coverage/
 
 # claude
 .claude/
+
+# Playwright
+/test-results/
+/playwright-report/
+/blob-report/
+/playwright/.cache/
+/playwright/.auth/
+.playwright-mcp/
+
+# captures for docling
+/proyect-captures

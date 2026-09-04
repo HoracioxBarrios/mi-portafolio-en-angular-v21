@@ -3,6 +3,21 @@
   flex-direction: column;
   min-height: 100vh;
 
+  &__particles {
+    // Canvas de fondo fijo (z-index 0); el resto del contenido queda por encima.
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+  }
+
+  &__profile,
+  &__main,
+  &__footer {
+    position: relative;
+    z-index: 1;
+  }
+
   &__header {
     position: sticky;
     top: 0;
@@ -16,6 +31,8 @@
     margin-inline: auto;
     // Padding fluido: ~1rem en mobile, hasta 2rem en desktop.
     padding: clamp(1rem, 3vw, 2rem);
+    // Reserva para que el sticky CTA móvil no tape el final del contenido.
+    padding-bottom: 5rem;
   }
 
   &__footer {

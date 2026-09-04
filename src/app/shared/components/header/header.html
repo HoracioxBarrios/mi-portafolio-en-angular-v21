@@ -1,6 +1,6 @@
 <header class="header">
   <div class="header__container">
-    <nav class="header__nav">
+    <nav class="header__nav" aria-label="Navegación principal">
       <mat-tab-group
         [selectedIndex]="activeIndex"
         (selectedIndexChange)="onTabChange($event)"
@@ -16,6 +16,19 @@
     </nav>
 
     <div class="header__controls">
+      @if (cvUrl) {
+      <a
+        class="header__cv-btn"
+        [href]="cvUrl"
+        target="_blank"
+        rel="noopener"
+        [attr.aria-label]="tr.t('header.cvAria')"
+      >
+        <mat-icon>download</mat-icon>
+        <span>{{ tr.t('header.cvButton') }}</span>
+      </a>
+      }
+
       <button
         type="button"
         class="header__lang-btn"

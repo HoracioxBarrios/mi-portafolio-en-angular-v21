@@ -2,25 +2,48 @@
 // DESIGN TOKENS — colores temáticos como CSS custom properties
 // Se alternan en runtime con el atributo data-theme en <html>.
 // El tema por defecto es dark (sin atributo o data-theme="dark").
+// Paleta: dark-first con acento azul Material (#2196f3).
 // ============================================================
+
+// Escala de radios (compartida por ambos temas) — D5
+:root {
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-pill: 999px;
+}
 
 :root,
 :root[data-theme='dark'] {
-  --bg-primary: #0a0a0a;
-  --bg-secondary: #1a1a1a;
-  --surface: #1a1a1a;
-  --surface-raised: #222222;
+  --bg-primary: #0b0f0d;
+  --bg-secondary: #131a16;
+  --surface: #131a16;
+  --surface-raised: #1b241e;
 
-  --text-primary: #ffffff;
-  --text-secondary: #b0b0b0;
-  --text-on-accent: #ffffff;
+  --text-primary: #f4faf5;
+  --text-secondary: #a8b3ac;
+  --text-on-accent: #0b0f0d;
 
   --accent: #2196f3;
-  --accent-strong: #1976d2;
-  --accent-soft-bg: rgba(33, 150, 243, 0.12);
+  --accent-strong: #1e88e5;
+  --accent-soft-bg: rgba(33, 150, 243, 0.10);
   --accent-soft-border: rgba(33, 150, 243, 0.28);
+  --accent-glow: rgba(33, 150, 243, 0.35);
 
-  --danger: #d32f2f;
+  // CTA reservado: acento pleno solo en acciones primarias (D2)
+  --cta-bg: #2196f3;
+  --cta-bg-hover: #1e88e5;
+  --cta-text: #0b0f0d;
+
+  --danger: #f87171;
+
+  // Colores semánticos de los botones de la card de proyecto (ajustes-cards-proyecto):
+  // repo privado rojo fijo, repo público verde original del sitio y "Ver proyecto" azul fijo.
+  --repo-private: #d32f2f;
+  --repo-public-bg: #bef264;
+  --repo-public-text: #0b0f0d;
+  --repo-live: #2196f3;
+  --repo-live-text: #0b0f0d;
 
   --border-subtle: rgba(255, 255, 255, 0.06);
   --border-medium: rgba(255, 255, 255, 0.08);
@@ -37,7 +60,7 @@
 }
 
 :root[data-theme='light'] {
-  --bg-primary: #eaedf2;
+  --bg-primary: #f4f6f0;
   --bg-secondary: #ffffff;
   --surface: #ffffff;
   --surface-raised: #ffffff;
@@ -50,8 +73,20 @@
   --accent-strong: #115293;
   --accent-soft-bg: rgba(23, 105, 196, 0.10);
   --accent-soft-border: rgba(23, 105, 196, 0.28);
+  --accent-glow: rgba(23, 105, 196, 0.18);
+
+  // CTA reservado: blue-800 pleno con texto blanco (WCAG AA 4.5:1)
+  --cta-bg: #1769c4;
+  --cta-bg-hover: #115293;
+  --cta-text: #ffffff;
 
   --danger: #c62828;
+
+  --repo-private: #d32f2f;
+  --repo-public-bg: #4d7c0f;
+  --repo-public-text: #ffffff;
+  --repo-live: #2196f3;
+  --repo-live-text: #0b0f0d;
 
   --border-subtle: rgba(0, 0, 0, 0.08);
   --border-medium: rgba(0, 0, 0, 0.10);

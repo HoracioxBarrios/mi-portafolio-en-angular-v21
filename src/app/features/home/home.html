@@ -1,7 +1,9 @@
 <!-- Hero Section -->
 <section class="hero">
+  <div class="hero__glow" aria-hidden="true"></div>
   <div class="hero__container">
-    <div class="hero__content">
+    <div class="hero__content" appReveal>
+      <p class="hero__badge font-mono">{{ tr.t('home.hero.badge') }}</p>
       <h1 class="hero__title">{{ tr.t('home.hero.title') }}</h1>
       <p class="hero__subtitle">{{ tr.t('home.hero.subtitle') }}</p>
       <div class="hero__cta">
@@ -17,11 +19,12 @@
 <!-- Featured Projects Section -->
 <section class="featured-projects">
   <div class="featured-projects__container">
-    <h2 class="featured-projects__title">{{ tr.t('home.featured.title') }}</h2>
+    <h2 class="featured-projects__title" appReveal>{{ tr.t('home.featured.title') }}</h2>
     <div class="featured-projects__grid">
       @if (featuredProjects.length > 0) {
         @for (project of featuredProjects; track $index) {
           <app-project-card
+            appReveal
             [title]="project.title"
             [description]="tr.t(project.descKey)"
             [image]="project.image"
@@ -36,7 +39,7 @@
         <p class="featured-projects__empty">{{ tr.t('home.featured.loading') }}</p>
       }
     </div>
-    <div class="featured-projects__cta">
+    <div class="featured-projects__cta" appReveal>
       <a routerLink="/proyectos" class="btn btn--outline">{{ tr.t('home.featured.viewAll') }}</a>
     </div>
   </div>
@@ -50,7 +53,7 @@
 </section> -->
 
 <!-- CTA Section -->
-<section class="cta-section">
+<section class="cta-section" appReveal>
   <div class="cta-section__container">
     <h2>{{ tr.t('home.cta.title') }}</h2>
     <p>{{ tr.t('home.cta.text') }}</p>

@@ -2,6 +2,7 @@
 // 1. TODOS LOS @use PRIMERO
 // ========================================
 @use '@angular/material' as mat;
+@use 'sass:map';
 @use './styles/abstracts/variables';
 @use './styles/abstracts/mixins';
 @use './styles/themes/tokens';
@@ -17,17 +18,39 @@
 // ========================================
 // 3. DEFINIR TEMAS (Material Design 3) — dark y light
 // ========================================
+// Palette custom del acento azul Material (#2196f3): se reutilizan los submaps
+// (secondary/neutral/error) de mat.$blue-palette y se sobrescriben los tonos base
+// con la rampa azul clásica (MD2 50-900) alrededor del acento del portafolio.
+$azul-palette: map.merge(mat.$blue-palette, (
+  0: #000000,
+  10: #0d47a1,
+  20: #1565c0,
+  25: #1976d2,
+  30: #1e88e5,
+  35: #2196f3,
+  40: #1769c4,
+  50: #42a5f5,
+  60: #64b5f6,
+  70: #90caf9,
+  80: #bbdefb,
+  90: #e3f2fd,
+  95: #f1f8fe,
+  98: #f9fcff,
+  99: #fbfdff,
+  100: #ffffff,
+));
+
 $dark-theme: mat.define-theme((
   color: (
     theme-type: dark,
-    primary: mat.$blue-palette,
+    primary: $azul-palette,
   ),
 ));
 
 $light-theme: mat.define-theme((
   color: (
     theme-type: light,
-    primary: mat.$blue-palette,
+    primary: $azul-palette,
   ),
 ));
 
@@ -54,7 +77,7 @@ html, body {
 }
 
 body {
-  font-family: Roboto, "Helvetica Neue", sans-serif;
+  font-family: 'Space Grotesk', 'Helvetica Neue', sans-serif;
   background-color: var(--bg-primary);
   color: var(--text-primary);
   transition: background-color 0.3s ease, color 0.3s ease;
@@ -75,41 +98,56 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-/* === MAT TAB INDICATOR COLOR para las opciones en el navbar === */
-
-/* Línea inferior activa */
-.mat-mdc-tab-group
-  .mat-mdc-tab.mdc-tab--active
-  .mdc-tab-indicator__content--underline {
-  border-color: var(--accent) !important;
-}
-
-/* Texto activo */
-.mat-mdc-tab-group
-  .mat-mdc-tab.mdc-tab--active
-  .mdc-tab__text-label,
-.mat-mdc-tab-group
-  .mat-mdc-tab.mdc-tab--active
-  a {
-  color: var(--accent) !important;
-}
-
 /* === Skill detail dialog (modal) === */
 .skill-detail-dialog-panel .mat-mdc-dialog-container,
-.figma-modal-panel .mat-mdc-dialog-container {
+.figma-modal-panel .mat-mdc-dialog-container,
+.project-lightbox-panel .mat-mdc-dialog-container {
   padding: 0;
   background: transparent;
   box-shadow: none;
 }
 
-.skill-detail-dialog-backdrop {
+.skill-detail-dialog-backdrop,
+.project-lightbox-backdrop {
   background: var(--backdrop) !important;
 }
 
 /* === Project detail modal === */
+.project-detail-panel .mat-mdc-dialog-container,
+.project-detail-panel .mat-mdc-dialog-surface {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
 .project-detail-panel .mat-mdc-dialog-surface {
   box-shadow:
     0 20px 60px rgba(0, 0, 0, 0.85),
     0 0 40px rgba(200, 200, 200, 0.2),
     0 0 80px rgba(200, 200, 200, 0.08) !important;
+  overflow: hidden;
+}
+
+/* === Scroll reveal (directiva appReveal) ===
+   Estado inicial oculto; al intersectar, .is-revealed aplica el fade-in.
+   Solo opacity/transform para evitar CLS. prefers-reduced-motion: sin animación. */
+.reveal-init {
+  opacity: 0;
+  transform: translateY(16px);
+}
+
+.is-revealed {
+  opacity: 1;
+  transform: translateY(0);
+  transition:
+    opacity 0.45s ease-out,
+    transform 0.45s ease-out;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal-init {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
 }

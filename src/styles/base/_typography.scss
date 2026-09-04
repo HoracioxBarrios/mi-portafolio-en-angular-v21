@@ -1,31 +1,54 @@
 @use '../abstracts/variables' as *;
 
+// ============================================================
+// TIPOGRAFÍA — Space Grotesk (display/body) + JetBrains Mono (técnico)
+// Escala con clamp(): crece de forma fluida entre breakpoints.
+// Tracking negativo en títulos para densidad visual (D1).
+// ============================================================
+
 body {
-  font-family: 'Roboto', 'Helvetica Neue', sans-serif;
-  font-size: 1rem;
+  font-family: 'Space Grotesk', 'Helvetica Neue', sans-serif;
+  font-size: clamp(1rem, 0.95rem + 0.2vw, 1.0625rem);
   color: var(--text-primary);
 }
 
+// Utilidad para elementos técnicos (tags, labels, períodos, nav)
+.font-mono {
+  font-family: 'JetBrains Mono', ui-monospace, monospace;
+}
+
 h1, h2, h3, h4, h5, h6 {
-  font-weight: 500;
-  line-height: 1.2;
+  font-family: 'Space Grotesk', sans-serif;
+  line-height: 1.15;
   margin-bottom: 1rem;
+  color: var(--text-primary);
 }
 
+// H1: 32–40px móvil / 48–60px desktop
 h1 {
-  font-size: 2.5rem;
+  font-size: clamp(2rem, 1.4rem + 3vw, 3.75rem);
+  font-weight: 700;
+  letter-spacing: -0.03em;
 }
 
+// H2: 24–32px / 32–40px
 h2 {
-  font-size: 2rem;
+  font-size: clamp(1.5rem, 1.15rem + 1.8vw, 2.5rem);
+  font-weight: 600;
+  letter-spacing: -0.025em;
 }
 
+// H3: 20–24px / 24–28px
 h3 {
-  font-size: 1.75rem;
+  font-size: clamp(1.25rem, 1.1rem + 0.8vw, 1.75rem);
+  font-weight: 600;
+  letter-spacing: -0.015em;
 }
 
 h4 {
-  font-size: 1.5rem;
+  font-size: 1.25rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
 }
 
 p {
@@ -34,10 +57,10 @@ p {
 }
 
 a {
-  color: var(--accent);
+  color: var(--accent-strong);
   transition: color $transition-fast;
 
   &:hover {
-    color: var(--accent-strong);
+    color: var(--accent);
   }
 }

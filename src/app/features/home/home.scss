@@ -1,15 +1,32 @@
 // Hero Section
 .hero {
+  position: relative;
   padding: 50px 20px;
-  background: linear-gradient(135deg, #1c275d 0%, #3d6ae6 100%);
-  color: white;
+  background-color: var(--bg-primary);
+  // Grid sutil de 1px (opacidad baja) sobre el fondo base
+  background-image:
+    linear-gradient(var(--border-subtle) 1px, transparent 1px),
+    linear-gradient(90deg, var(--border-subtle) 1px, transparent 1px);
+  background-size: 48px 48px;
+  color: var(--text-primary);
   text-align: center;
   min-height: 500px;
   display: flex;
   align-items: center;
   justify-content: center;
+  overflow: hidden;
+
+  &__glow {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background: radial-gradient(ellipse 70% 55% at 50% 42%, var(--accent-glow) 0%, transparent 70%);
+    z-index: 0;
+  }
 
   &__container {
+    position: relative;
+    z-index: 1;
     max-width: 900px;
     width: 100%;
   }
@@ -18,31 +35,28 @@
     animation: slideInUp 0.8s ease-out;
   }
 
+  &__badge {
+    display: inline-block;
+    margin-bottom: 1.5rem;
+    padding: 0.35rem 0.9rem;
+    border: 1px solid var(--accent-soft-border);
+    border-radius: var(--radius-pill);
+    background: var(--accent-soft-bg);
+    color: var(--accent-strong);
+    font-size: 0.8rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+
   &__title {
-    font-size: 3rem;
     margin-bottom: 1rem;
-    font-weight: 700;
-    line-height: 1.2;
-
-    @media (max-width: 768px) {
-      font-size: 2rem;
-    }
-
-    @media (max-width: 480px) {
-      font-size: 1.5rem;
-    }
   }
 
   &__subtitle {
-    font-size: 1.3rem;
+    max-width: 640px;
+    margin-inline: auto;
     margin-bottom: 2rem;
-    // Texto siempre claro: el hero es un degradado azul fijo en ambos temas.
-    // (sobrescribe la regla global `p { color: var(--text-secondary) }`)
-    color: rgba(255, 255, 255, 0.92);
-
-    @media (max-width: 768px) {
-      font-size: 1rem;
-    }
+    font-size: clamp(1.05rem, 0.95rem + 0.5vw, 1.3rem);
   }
 
   &__cta {
@@ -77,8 +91,6 @@
   &__title {
     text-align: center;
     margin-bottom: 3rem;
-    font-size: 2rem;
-    font-weight: 600;
   }
 }
 
@@ -95,8 +107,6 @@
   &__title {
     text-align: center;
     margin-bottom: 3rem;
-    font-size: 2rem;
-    font-weight: 600;
   }
 
   &__grid {
@@ -135,31 +145,40 @@
 
 // CTA Section
 .cta-section {
+  position: relative;
   padding: 60px 20px;
-  background: linear-gradient(135deg, #5572f2 0%, #6d25b5 100%);
-  color: white;
+  background-color: var(--surface);
+  // Grid sutil + glow del acento, sin degradado fijo
+  background-image:
+    linear-gradient(var(--border-subtle) 1px, transparent 1px),
+    linear-gradient(90deg, var(--border-subtle) 1px, transparent 1px);
+  background-size: 48px 48px;
+  color: var(--text-primary);
   text-align: center;
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background: radial-gradient(ellipse 60% 70% at 50% 110%, var(--accent-glow) 0%, transparent 70%);
+  }
 
   &__container {
+    position: relative;
+    z-index: 1;
     max-width: 600px;
     margin: 0 auto;
   }
 
   h2 {
-    font-size: 2rem;
     margin-bottom: 1rem;
-    font-weight: 600;
-
-    @media (max-width: 768px) {
-      font-size: 1.5rem;
-    }
   }
 
   p {
     font-size: 1.1rem;
     margin-bottom: 2rem;
-    // Texto siempre claro sobre el degradado fijo del CTA.
-    color: rgba(255, 255, 255, 0.92);
 
     @media (max-width: 768px) {
       font-size: 1rem;
@@ -167,11 +186,11 @@
   }
 }
 
-// Button styles
+// Button styles — el acento pleno (--cta-bg) es solo para acciones primarias
 .btn {
   display: inline-block;
   padding: 12px 28px;
-  border-radius: 6px;
+  border-radius: var(--radius-md);
   text-decoration: none;
   font-weight: 600;
   transition: all 0.3s ease;
@@ -180,35 +199,36 @@
   font-size: 1rem;
 
   &--primary {
-    background-color: white;
-    color: #667eea;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    background-color: var(--cta-bg);
+    color: var(--cta-text);
+    box-shadow: 0 4px 15px var(--accent-glow);
 
     &:hover {
+      background-color: var(--cta-bg-hover);
       transform: translateY(-2px);
-      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+      box-shadow: 0 6px 20px var(--accent-glow);
     }
   }
 
   &--secondary {
-    border-color: white;
-    color: white;
+    border-color: var(--accent-soft-border);
+    color: var(--accent-strong);
     background-color: transparent;
 
     &:hover {
-      background-color: rgba(255, 255, 255, 0.1);
+      background-color: var(--accent-soft-bg);
       transform: translateY(-2px);
     }
   }
 
   &--outline {
-    border-color: #667eea;
-    color: #667eea;
+    border-color: var(--accent-soft-border);
+    color: var(--accent-strong);
     background-color: transparent;
 
     &:hover {
-      background-color: #667eea;
-      color: white;
+      background-color: var(--accent-soft-bg);
+      color: var(--accent);
     }
   }
 

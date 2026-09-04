@@ -3,10 +3,11 @@ import { ProjectCard } from './components/project-card/project-card';
 import { PROJECTS } from '../../core/data/projects.mock';
 import { Project } from '../../core/models/proyect.interface';
 import { Translation } from '@app/core/services/translation';
+import { Reveal } from '@app/shared/directives/reveal';
 
 @Component({
   selector: 'app-proyectos',
-  imports: [ProjectCard],
+  imports: [ProjectCard, Reveal],
   templateUrl: './proyectos.html',
   styleUrl: './proyectos.scss',
 })

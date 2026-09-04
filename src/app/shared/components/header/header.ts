@@ -1,4 +1,4 @@
-import { Component, DestroyRef, inject } from '@angular/core';
+import { Component, DestroyRef, Input, inject } from '@angular/core';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
@@ -27,8 +27,10 @@ export class Header {
   protected readonly theme = inject(Theme);
   protected readonly tr = inject(Translation);
 
+  @Input() cvUrl?: string;
+
   navLinks = [
-    { id: 1, path: 'home', key: 'nav.home' },
+    { id: 1, path: 'inicio', key: 'nav.home' },
     { id: 2, path: 'proyectos', key: 'nav.proyectos' },
     { id: 3, path: 'sobre-mi', key: 'nav.sobreMi' }
   ];
@@ -40,7 +42,6 @@ export class Header {
       .subscribe(() => this.syncTabWithRoute());
     this.syncTabWithRoute();
   }
-
 
   onTabChange(index: number) {
     const link = this.navLinks[index];
@@ -54,5 +55,4 @@ export class Header {
     const index = this.navLinks.findIndex(l => l.path === currentPath);
     this.activeIndex = index !== -1 ? index : 0;
   }
-
 }

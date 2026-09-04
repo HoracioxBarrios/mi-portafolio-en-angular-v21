@@ -1,0 +1,40 @@
+<section class="certificados">
+  <h3 class="certificados__section-title">{{ tr.t('about.certificados.title') }}</h3>
+  <p class="certificados__subtitle">{{ tr.t('about.certificados.subtitle') }}</p>
+
+  <div class="certificados__grid">
+    @for (cert of certificados; track cert.tituloKey) {
+      <article class="certificados__card">
+        @if (cert.imagen) {
+          <img
+            class="certificados__imagen"
+            [src]="cert.imagen"
+            [alt]="tr.t(cert.tituloKey)"
+            loading="lazy"
+          />
+        }
+
+        <div class="certificados__body">
+          <h4 class="certificados__titulo">{{ tr.t(cert.tituloKey) }}</h4>
+          <span class="certificados__plataforma font-mono">{{ cert.plataforma }}</span>
+
+          <div class="certificados__meta">
+            @if (cert.anio) {
+              <span class="certificados__anio font-mono">{{ cert.anio }}</span>
+            }
+            @if (cert.url) {
+              <a
+                class="certificados__link"
+                [href]="cert.url"
+                target="_blank"
+                rel="noopener"
+              >
+                {{ tr.t('about.certificados.verCertificado') }}
+              </a>
+            }
+          </div>
+        </div>
+      </article>
+    }
+  </div>
+</section>
