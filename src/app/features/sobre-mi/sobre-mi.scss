@@ -14,6 +14,9 @@
 
   // ── Header / Quién soy ──────────────────────────────────
   &__header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     background:
       linear-gradient(135deg, var(--accent-soft-bg) 0%, transparent 55%),
       var(--surface);
@@ -29,6 +32,7 @@
     font-weight: 700;
     color: var(--text-primary);
     margin-bottom: 1rem;
+    text-align: center;
   }
 
   &__description {
