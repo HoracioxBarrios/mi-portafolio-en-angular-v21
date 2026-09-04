@@ -63,10 +63,16 @@ export const EN: Record<string, string> = {
   'about.certificados.title': 'Certificates',
   'about.certificados.subtitle': 'Training & certifications',
   'about.certificados.verCertificado': 'View certificate',
-  'about.certificados.claudeCode.title': 'Claude Code',
   'about.certificados.claudeCodeInAction.title': 'Claude Code in Action',
   'about.certificados.cSharp.title': 'C# Course',
   'about.certificados.angular.title': 'Angular Course',
+  'about.certificados.claude101.title': 'Claude 101',
+  'about.certificados.claudeCode101.title': 'Claude Code 101',
+  'about.certificados.mcp.title': 'Introduction to Model Context Protocol',
+  'about.certificados.agentSkills.title': 'Introduction to Agent Skills',
+  'about.certificados.subAgents.title': 'Introduction to SubAgents',
+  'about.certificados.devinFoundations.title': 'Devin Foundations Badge',
+  'about.certificados.mcpAdvanced.title': 'Model Context Protocol: Advanced Topics',
 
   // Project card
   'card.seeMore': 'See more...',
