@@ -13,7 +13,7 @@ export const ES: Record<string, string> = {
   'home.hero.title': 'Hola, soy Hora',
   'home.hero.badge': 'Software Developer | Angular & Ionic | AI Solutions & AI-Augmented Development',
   'home.hero.subtitle':
-    'Desarrollador Frontend (Angular/Ionic) enfocado en construir productos sólidos, con experiencia integrando IA al flujo de desarrollo para trabajar más rápido y mejor.',
+    'Desarrollador especializado en Angular e Ionic, con más de 3 años creando y manteniendo aplicaciones web y móviles, con experiencia en proyectos de gran escala para el sector público.',
   'home.hero.ctaAbout': 'Conóceme más',
   'home.hero.ctaProjects': 'Ver mis proyectos',
 
@@ -37,7 +37,7 @@ export const ES: Record<string, string> = {
   // Sobre mí
   'about.title': 'Quién soy',
   'about.description':
-    'Desarrollador Angular con experiencia en proyectos de gran escala para el sector público — llevé a producción la primera solución de IA generativa del proyecto como asistente conversacional. Combino expertise técnico en Angular (v12–v21) con herramientas modernas de desarrollo asistido por IA para entregar soluciones de mayor calidad en menos tiempo.',
+    'Soy un Desarrollador especializado en Angular e Ionic Framework, con más de 3 años de experiencia desarrollando aplicaciones web y móviles para proyectos de gran escala del sector público. Experiencia en migraciones de Angular, arquitectura frontend, optimización de rendimiento, accesibilidad e integración de soluciones basadas en Inteligencia Artificial Generativa. Aplicación de metodologías de desarrollo asistidas por IA como Spec-Driven Development (SDD), BMAD Method y OpenSpec para mejorar la productividad, calidad y mantenibilidad del código. Orientado a la innovación y adopción de prácticas modernas de desarrollo.',
   'about.experience.title': 'Experiencia profesional',
   'about.experience.company': 'Consultores en Desarrollos Tecnológicos S.A. — CABA',
   'about.experience.period': 'Agosto 2023 – Actualidad',

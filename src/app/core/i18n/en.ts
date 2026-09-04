@@ -13,7 +13,7 @@ export const EN: Record<string, string> = {
   'home.hero.title': "Hi, I'm Hora",
   'home.hero.badge': 'Software Developer | Angular & Ionic | AI Solutions & AI-Augmented Development',
   'home.hero.subtitle':
-    'Frontend Developer (Angular/Ionic) focused on building solid products, with experience integrating AI into the development flow to work faster and better.',
+    'Developer specialized in Angular and Ionic, with over 3 years building and maintaining web and mobile apps, with experience on large-scale public-sector projects.',
   'home.hero.ctaAbout': 'Get to know me',
   'home.hero.ctaProjects': 'See my projects',
 
@@ -37,7 +37,7 @@ export const EN: Record<string, string> = {
   // About me
   'about.title': 'Who I am',
   'about.description':
-    'Angular developer with experience on large-scale public-sector projects — I shipped the project’s first generative-AI solution to production as a conversational assistant. I combine technical expertise in Angular (v12–v21) with modern AI-assisted development tools to deliver higher-quality solutions in less time.',
+    "I'm a developer specialized in Angular and the Ionic Framework, with over 3 years of experience building web and mobile applications for large-scale public-sector projects. Experience with Angular migrations, frontend architecture, performance optimization, accessibility and the integration of generative Artificial Intelligence-based solutions. Application of AI-assisted development methodologies such as Spec-Driven Development (SDD), the BMAD Method and OpenSpec to improve productivity, quality and code maintainability. Focused on innovation and the adoption of modern development practices.",
   'about.experience.title': 'Professional experience',
   'about.experience.company': 'Consultores en Desarrollos Tecnológicos S.A. — CABA',
   'about.experience.period': 'August 2023 – Present',
